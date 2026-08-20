@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Monster Wiki: estratégias, mapas e informações da franquia Kingdom Rush.">
+
+    <meta
+        name="keywords"
+        content="Monster Wiki, Kingdom Rush, estratégias, mapas, Origins, Frontiers, Vengeance, Alliance">
+
+    <meta name="author" content="Marcos">
+    <meta name="theme-color" content="#0B1120">
+
+    <title>Monster Wiki | Kingdom Rush</title>
+
+    <link rel="icon" href="../../assets/logo/LOGO CIMA.webp" type="image/webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/global/style.css">
+    <link rel="stylesheet" href="../../css/global/header.css">
+    <link rel="stylesheet" href="../../css/global/footer.css">
+    <link rel="stylesheet" href="../../css/global/responsive.css">
+    <link rel="stylesheet" href="../../css/wiki/wiki.css?v=20260816">
+    <link rel="stylesheet" href="../../css/global/intro.css?v=20260818-1445">
+
+</head>
+
+<body data-page="wiki">
+    <!-- MONSTER INTRO -->
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="../../assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+            <span>MONSTER</span>
+        </a>
+
+        <nav class="navbar" aria-label="Navegação principal">
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="../../index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../Kingdom Rush/kingdom.html">
+                            Kingdom Rush
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../Jux/jux.html">
+                            JUX
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../About/about.html">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        <div class="header-social">
+
+            <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">
+                YouTube
+            </a>
+
+            <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">
+                Twitch
+            </a>
+
+            <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">
+                Discord
+            </a>
+
+        </div>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir Menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+
+            <div class="quick-menu-head">
+                <div>
+                    <span class="quick-menu-kicker">MONSTER</span>
+                    <div class="quick-menu-title">Navegação</div>
+                </div>
+                <span class="quick-menu-live">● Online</span>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+                <a href="../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+                <a href="../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+                <a href="../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="wiki.html"><span>Wiki</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+                <a href="../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+                <a href="../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-social">
+                <div class="quick-menu-social-title">Siga o Monster</div>
+                <div class="quick-menu-social-links">
+                    <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                    <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+                </div>
+            </div>
+
+        </div>
+
+
+<main class="wiki-main">
+
+
+<section class="wiki-intro section-anchor" id="inicio">
+    <div class="container">
+        <div class="wiki-intro-inner">
+            <span class="wiki-kicker">BEM-VINDO À MONSTER WIKI</span>
+            <h1><span>Bem-vindo!</span></h1>
+            <div class="wiki-intro-text">
+                <p>
+                    Bem-vindo! Esta página serve como um guia para qualquer pessoa que esteja jogando <strong>Kingdom Rush</strong>.
+                    Conforme novos vídeos forem saindo, mais informações serão adicionadas e atualizadas por aqui.
+                </p>
+                <p>
+                    Lembrando que as recomendações não são universais: elas são conclusões feitas a partir da minha perspectiva no jogo.
+                    Nada aqui é imposto ao leitor, considerando a liberdade de cada jogador durante a jogatina.
+                </p>
+                <p>
+                    Existem pessoas que pensam de outras formas, e tudo bem. Se um jeito alternativo também funciona para você,
+                    ele continua sendo válido. A ideia desta Wiki é compartilhar experiências e organizar o conteúdo da melhor maneira possível.
+                </p>
+                <p>
+                    Resolvi começar por <strong>Kingdom Rush Origins</strong> porque estou jogando na ordem cronológica da história
+                    desta franquia — e não pela ordem de lançamento dos jogos.
+                </p>
+            </div>
+            <div class="wiki-actions">
+                <a href="#ordem" class="wiki-action wiki-action-primary">Ver ordem cronológica <span aria-hidden="true">↓</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="wiki-order section-anchor" id="ordem">
+    <div class="container">
+        <div class="wiki-section-heading centered-heading">
+            <span class="wiki-heading-kicker orange">ORGANIZAÇÃO DA SÉRIE</span>
+            <h2>Ordem cronológica</h2>
+            <p>
+                A série começa por <strong>Kingdom Rush Origins</strong> porque esta sequência segue a ordem cronológica da história,
+                e não a ordem em que os jogos foram lançados.
+            </p>
+        </div>
+
+        <div class="wiki-order-board chronological-board" aria-label="Ordem cronológica dos jogos">
+            <div class="order-items" id="chronological-order"></div>
+</div>
+    </div>
+</section>
+
+<section class="wiki-order wiki-release section-anchor" id="lancamento">
+    <div class="container">
+        <div class="wiki-section-heading centered-heading">
+            <span class="wiki-heading-kicker red">REFERÊNCIA</span>
+            <h2>Data de lançamento</h2>
+            <p>
+                Aqui a lógica é diferente: os jogos ficam apresentados pela ordem em que foram lançados.
+            </p>
+        </div>
+
+        <div class="wiki-order-board release-board" aria-label="Ordem de lançamento dos jogos">
+            <div class="order-items" id="release-order"></div>
+</div>
+    </div>
+</section>
+
+<section class="wiki-structure section-anchor" id="estrutura">
+    <div class="container">
+        <div class="wiki-section-heading centered-heading structure-heading">
+            <span class="wiki-heading-kicker red">CONTEXTO DA SÉRIE</span>
+            <h2>Esclarecendo a estrutura da série</h2>
+            <p>
+                Os episódios originalmente eram apenas gravados com base no mapa do Origins, e eu não sabia quantas fases o jogo tinha, então pensei em dividir em dois episódios por bioma.
+            </p>
+        </div>
+
+        <div class="wiki-structure-grid">
+            <article class="wiki-structure-card">
+                <div class="wiki-structure-card-media map-media">
+                    <img src="../../assets/wiki/Base Mapa Origins.png" alt="Mapa do Kingdom Rush Origins dividido por biomas" loading="lazy" decoding="async">
+                </div>
+                <div class="wiki-structure-card-copy">
+                    <span class="wiki-structure-card-kicker">PRIMEIRA IDEIA</span>
+                    <h3>Divisão por bioma</h3>
+                    <p>
+                        A organização inicial partia do mapa: cada bioma ajudaria a definir a divisão dos episódios antes de a quantidade total de fases ser conhecida.
+                    </p>
+                </div>
+            </article>
+
+            <article class="wiki-structure-card">
+                <div class="wiki-structure-card-media logo-media">
+                    <img src="../../assets/wiki/logos/Kingdom Rush Origins.png" alt="Logo do Kingdom Rush Origins" loading="lazy" decoding="async">
+                </div>
+                <div class="wiki-structure-card-copy">
+                    <span class="wiki-structure-card-kicker">IDEIA ATUAL</span>
+                    <h3>Cada letra vira um episódio</h3>
+                    <p>
+                        Mas depois de montar o banner de playlist usando a logo do jogo, a ideia passou a imitar o estilo de atualização da série Jux: cada letra da logo representa um episódio, enquanto cada palavra representa a dificuldade.
+                    </p>
+                    <div class="wiki-structure-difficulties" aria-label="Estrutura das dificuldades">
+                        <span><b>NORMAL</b><strong>KINGDOM</strong><small>7 episódios</small></span>
+                        <span><b>DIFÍCIL</b><strong>RUSH</strong><small>4 episódios</small></span>
+                        <span><b>IMPOSSÍVEL</b><strong>ORIGINS</strong><small>7 episódios</small></span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="wiki-structure-card">
+                <div class="wiki-structure-card-media interpretation-media">
+                    <img src="../../assets/wiki/logos/Kingdom Rush Logo.png" alt="Anotações sobre a interpretação do jogo Kingdom Rush" loading="lazy" decoding="async">
+                </div>
+                <div class="wiki-structure-card-copy">
+                    <span class="wiki-structure-card-kicker">OUTRO ESCLARECIMENTO</span>
+                    <h3>Como você interpreta o jogo?</h3>
+                    <p>
+                        A interpretação é baseada principalmente no desempenho das torres, observando os slots e o alcance de ataque em vez de memorizar números de dano ou intervalos. A estratégia também busca equilibrar os gastos entre os tipos de torres e evitar concentrar os mesmos tipos em posições muito próximas.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="wiki-structure-note">
+            <p>
+                No caso atual, <code>KINGDOM</code> tem 7 letras para a dificuldade <em>normal</em>,
+                <code>RUSH</code> tem 4 letras para a dificuldade <em>difícil</em> e
+                <code>ORIGINS</code> tem 7 letras para a dificuldade <em>impossível</em>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="wiki-games section-anchor" id="jogos">
+    <div class="container">
+        <div class="wiki-section-heading centered-heading games-heading">
+            <span class="wiki-heading-kicker orange">CENTRAL DA WIKI</span>
+            <h2>Jogos da franquia</h2>
+            <p>
+                O jogo disponível abre uma página própria com as fases. Os demais ficam acinzentados e com cadeado
+                até entrarem na sequência do criador.
+            </p>
+        </div>
+
+        <div class="wiki-filter" role="tablist" aria-label="Filtrar jogos">
+            <button class="wiki-filter-btn active" type="button" data-filter="all">Todos</button>
+            <button class="wiki-filter-btn" type="button" data-filter="available">Disponíveis</button>
+            <button class="wiki-filter-btn" type="button" data-filter="locked">Bloqueados</button>
+        </div>
+
+        <div class="wiki-games-grid" id="wiki-games-grid">
+            <article class="wiki-game-tile available" data-status="available" data-game="origins">
+                <div class="wiki-game-meta"><span>01</span><b>DISPONÍVEL</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Kingdom Rush Origins.png" alt="Kingdom Rush Origins" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-logo-fallback" aria-hidden="true">ORIGINS</div>
+                </div>
+                <div class="wiki-game-copy">
+                    <span class="wiki-game-eyebrow">EM ANDAMENTO</span>
+                    <h3>Kingdom Rush Origins</h3>
+                    <p>Fases, episódios, estratégias e organização da série.</p>
+                </div>
+                <a href="wiki-game.html" class="wiki-game-button">Abrir Wiki do jogo <span>→</span></a>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="kingdom">
+                <div class="wiki-game-meta"><span>02</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush Bloqueado.png" alt="Kingdom Rush bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush</h3><p>Ainda não jogado nesta sequência.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="frontiers">
+                <div class="wiki-game-meta"><span>03</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush Fronties Bloqueado.png" alt="Kingdom Rush Frontiers bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush Frontiers</h3><p>Reservado para uma etapa futura.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="vengeance">
+                <div class="wiki-game-meta"><span>04</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush Vengeance Bloqueado.png" alt="Kingdom Rush Vengeance bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush Vengeance</h3><p>Reservado para uma etapa futura.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="legends">
+                <div class="wiki-game-meta"><span>06</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Legends of Kingdom Rush Bloqueado.png" alt="Legends of Kingdom Rush bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Legends of Kingdom Rush</h3><p>Spin-off estratégico da franquia, reservado para uma etapa futura.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="alliance">
+                <div class="wiki-game-meta"><span>07</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush 5 Alliance Bloqueado.png" alt="Kingdom Rush Alliance bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush Alliance</h3><p>Reservado para o futuro da série.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="genesis">
+                <div class="wiki-game-meta"><span>08</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush 6 Genesis Bloqueado.png" alt="Kingdom Rush Genesis bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush Genesis</h3><p>Próximo capítulo da franquia, aguardando a sequência da Wiki.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+
+            <article class="wiki-game-tile locked" data-status="locked" data-game="battles">
+                <div class="wiki-game-meta"><span>09</span><b>BLOQUEADO</b></div>
+                <div class="wiki-game-logo">
+                    <img src="../../assets/wiki/logos/Bloqueados/Kingdom Rush Battles Bloqueado.png" alt="Kingdom Rush Battles bloqueado" class="game-logo" loading="lazy" decoding="async">
+                    <div class="wiki-lock" aria-hidden="true"><span class="lock-glow"></span><img class="lock-image" src="../../assets/wiki/Cadeado.png" alt="" decoding="async"></div>
+                </div>
+                <div class="wiki-game-copy"><span class="wiki-game-eyebrow">BLOQUEADO</span><h3>Kingdom Rush: Battles</h3><p>Modo separado da linha principal, mantido como conteúdo futuro da Wiki.</p></div>
+                <button class="wiki-game-button disabled" type="button" disabled>Jogo ainda bloqueado</button>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</main>
+
+
+
+<!-- ======================================================
+                    CRIADOR DO MAPA
+======================================================= -->
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary">
+                    <span aria-hidden="true">⌘</span>
+                    <span>Meu GitHub</span>
+                </a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary">
+                    <span aria-hidden="true">✉</span>
+                    <span>Entrar em contato</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="../../index.html" class="footer-logo">
+                    <img src="../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+                    <span>MONSTER</span>
+                </a>
+
+                <p>
+                    Aqui você vai encontrar de forma mais organizada
+                    e criativa todas as informações relevantes do canal Kazibro2.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                    <li><a href="wiki.html">Wiki</a></li>
+                    <li><a href="../Jux/jux.html">JUX</a></li>
+                    <li><a href="../About/about.html">
+                            Sobre nós
+                        </a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h3>Comunidade</h3>
+
+                <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">
+                    YouTube
+                </a>
+
+                <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">
+                    Twitch
+                </a>
+
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">
+                    Discord
+                </a>
+
+            </div>
+
+        </div>
+
+<div class="footer-bottom">
+            <p>© 2026 Monster. Todos os direitos reservados.</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="../../js/global/config.js?v=20260815-1535"></script>
+<script src="../../js/global/data.js?v=20260815-1535"></script>
+<script src="../../js/global/navigation.js?v=20260815-1535"></script>
+<script src="../../js/global/animations.js?v=20260815-1535"></script>
+<script src="../../js/global/app.js?v=20260816-1200"></script>
+
+    <script src="../../js/global/hamburger.js?v=20260815-1535"></script>
+
+<script src="../../js/wiki/wiki.js?v=20260816"></script>
+</body>
+</html>

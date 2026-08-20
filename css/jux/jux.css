@@ -1,0 +1,1118 @@
+/* ==========================================================
+   JUX PAGE
+========================================================== */
+
+
+/* ==========================================================
+   JUX HERO
+========================================================== */
+
+.jux-hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 67px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 80px 20px;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            rgba(255,123,0,.12),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom left,
+            rgba(255,123,0,.08),
+            transparent 35%
+        ),
+
+        var(--color-background);
+}
+
+
+/* ==========================================================
+   JUX HERO CONTAINER
+========================================================== */
+
+.jux-hero .container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ==========================================================
+   JUX HERO CONTENT
+========================================================== */
+
+.jux-hero-content {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+    text-align: left;
+
+    animation: fadeUp .9s ease;
+}
+
+
+/* ==========================================================
+   JUX HERO SUBTITLE
+========================================================== */
+
+.jux-hero-subtitle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    margin-bottom: 25px;
+
+    border-radius: 999px;
+
+    background: rgba(255,123,0,.12);
+
+    color: var(--color-primary);
+
+    font-size: .85rem;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   JUX HERO TITLE
+========================================================== */
+
+.jux-hero-content h1 {
+
+    margin: 0 0 20px;
+}
+
+.jux-hero-content h1 span {
+
+    color: var(--color-primary);
+}
+
+
+/* ==========================================================
+   JUX HERO DESCRIPTION
+========================================================== */
+
+.jux-hero-content p {
+
+    max-width: 700px;
+
+    margin: 0 0 35px;
+
+    line-height: 1.8;
+
+    color: var(--color-text-light);
+}
+
+
+/* ==========================================================
+   JUX HERO BUTTONS
+========================================================== */
+
+.jux-hero-buttons {
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+
+/* ==========================================================
+   HERO BUTTON BASE
+========================================================== */
+
+.jux-hero-buttons .btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ==========================================================
+   HERO BUTTON PRIMARY
+========================================================== */
+
+.jux-hero-buttons .btn-primary {
+
+    background: var(--color-primary);
+
+    color: #ffffff;
+
+    border: 1px solid var(--color-primary);
+}
+
+.jux-hero-buttons .btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 10px 25px rgba(255,123,0,.25);
+}
+
+
+/* ==========================================================
+   HERO BUTTON SECONDARY
+========================================================== */
+
+.jux-hero-buttons .btn-secondary {
+
+    background: transparent;
+
+    color: var(--color-text);
+
+    border: 1px solid rgba(255,255,255,.16);
+}
+
+.jux-hero-buttons .btn-secondary:hover {
+
+    background: rgba(255,123,0,.10);
+
+    color: var(--color-primary);
+
+    border-color: rgba(255,123,0,.55);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 8px 20px rgba(255,123,0,.10);
+}
+
+
+/* ==========================================================
+   JUX HERO IMAGE
+========================================================== */
+
+.jux-hero-image {
+
+    animation: fadeRight .9s ease;
+}
+
+.jux-hero-image img {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    display: block;
+
+    transition: .5s ease;
+
+    filter:
+
+        drop-shadow(
+            0 15px 40px rgba(0,0,0,.45)
+        );
+}
+
+.jux-hero-image img:hover {
+
+    transform: scale(1.03);
+}
+
+
+/* ==========================================================
+   JUX HERO BACKGROUND
+========================================================== */
+
+.jux-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(13,17,23,.15),
+            rgba(13,17,23,.45)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   JUX HERO DECORATION
+========================================================== */
+
+.jux-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    right: -250px;
+
+    top: -250px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,123,0,.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   FEATURED VIDEO
+========================================================== */
+
+.featured-video {
+
+    position: relative;
+
+    padding: 100px 20px;
+}
+
+
+/* ==========================================================
+   FEATURED VIDEO CONTENT
+========================================================== */
+
+.featured-video-content {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+/* ==========================================================
+   FEATURED THUMBNAIL
+========================================================== */
+
+.featured-thumbnail {
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25);
+
+    background: #111820;
+}
+
+.featured-thumbnail img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    transition: transform .5s ease;
+}
+
+.featured-thumbnail:hover img {
+
+    transform: scale(1.03);
+}
+
+
+/* ==========================================================
+   FEATURED INFO
+========================================================== */
+
+.featured-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* ==========================================================
+   VIDEO CATEGORY
+========================================================== */
+
+.video-category {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--color-primary);
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+}
+
+
+/* ==========================================================
+   FEATURED TITLE
+========================================================== */
+
+.featured-info h3 {
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================================
+   FEATURED DESCRIPTION
+========================================================== */
+
+.featured-info p {
+
+    color: var(--color-text-light);
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   FEATURED BUTTONS
+========================================================== */
+
+.featured-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+
+/* ==========================================================
+   EPISÓDIOS
+========================================================== */
+
+.episodes {
+
+    position: relative;
+
+    padding: 100px 20px;
+}
+
+
+/* ==========================================================
+   GRID DOS EPISÓDIOS
+========================================================== */
+
+.episodes-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    margin-top: 55px;
+}
+
+
+/* ==========================================================
+   CARD DO EPISÓDIO
+========================================================== */
+
+.episode-card {
+
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 32px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.25);
+
+    background-color: rgba(30,38,52,.90);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+    /*
+        IMPORTANTE:
+        Não usamos opacity: 0 aqui.
+        Assim os cards aparecem mesmo sem JavaScript.
+    */
+}
+
+
+/* ==========================================================
+   IMAGEM TEMPORADA 1
+========================================================== */
+
+.episode-card.season-1 {
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(10,14,20,.95) 0%,
+            rgba(10,14,20,.82) 40%,
+            rgba(10,14,20,.45) 100%
+        ),
+
+        url("../../assets/backgrounds jux/Temporada 1 Jux.png");
+}
+
+
+/* ==========================================================
+   IMAGEM TEMPORADA 2
+========================================================== */
+
+.episode-card.season-2 {
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(10,14,20,.95) 0%,
+            rgba(10,14,20,.82) 40%,
+            rgba(10,14,20,.45) 100%
+        ),
+
+        url("../../assets/backgrounds jux/Temporada 2 Jux.png");
+}
+
+
+/* ==========================================================
+   IMAGEM TEMPORADA 3
+========================================================== */
+
+.episode-card.season-3 {
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(10,14,20,.95) 0%,
+            rgba(10,14,20,.82) 40%,
+            rgba(10,14,20,.45) 100%
+        ),
+
+        url("../../assets/backgrounds jux/Temporada 3 Jux.png");
+}
+
+
+/* ==========================================================
+   BRILHO LATERAL + EFEITO DE DESTAQUE
+========================================================== */
+
+.episode-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 4px;
+
+    height: 100%;
+
+    background: var(--color-primary);
+
+    opacity: .78;
+
+    transition: opacity .3s ease, width .3s ease, box-shadow .3s ease;
+
+    z-index: 5;
+}
+
+.episode-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -30%;
+
+    left: -45%;
+
+    width: 38%;
+
+    height: 160%;
+
+    pointer-events: none;
+
+    transform: rotate(14deg);
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,.04) 35%,
+        rgba(255,255,255,.22) 50%,
+        rgba(255,123,0,.12) 58%,
+        transparent 100%
+    );
+
+    opacity: 0;
+
+    transition: opacity .25s ease;
+
+    z-index: 4;
+}
+
+
+/* ==========================================================
+   CONTEÚDO DO CARD
+========================================================== */
+
+.episode-content {
+
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    max-width: 850px;
+}
+
+
+/* ==========================================================
+   CARD INTEIRO INTERAGÍVEL
+========================================================== */
+
+.episode-card {
+
+    cursor: pointer;
+
+}
+
+.episode-card:focus-visible {
+
+    outline: 2px solid var(--color-primary);
+
+    outline-offset: 4px;
+
+}
+
+
+/* ==========================================================
+   HOVER DO CARD
+========================================================== */
+
+.episode-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255,123,0,.72);
+
+    background-color: rgba(37,44,58,.96);
+
+    box-shadow:
+
+        0 24px 55px rgba(0,0,0,.42),
+        0 0 0 1px rgba(255,123,0,.10),
+        0 0 28px rgba(255,123,0,.12);
+}
+
+.episode-card:hover::before {
+
+    width: 7px;
+
+    opacity: 1;
+
+    box-shadow: 0 0 18px rgba(255,123,0,.72);
+}
+
+.episode-card:hover::after {
+
+    opacity: 1;
+
+    animation: episodeCardShine .85s ease forwards;
+}
+
+.episode-card:focus-visible {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255,123,0,.72);
+
+    box-shadow:
+
+        0 24px 55px rgba(0,0,0,.42),
+        0 0 0 2px rgba(255,123,0,.18),
+        0 0 28px rgba(255,123,0,.12);
+}
+
+@keyframes episodeCardShine {
+
+    from {
+        transform: translateX(0) rotate(14deg);
+    }
+
+    to {
+        transform: translateX(420%) rotate(14deg);
+    }
+}
+
+
+/* ==========================================================
+   TEMPORADA
+========================================================== */
+
+.episode-content > span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--color-primary);
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    letter-spacing: .06em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.episode-content h3 {
+
+    margin: 0 0 12px;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   DESCRIÇÃO
+========================================================== */
+
+.episode-content p {
+
+    margin: 0;
+
+    max-width: 780px;
+
+    color: rgba(255,255,255,.84);
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   BOTÃO DOS EPISÓDIOS
+========================================================== */
+
+.episode-card .episode-btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    min-width: 110px;
+
+    height: 42px;
+
+    margin-top: 24px;
+
+    padding: 0 24px;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    background: rgba(13,17,23,.75);
+
+    color: #ffffff;
+
+    font-size: .88rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .3s ease,
+
+        border-color .3s ease,
+
+        background .3s ease,
+
+        box-shadow .3s ease;
+}
+
+
+/* ==========================================================
+   HOVER BOTÃO
+========================================================== */
+
+.episode-card .episode-btn:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--color-primary);
+
+    border-color: var(--color-primary);
+
+    color: #ffffff;
+
+    box-shadow:
+
+        0 8px 20px rgba(255,123,0,.25);
+}
+
+
+/* ==========================================================
+   CLIQUE
+========================================================== */
+
+.episode-card .episode-btn:active {
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   ACESSIBILIDADE
+========================================================== */
+
+.episode-card .episode-btn:focus-visible {
+
+    outline: 2px solid var(--color-primary);
+
+    outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   ANIMAÇÃO OPCIONAL
+========================================================== */
+
+
+.episode-card.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   FADE SECTION
+========================================================== */
+
+
+.jux-fade-section {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   CONTAINER / SECTION TITLE
+========================================================== */
+
+.jux-hero .container,
+.featured-video .container,
+.episodes .container {
+
+    width: 100%;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .jux-hero {
+
+        padding: 70px 25px;
+    }
+
+
+    .jux-hero .container {
+
+        max-width: 100%;
+    }
+
+
+    .jux-hero-content {
+
+        max-width: 850px;
+    }
+
+
+    .featured-video-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .featured-info {
+
+        align-items: flex-start;
+    }
+
+
+    .episode-card {
+
+        min-height: 250px;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .jux-hero {
+
+        min-height: calc(100vh - 67px);
+
+        padding: 60px 20px;
+    }
+
+
+    .jux-hero-content {
+
+        max-width: 100%;
+    }
+
+
+    .jux-hero-content p {
+
+        max-width: 100%;
+    }
+
+
+    .jux-hero-buttons {
+
+        justify-content: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .jux-hero-buttons .btn {
+
+        padding: 11px 18px;
+    }
+
+
+    .featured-video {
+
+        padding: 70px 20px;
+    }
+
+
+    .featured-thumbnail {
+
+        border-radius: 12px;
+    }
+
+
+    .featured-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .featured-buttons .btn {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .episodes {
+
+        padding: 70px 20px;
+    }
+
+
+    .episodes-grid {
+
+        gap: 18px;
+
+        margin-top: 40px;
+    }
+
+
+    .episode-card {
+
+        min-height: 290px;
+
+        padding: 22px;
+
+        background-position: center;
+    }
+
+
+    .episode-content h3 {
+
+        font-size: 1.15rem;
+    }
+
+
+    .episode-content p {
+
+        font-size: .9rem;
+    }
+
+
+    .episode-card .episode-btn {
+
+        min-width: 105px;
+
+        height: 40px;
+
+        padding: 0 20px;
+    }
+}
+
+/* Fundo global compartilhado */
+.jux-page,
+.jux-main,
+.jux-content,
+.jux-featured,
+.jux-featured-video,
+.jux-section {
+    background:transparent !important;
+}

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ==========================================
+                    META TAGS
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portal oficial do canal Monster dedicado à franquia Kingdom Rush. Gameplays, estratégias, guias e conteúdos exclusivos.">
+
+    <meta
+        name="keywords"
+        content="Monster, Kingdom Rush, Kingdom Rush Alliance, Kingdom Rush Frontiers, Kingdom Rush Origins, Kingdom Rush Vengeance">
+
+    <meta
+        name="author"
+        content="Monster">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#0B1120">
+
+    <!-- ==========================================
+                        TÍTULO
+    =========================================== -->
+
+    <title>
+
+        Monster | Kingdom Rush
+
+    </title>
+
+    <!-- ==========================================
+                        FAVICON
+    =========================================== -->
+
+    <link
+        rel="icon"
+        href="assets/logo/LOGO CIMA.webp"
+        type="image/png">
+
+    <!-- ==========================================
+                    GOOGLE FONTS
+    =========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+                    CSS GLOBAL
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/global/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/global/header.css">
+
+    <link
+        rel="stylesheet"
+        href="css/global/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="css/global/responsive.css">
+
+    <!-- ==========================================
+                    HOME CSS
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/home/home.css">
+
+    <link rel="stylesheet" href="css/global/intro.css?v=20260818-1445">
+
+</head>
+
+<body>
+    <!-- MONSTER INTRO -->
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+                        HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <div class="container header-container">
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="logo">
+
+                <img
+                    src="assets/logo/Monster Logo.webp"
+                    alt="Monster Logo">
+
+                <span>
+
+                    MONSTER
+
+                </span>
+
+            </a>
+
+            <!-- Navegação -->
+
+            <nav class="navbar" aria-label="Navegação principal">
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="html/Kingdom Rush/kingdom.html">
+                            Kingdom Rush
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="html/Jux/jux.html">
+                            JUX
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="html/About/about.html">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Redes Sociais -->
+
+            <div class="header-social">
+
+                <a
+                    href="https://www.youtube.com/@kazibro2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    YouTube
+
+                </a>
+
+                <a
+                    href="https://www.twitch.tv/thesupermonsteragain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Twitch
+
+                </a>
+
+                <a
+                    href="https://linktr.ee/Kazibro2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Discord
+
+                </a>
+
+            </div>
+
+            <!-- Menu Mobile -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="quick-menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+
+            <div class="quick-menu-head">
+                <div>
+                    <span class="quick-menu-kicker">MONSTER</span>
+                    <div class="quick-menu-title">Navegação</div>
+                </div>
+                <span class="quick-menu-live">● Online</span>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+                <a href="index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+                <a href="html/Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+                <a href="html/Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="html/Wiki/wiki.html"><span>Wiki</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+                <a href="html/Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+                <a href="html/About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-social">
+                <div class="quick-menu-social-title">Siga o Monster</div>
+                <div class="quick-menu-social-links">
+                    <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                    <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+                </div>
+            </div>
+
+        </div>
+
+    <main>
+
+    <!-- ==========================================
+                        HERO
+    =========================================== -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-subtitle">
+
+                    SEJAM BEM VINDOS 
+
+             </span>
+
+                <h1>
+                    Bem vindo ao guia do
+                         <br>
+             <span>Meu canal do youtube</span>
+                </h1>
+
+                <p>
+                Aqui voce vai encontrar de forma mais organizada e criativa, todas as 
+                informações relevantes do meu canal Kazibro2
+                </p>
+                <div class="hero-buttons">
+
+                    <a
+                        href="https://www.youtube.com/watch?v=SaFwR8SBLfc"
+                        class="btn btn-primary">
+
+                        Assistir Agora
+
+                    </a>
+
+                    <a
+                        href="html/Kingdom Rush/kingdom.html"
+                        class="btn btn-secondary">
+
+                        Explorar Jogos
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+                VÍDEO EM DESTAQUE
+    =========================================== -->
+
+    <section
+        class="featured-video"
+        id="featured-video">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+
+                    Destaque da Semana
+
+                </span>
+
+                <h2>
+
+                    Assista ao vídeo mais recente
+
+                </h2>
+
+                <p>
+
+                    Confira o conteúdo em destaque do canal Monster
+                    e fique por dentro das novidades.
+
+                </p>
+
+            </div>
+
+            <div class="featured-video-content">
+
+                <div class="featured-thumbnail">
+
+                    <img
+                        src="assets/imagens/Compilado de mortes.png"
+                        alt="Vídeo em Destaque">
+
+                </div>
+
+                <div class="featured-info">
+
+                    <span class="video-category">
+  
+                    Todos os compilados especiais (1A até 3B)
+
+                    </span>
+
+                    <p>
+
+                        esta na hora de acordar....voce sonhou por tempo demais.
+                    </p>
+
+                    <div class="featured-buttons">
+
+                        <a
+                            href="https://youtu.be/U4nTbTF9wBw?si=7wowuGWpo5xkgJ0E" 
+                            class="btn btn-primary">
+
+                            Assistir no YouTube
+
+                        </a>
+
+                        <a  
+                            href="https://www.youtube.com/channel/UCQ77ngwSdgvetB5yi79kwhQ/videos"
+                            class="btn btn-secondary">
+
+                            Ver Mais Vídeos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+                        FOOTER
+    =========================================== -->
+
+    
+<!-- ======================================================
+                    CRIADOR DO MAPA
+======================================================= -->
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster </span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary">
+                    <span aria-hidden="true">⌘</span>
+                    <span>Meu GitHub</span>
+                </a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary">
+                    <span aria-hidden="true">✉</span>
+                    <span>Entrar em contato</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <!-- Logo -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="footer-logo">
+
+                        <img
+                            src="assets/logo/Monster Logo.webp"
+                            alt="Monster Logo">
+
+                        <span>
+
+                            MONSTER
+
+                        </span>
+
+                    </a>
+
+                    <p>
+
+                 Aqui voce vai encontrar de forma mais organizada e cretiva todas as 
+                informações relevantes do meu canal Kazibro2
+
+                    </p>
+
+                </div>
+
+                <!-- Navegação -->
+
+                <div class="footer-links">
+
+                    <h3>
+
+                        Navegação
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            <a href="index.html">
+
+                                Início
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="html/Kingdom Rush/kingdom.html">
+
+                                Kingdom Rush
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="html/Jux/jux.html">
+
+                                JUX
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="html/About/about.html">
+                            Sobre nós
+                        </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Comunidade -->
+
+                <div class="footer-social">
+
+                    <h3>
+
+                        Comunidade
+
+                    </h3>
+
+                    <a
+                        href="https://www.youtube.com/@kazibro2"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        YouTube
+
+                    </a>
+
+                    <a
+                        href="https://www.twitch.tv/thesupermonsteragain"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Twitch
+
+                    </a>
+
+                    <a
+                        href="https://linktr.ee/Kazibro2"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Discord
+
+                    </a>
+
+                </div>
+
+            </div>
+
+<div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Monster. Todos os direitos reservados.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+                JAVASCRIPT GLOBAL
+    =========================================== -->
+
+    <script src="js/global/config.js?v=20260815-1535"></script>
+
+    <script src="js/global/data.js?v=20260815-1535"></script>
+
+    <script src="js/global/navigation.js?v=20260815-1535"></script>
+
+    <script src="js/global/animations.js?v=20260815-1535"></script>
+
+    <script src="js/global/app.js?v=20260816-1200"></script>
+
+    <script src="js/global/hamburger.js?v=20260815-1535"></script>
+
+    <!-- ==========================================
+                JAVASCRIPT HOME
+    =========================================== -->
+
+    <script src="js/home/home.js"></script>
+
+</body>
+
+</html>

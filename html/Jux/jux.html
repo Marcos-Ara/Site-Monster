@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ==========================================
+                    META TAGS
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portal oficial da série JUX. Episódios, novidades e conteúdos exclusivos do canal Monster.">
+
+    <meta
+        name="keywords"
+        content="Monster, JUX, Série JUX, Episódios, YouTube">
+
+    <meta
+        name="author"
+        content="Monster">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#0B1120">
+
+
+    <!-- ==========================================
+                    TÍTULO
+    =========================================== -->
+
+    <title>
+        Monster | JUX
+    </title>
+
+
+    <!-- ==========================================
+                    FAVICON
+    =========================================== -->
+
+    <link
+        rel="icon"
+        href="../../assets/logo/LOGO CIMA.webp"
+        type="image/webp">
+
+
+    <!-- ==========================================
+                GOOGLE FONTS
+    =========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==========================================
+                CSS GLOBAL
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/header.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/responsive.css">
+
+
+    <!-- ==========================================
+                    JUX CSS
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/jux/jux.css">
+
+    <link rel="stylesheet" href="../../css/global/intro.css?v=20260818-1445">
+
+</head>
+
+
+<body>
+    <!-- MONSTER INTRO -->
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="../../assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+
+
+    <!-- ==================================================
+                        HEADER
+    =================================================== -->
+
+    <header class="header">
+
+        <div class="container header-container">
+
+
+            <!-- ==================================
+                        LOGO
+            =================================== -->
+
+            <a
+                href="../../index.html"
+                class="logo">
+
+                <img
+                    src="../../assets/logo/Monster Logo.webp"
+                    alt="Monster Logo">
+
+                <span>
+                    MONSTER
+                </span>
+
+            </a>
+
+
+            <!-- ==================================
+                    NAVEGAÇÃO
+            =================================== -->
+
+            <nav class="navbar" aria-label="Navegação principal">
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="../../index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../Kingdom Rush/kingdom.html">
+                            Kingdom Rush
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="jux.html">
+                            JUX
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../About/about.html">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- ==================================
+                    REDES SOCIAIS
+            =================================== -->
+
+            <div class="header-social">
+
+                <a
+                    href="https://www.youtube.com/@kazibro2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    YouTube
+
+                </a>
+
+
+                <a
+                    href="https://www.twitch.tv/thesupermonsteragain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Twitch
+
+                </a>
+
+
+                <a
+                    href="https://discord.com/invite/nrwnVzAdw3"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Discord
+
+                </a>
+
+            </div>
+
+
+            <!-- ==================================
+                    MENU MOBILE
+            =================================== -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                type="button"
+                aria-label="Abrir Menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+
+            <div class="quick-menu-head">
+                <div>
+                    <span class="quick-menu-kicker">MONSTER</span>
+                    <div class="quick-menu-title">Navegação</div>
+                </div>
+                <span class="quick-menu-live">● Online</span>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+                <a href="../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+                <a href="../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+                <a href="../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="../Wiki/wiki.html"><span>Wiki</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+                <a href="jux.html#featured-video#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+                <a href="../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-social">
+                <div class="quick-menu-social-title">Siga o Monster</div>
+                <div class="quick-menu-social-links">
+                    <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                    <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+                </div>
+            </div>
+
+        </div>
+
+    <main>
+
+    <!-- ==================================================
+                        CONTEÚDO
+    =================================================== -->
+
+    <main>
+
+
+        <!-- ==================================================
+                            HERO JUX
+        =================================================== -->
+
+        <section
+            class="jux-hero"
+            id="jux-hero">
+
+            <div class="container">
+
+                <div class="jux-hero-content">
+
+
+                    <!-- SUBTÍTULO -->
+
+                    <span class="jux-hero-subtitle">
+
+                        Série Exclusiva
+
+                    </span>
+
+
+                    <!-- TÍTULO -->
+
+                    <h1>
+
+                        Bem-vindo ao universo do
+
+                        <br>
+
+                        <span>JUX</span>
+
+                    </h1>
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <p>
+
+                        Acompanhe todos os episódios da série
+                        através das temporadas, e aproveite toda
+                        a edição feita pelo Monster sobre a
+                        gameplay do JUX no seu mod.
+
+                    </p>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="jux-hero-buttons">
+
+                        <a
+                            href="#featured-video"
+                            class="btn btn-primary">
+
+                            Assistir Agora
+
+                        </a>
+
+
+                        <a
+                            href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
+
+                            Ver Episódios
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+                    EPISÓDIO EM DESTAQUE
+        =================================================== -->
+
+        <section
+            class="featured-video jux-fade-section"
+            id="featured-video">
+
+            <div class="container">
+
+
+                <!-- TÍTULO -->
+
+                <div class="section-title">
+
+                    <span>
+                        Episódio em Destaque
+                    </span>
+
+
+                    <h2>
+                        Assista ao episódio mais recente
+                    </h2>
+
+
+                    <p>
+
+                        Confira o episódio em destaque da série JUX
+                        e acompanhe toda a aventura.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CONTEÚDO -->
+
+                <div class="featured-video-content">
+
+
+                    <!-- ==================================
+                            IMAGEM DO VÍDEO
+                    =================================== -->
+
+                    <div class="featured-thumbnail">
+
+                        <img
+                            src="../../assets/backgrounds jux/Jux Video Recente.png"
+                            alt="Imagem do episódio mais recente da série JUX"
+                            loading="lazy">
+
+                    </div>
+
+
+                    <!-- ==================================
+                            INFORMAÇÕES
+                    =================================== -->
+
+                    <div class="featured-info">
+
+                        <span class="video-category">
+
+                            Série JUX
+
+                        </span>
+
+
+                        <h3>
+
+                            Jux jogando meu mod de celeste
+                            (6A Renascido)
+
+                        </h3>
+
+
+                        <p>
+
+                            Um episódio mais calmo, mais para
+                            distrair e passar o tempo, mas em
+                            questões de progressão ainda sim
+                            é importante.
+
+                        </p>
+
+
+                        <!-- BOTÕES -->
+
+                        <div class="featured-buttons">
+
+
+                            <a
+                                href="https://youtu.be/cAZEkEUSpdQ?si=ha5rqNxK1pv3XWQj"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-primary">
+
+                                Assistir no YouTube
+
+                            </a>
+
+
+                            <a
+                                href="#episodes"
+                                class="btn btn-secondary">
+
+                                Ver Episódios
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+                            EPISÓDIOS
+        =================================================== -->
+
+        <section
+            class="episodes jux-fade-section"
+            id="episodes">
+
+            <div class="container">
+
+
+                <!-- ==================================
+                        TÍTULO DA SEÇÃO
+                =================================== -->
+
+                <div class="section-title">
+
+                    <span>
+                        Episódios
+                    </span>
+
+
+                    <h2>
+                        Todos os Episódios da Série
+                    </h2>
+
+
+                    <p>
+
+                        Navegue pelos episódios da JUX e
+                        acompanhe toda a história em ordem.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ==================================
+                        GRID DOS EPISÓDIOS
+                =================================== -->
+
+                <div class="episodes-grid">
+
+
+                    <!-- ==================================================
+                                TEMPORADA 1
+                    =================================================== -->
+
+                    <article
+                        class="episode-card season-1"
+                        data-playlist="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy"
+                        role="link"
+                        tabindex="0"
+                        aria-label="Abrir a playlist da Temporada 1">
+
+
+                        <!-- CAMADA ESCURA -->
+
+                        <div
+                            class="episode-overlay"
+                            aria-hidden="true">
+                        </div>
+
+
+                        <!-- CONTEÚDO -->
+
+                        <div class="episode-content">
+
+
+                            <span>
+                                Temporada 1
+                            </span>
+
+
+                            <h3>
+                                Episódios 1 a 7
+                            </h3>
+
+
+                            <p>
+
+                                Todos os lados A das primeiras
+                                versões do mod que o JUX jogou,
+                                indo de 1A até 7A deletado.
+
+                            </p>
+
+
+                            <!-- BOTÃO -->
+
+                            <a
+                                href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="episode-btn">
+
+                                Assistir
+
+                            </a>
+
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                                TEMPORADA 2
+                    =================================================== -->
+
+                    <article
+                        class="episode-card season-2"
+                        data-playlist="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L"
+                        role="link"
+                        tabindex="0"
+                        aria-label="Abrir a playlist da Temporada 2">
+
+
+                        <!-- CAMADA ESCURA -->
+
+                        <div
+                            class="episode-overlay"
+                            aria-hidden="true">
+                        </div>
+
+
+                        <!-- CONTEÚDO -->
+
+                        <div class="episode-content">
+
+
+                            <span>
+                                Temporada 2
+                            </span>
+
+
+                            <h3>
+                                Episódios 8 a 13
+                            </h3>
+
+
+                            <p>
+
+                                Todos os lados B da mesma versão,
+                                onde o JUX mais sofreu e teve os
+                                momentos mais nostálgicos e
+                                memoráveis.
+
+                                Aqui os vídeos são mais longos
+                                devido ao tempo investido na
+                                gameplay.
+
+                                Por isso vamos de 1B até 6B
+                                incompleto, que era o máximo que
+                                o mod tinha a oferecer na época.
+
+                            </p>
+
+
+                            <!-- BOTÃO -->
+
+                            <a
+                                href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="episode-btn">
+
+                                Assistir
+
+                            </a>
+
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                                TEMPORADA 3
+                    =================================================== -->
+
+                    <article
+                        class="episode-card season-3"
+                        data-playlist="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW"
+                        role="link"
+                        tabindex="0"
+                        aria-label="Abrir a playlist da Temporada 3">
+
+
+                        <!-- CAMADA ESCURA -->
+
+                        <div
+                            class="episode-overlay"
+                            aria-hidden="true">
+                        </div>
+
+
+                        <!-- CONTEÚDO -->
+
+                        <div class="episode-content">
+
+
+                            <span>
+                                Temporada 3
+                            </span>
+
+
+                            <h3>
+                                Episódios 14 e 15
+                            </h3>
+
+
+                            <p>
+
+                                Todo o conteúdo modificado e novo
+                                adicionado depois da atualização
+                                do Renascimento.
+
+                                Mapas antigos foram polidos e
+                                outros deletados para renascerem
+                                como experiências completamente
+                                novas.
+
+                                Alguns episódios já são
+                                considerados filmes pela sua
+                                duração!
+
+                            </p>
+
+
+                            <!-- BOTÃO -->
+
+                            <a
+                                href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="episode-btn">
+
+                                Assistir
+
+                            </a>
+
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+                            FOOTER
+    =================================================== -->
+
+    
+<!-- ======================================================
+                    CRIADOR DO MAPA
+======================================================= -->
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary">
+                    <span aria-hidden="true">⌘</span>
+                    <span>Meu GitHub</span>
+                </a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary">
+                    <span aria-hidden="true">✉</span>
+                    <span>Entrar em contato</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+
+                <!-- ==================================
+                            LOGO
+                =================================== -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="../../index.html"
+                        class="footer-logo">
+
+                        <img
+                            src="../../assets/logo/Monster Logo.webp"
+                            alt="Monster Logo">
+
+                        <span>
+                            MONSTER
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        Aqui você vai encontrar de forma mais
+                        organizada e criativa todas as informações
+                        relevantes do meu canal Kazibro2.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ==================================
+                        NAVEGAÇÃO
+                =================================== -->
+
+                <div class="footer-links">
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+
+                            <a href="../../index.html">
+                                Início
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="../Kingdom Rush/kingdom.html">
+                                Kingdom Rush
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="jux.html">
+                                JUX
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="../About/about.html">
+                            Sobre nós
+                        </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ==================================
+                        COMUNIDADE
+                =================================== -->
+
+                <div class="footer-social">
+
+                    <h3>
+                        Comunidade
+                    </h3>
+
+
+                    <a
+                        href="https://www.youtube.com/@kazibro2"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        YouTube
+
+                    </a>
+
+
+                    <a
+                        href="https://www.twitch.tv/thesupermonsteragain"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Twitch
+
+                    </a>
+
+
+                    <a
+                        href="https://discord.com/invite/nrwnVzAdw3"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Discord
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ==================================
+                    RODAPÉ INFERIOR
+            =================================== -->
+
+<div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Monster. Todos os direitos reservados.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================================================
+                    JAVASCRIPT GLOBAL
+    =================================================== -->
+
+    <script src="../../js/global/config.js?v=20260815-1535"></script>
+<script src="../../js/global/data.js?v=20260815-1535"></script>
+<script src="../../js/global/navigation.js?v=20260815-1535"></script>
+<script src="../../js/global/animations.js?v=20260815-1535"></script>
+<script src="../../js/global/app.js?v=20260816-1200"></script>
+
+    <script src="../../js/global/hamburger.js?v=20260815-1535"></script>
+<script src="../../js/jux/jux.js"></script>
+
+
+</body>
+
+</html>

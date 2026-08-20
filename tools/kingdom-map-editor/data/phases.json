@@ -1,0 +1,70 @@
+{
+  "nextId": 9,
+  "phases": [
+    {
+      "id": 4,
+      "title": "Franquia Kingdom Rush: Origins 1",
+      "youtube_url": "https://youtu.be/aNqB63xAM2s?si=_1zhxhz0KaNgY66l",
+      "x_percent": 7.59843224929682,
+      "y_percent": 79.41818026585852,
+      "flag_image": "/assets/flags/flag-1787068620301-925b433221.webp",
+      "created_at": "2026-08-18T15:57:00.388Z",
+      "updated_at": "2026-08-18T19:36:53.951Z",
+      "width_px": 210,
+      "height_px": 118,
+      "description": "primeiro episódio, quero apenas ver a reação das pessoas, eu gosto muito desse jogo :p"
+    },
+    {
+      "id": 5,
+      "title": "Franquia Kingdom Rush: Origins 2",
+      "youtube_url": "https://youtu.be/aCETz6uuiEE?si=e74TbuOFKgSxcKMO",
+      "x_percent": 25.556744332871357,
+      "y_percent": 95.16447587208978,
+      "flag_image": "/assets/flags/flag-1787068666373-93f68a557c.webp",
+      "created_at": "2026-08-18T15:57:46.378Z",
+      "updated_at": "2026-08-19T20:49:51.961Z",
+      "width_px": 252,
+      "height_px": 142,
+      "description": "o segundo episódio teve 4h de gravação bruta, o dobro do primeiro.\n\neditado em 8 dias (oque penso ser uma velocidade decente), eu genuinamente me diverti muito jogando a segunda metade da floresta, tenho certeza de que isso será uma série bem mais memorável do que qualquer serie minha que eu grave sobre celeste (Strawberry Jam por exemplo)."
+    },
+    {
+      "id": 6,
+      "title": "Franquia Kingdom Rush: Origins 3",
+      "youtube_url": "https://youtu.be/HArPTPxpqsk?si=7qZaOwPPlTBTj6BC",
+      "x_percent": 48.46071823219126,
+      "y_percent": 84.75425961581917,
+      "flag_image": "/assets/flags/flag-1787068696070-c61b72f1ce.webp",
+      "created_at": "2026-08-18T15:58:16.078Z",
+      "updated_at": "2026-08-19T20:50:53.897Z",
+      "width_px": 231,
+      "height_px": 130,
+      "description": "Esse foi o completo oposto do episódio dois, ele me levou muito tempos a vários detalhes novos que tive ideias de adicionar e acabei de sobrecarregando e procrastinando esse vídeo alguns dias, oque me levou praticamente 1 mês, já que eu comecei isso no dia primeiro de abril.\n\nde qualquer esse vídeo foi divertido de gravar por causa que a floresta mágica é onde a maioria das minhas lembranças de Kingdom Rush estavam antes de eu voltar a jogar, então foi uma experiência estranha onde eu sabia oque"
+    },
+    {
+      "id": 7,
+      "title": "Franquia Kingdom Rush: Origins 5",
+      "youtube_url": "https://www.youtube.com/playlist?list=PLHHvBYie7YMA",
+      "x_percent": 79.14662521469629,
+      "y_percent": 91.70086929716923,
+      "flag_image": "/assets/flags/flag-1787068937671-76b64751aa.webp",
+      "created_at": "2026-08-18T16:02:17.676Z",
+      "updated_at": "2026-08-19T20:52:44.896Z",
+      "width_px": 378,
+      "height_px": 212,
+      "description": ""
+    },
+    {
+      "id": 8,
+      "title": "Franquia Kingdom Rush: Origins 4",
+      "youtube_url": "https://youtu.be/Fn-FWaPX9qo?si=g6kmfqHEu2GPVqlD",
+      "x_percent": 65.35007610767158,
+      "y_percent": 82.5228111098131,
+      "flag_image": "/assets/flags/flag-1787069004041-e2a16a01d1.webp",
+      "created_at": "2026-08-18T16:03:24.046Z",
+      "updated_at": "2026-08-19T20:52:25.007Z",
+      "width_px": 221,
+      "height_px": 124,
+      "description": "Depois de muito esforço, finalmente saiu o segundo maior episódio da série até o momento. inclusive, não tem nada sobre o vídeo aqui na descrição porque eu coloquei nos créditos dessa vez!\nvale lembrar que agora tem timestamps dos destaques no comentário fixado."
+    }
+  ]
+}

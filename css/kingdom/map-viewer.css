@@ -1,0 +1,273 @@
+
+/* ==========================================================
+   MONSTER - MAP VIEWER (STATIC / GITHUB PAGES)
+   Isolated from the existing Kingdom Rush styles.
+========================================================== */
+
+
+.monster-map-dynamic {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.monster-map-marker {
+    position: absolute;
+    width: 210px;
+    height: 118px;
+    min-width: 28px;
+    min-height: 34px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 31;
+    display: grid;
+    place-items: center;
+    transition: transform .18s ease, filter .18s ease;
+}
+
+.monster-map-hitbox {
+    position: absolute;
+    left:35%;
+    top:18%;
+    width:30%;
+    height:68%;
+    transform:none;
+    border-radius:10px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.monster-map-marker::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 8px;
+    left: 50%;
+    bottom: 1px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(0,0,0,.45);
+    filter: blur(3px);
+}
+
+.monster-map-marker img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,.55));
+}
+
+.monster-map-marker:has(.monster-map-hitbox:hover) {
+    transform: translate(-50%, -100%) scale(1.14);
+    filter: drop-shadow(0 0 9px rgba(255,154,46,.75));
+    outline: none;
+}
+
+.monster-map-marker .monster-map-name {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 4px);
+    transform: translateX(-50%);
+    max-width: 210px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: #fff4d2;
+    background: rgba(21,13,8,.9);
+    border: 1px solid rgba(255,199,88,.45);
+    box-shadow: 0 5px 16px rgba(0,0,0,.36);
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.monster-map-marker:has(.monster-map-hitbox:hover) .monster-map-name {
+    opacity: 1;
+}
+
+.monster-map-popup {
+    position: absolute;
+    z-index: 60;
+    width: min(320px, calc(100% - 24px));
+    overflow: hidden;
+    border: 1px solid rgba(255,166,63,.42);
+    border-radius: 16px;
+    background: #1b110b;
+    box-shadow: 0 22px 55px rgba(0,0,0,.58);
+    opacity: 0;
+    transform: translateY(6px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+}
+
+.monster-map-popup.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.monster-map-video {
+    position: relative;
+    width: 100%;
+    height: 198px;
+    background: #0d0a08;
+    overflow: hidden;
+}
+
+.monster-map-video img,
+.monster-map-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.monster-map-video img {
+    opacity: 1;
+    transition: opacity .18s ease;
+}
+
+.monster-map-video img.is-hidden {
+    opacity: 0;
+}
+
+.monster-map-video iframe {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease;
+}
+
+.monster-map-video iframe.is-ready {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.monster-map-loading {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+    padding: 5px 8px;
+    border-radius: 999px;
+    color: #fff3d1;
+    background: rgba(24,14,9,.8);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.monster-map-loading.is-fallback {
+    opacity: 0;
+}
+
+.monster-map-popup-close {
+    position:absolute;
+    top:8px;
+    right:8px;
+    z-index:10;
+    width:34px;
+    height:34px;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:50%;
+    background:rgba(20,12,8,.82);
+    color:#fff8e8;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+    backdrop-filter:blur(5px);
+}
+.monster-map-popup-close:hover { filter:brightness(1.15); }
+.monster-map-popup.is-pinned .monster-map-popup-close { display:grid; }
+
+.monster-map-popup-body {
+    padding: 12px 13px 14px;
+}
+
+.monster-map-popup-kicker {
+    color: #e6ac42;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.monster-map-popup-description {
+    margin: -3px 0 12px;
+    color: rgba(255,241,201,.76);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.monster-map-popup-title {
+    margin: 4px 0 10px;
+    color: #fff1c9;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.12;
+}
+
+.monster-map-popup-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 11px;
+    border-radius: 8px;
+    background: var(--kingdom-orange, #ff7800);
+    color: #fff7e5;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.monster-map-popup-link:hover {
+    filter: brightness(1.08);
+}
+
+@media (max-width: 700px) {
+    .monster-map-marker {
+        min-width: 140px;
+        min-height: 78px;
+    }
+
+    .monster-map-popup {
+        width: min(320px, calc(100% - 18px));
+    }
+
+    .monster-map-video {
+        height: 172px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .monster-map-marker,
+    .monster-map-popup,
+    .monster-map-video img,
+    .monster-map-video iframe {
+        transition: none;
+    }
+}
+
+.monster-map-popup.is-pinned .monster-map-video iframe.is-ready { pointer-events:auto; }
+@media (max-width: 700px) {
+  .monster-map-popup-close { width:32px; height:32px; font-size:22px; }
+  .monster-map-video { cursor:pointer; }
+}

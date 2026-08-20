@@ -1,0 +1,1446 @@
+.wiki-main{overflow:hidden}
+.section-anchor{scroll-margin-top:100px}
+
+/* ==========================================================
+   INTRO 
+========================================================== */
+.wiki-intro{
+    position:relative;
+    min-height:calc(100vh - 80px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:92px 0 82px;
+    text-align:center;
+    isolation:isolate;
+    background:
+        radial-gradient(circle at top right,rgba(255,123,0,.12),transparent 35%),
+        radial-gradient(circle at bottom left,rgba(255,123,0,.08),transparent 30%),
+        var(--color-background);
+}
+
+.wiki-intro::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,transparent,rgba(13,17,23,.12),rgba(13,17,23,.4));
+    pointer-events:none;
+    z-index:-1;
+}
+
+.wiki-intro::after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    right:-250px;
+    top:-250px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,123,0,.08),transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+.wiki-intro .container{
+    position:relative;
+    z-index:2;
+    width:100%;
+}
+
+.wiki-intro-inner{
+    width:100%;
+    max-width:850px;
+    margin:0 auto;
+    animation:fadeUp .9s ease;
+}
+
+.wiki-kicker,.wiki-heading-kicker{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(255,123,0,.15);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+.wiki-kicker{color:var(--color-primary)}
+
+.wiki-intro h1{
+    margin:18px auto 24px;
+    max-width:900px;
+    font-size:clamp(3.3rem,7vw,6rem);
+    line-height:1.02;
+    letter-spacing:-.065em;
+}
+.wiki-intro h1 span{color:var(--color-primary)}
+
+.wiki-intro-text{
+    max-width:820px;
+    margin:0 auto;
+    color:var(--color-text-light);
+    font-size:1rem;
+    line-height:1.8;
+}
+
+.wiki-intro-text p{
+    margin:0 auto 14px;
+}
+
+.wiki-intro-text p:last-child{
+    margin-bottom:0;
+}
+
+.wiki-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.wiki-action{
+    min-width:170px;
+    min-height:48px;
+    padding:0 22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:800;
+    border:1px solid var(--color-border);
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease,border-color .25s ease;
+}
+.wiki-action-primary{background:var(--color-primary);color:#fff;border-color:var(--color-primary);box-shadow:0 10px 30px rgba(255,123,0,.17)}
+.wiki-action-secondary{background:transparent;color:var(--color-text)}
+.wiki-action:hover{transform:translateY(-3px)}
+.wiki-action-primary:hover{box-shadow:0 16px 38px rgba(255,123,0,.27)}
+.wiki-action-secondary:hover{border-color:var(--color-primary);color:var(--color-primary);}
+
+/* ==========================================================
+   TITULOS
+========================================================== */
+.wiki-section-heading{
+    max-width:960px;
+    margin:0 auto 34px;
+    text-align:center;
+}
+.wiki-section-heading h2{
+    margin:10px 0 12px;
+    font-size:clamp(2.2rem,4.5vw,4rem);
+    line-height:1.02;
+    letter-spacing:-.055em;
+}
+.wiki-section-heading p{
+    max-width:760px;
+    margin:0 auto;
+    color:var(--color-text-light);
+    line-height:1.8;
+}
+.wiki-heading-kicker.orange{color:#ffaa00}
+.wiki-heading-kicker.red{color:#ff0d25}
+
+/* ==========================================================
+   TRILHAS DE ORDEM — LOGOS + LINHAS
+========================================================== */
+.wiki-order-board{
+    position:relative;
+}
+
+.order-items{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    gap:10px;
+}
+
+.order-game{
+    position:relative;
+    width:126px;
+    min-height:124px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:5px 4px 6px;
+    color:#d9dee6;
+}
+
+.order-visual{
+    width:112px;
+    height:78px;
+    display:grid;
+    place-items:center;
+    position:relative;
+    z-index:3;
+}
+
+.order-game img{
+    width:112px;
+    height:78px;
+    object-fit:contain;
+    filter:drop-shadow(0 10px 17px rgba(0,0,0,.56));
+}
+
+.order-game small{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    min-height:32px;
+    max-width:120px;
+    margin-top:3px;
+    text-align:center;
+    color:#8f99a8;
+    font-size:.55rem;
+    line-height:1.1;
+    font-weight:800;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+}
+
+.order-game small strong{
+    color:inherit;
+    font:inherit;
+}
+
+.order-game small .release-date{
+    color:#6d7889;
+    font-size:.5rem;
+    font-weight:800;
+    letter-spacing:.04em;
+}
+
+.release-board .order-game small{
+    min-height:38px;
+}
+
+.release-board .order-game.active small,
+.release-board .order-game.active small strong{
+    color:#ff0d25;
+}
+
+.order-fallback{
+    width:106px;
+    height:70px;
+    display:grid;
+    place-items:center;
+    padding:8px;
+    border-radius:14px;
+    border:1px dashed #3b4658;
+    background:linear-gradient(145deg,#1a202a,#10151c);
+    color:#788393;
+    font-size:.53rem;
+    font-weight:900;
+    line-height:1.25;
+    letter-spacing:.06em;
+    text-align:center;
+    text-transform:uppercase;
+    box-sizing:border-box;
+}
+
+.order-fallback[hidden]{display:none}
+.order-visual.asset-missing img{display:none}
+
+/* Linha principal e seta da ordem cronológica. */
+.chronological-board .order-items::before,
+.release-board .order-items::before{
+    content:"";
+    position:absolute;
+    left:38px;
+    right:38px;
+    top:42px;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(90deg,rgba(255,170,0,.18),rgba(255,170,0,.72),rgba(255,170,0,.25));
+    z-index:0;
+}
+
+.release-board .order-items::before{
+    background:linear-gradient(90deg,rgba(255,13,37,.16),rgba(255,13,37,.68),rgba(255,13,37,.25));
+}
+
+.chronological-board .order-items::after,
+.release-board .order-items::after{
+    content:"";
+    position:absolute;
+    right:22px;
+    top:35px;
+    width:13px;
+    height:13px;
+    border-top:4px solid #ffaa00;
+    border-right:4px solid #ffaa00;
+    transform:rotate(45deg);
+    z-index:1;
+}
+
+.release-board .order-items::after{
+    border-color:#ff0d25;
+}
+
+/* Legends desce para a segunda linha, como na referência enviada. */
+.chronological-board .order-items{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(90px,1fr));
+    grid-template-rows:auto auto;
+    column-gap:6px;
+    row-gap:2px;
+    min-height:166px;
+    align-items:start;
+}
+
+.chronological-board .order-game:nth-child(1){grid-column:1;grid-row:1}
+.chronological-board .order-game:nth-child(2){grid-column:2;grid-row:1}
+.chronological-board .order-game:nth-child(3){grid-column:3;grid-row:1}
+.chronological-board .order-game:nth-child(4){grid-column:4;grid-row:1}
+.chronological-board .order-game:nth-child(5){grid-column:5;grid-row:1}
+.chronological-board .order-game:nth-child(6){grid-column:6;grid-row:1}
+.chronological-board .order-game:nth-child(7){grid-column:5;grid-row:2}
+
+.chronological-board .branch-item::before{
+    content:"";
+    position:absolute;
+    top:-3px;
+    left:50%;
+    width:2px;
+    height:28px;
+    transform:translateX(-50%);
+    border-radius:999px;
+    background:linear-gradient(180deg,rgba(255,170,0,.12),rgba(255,170,0,.72));
+}
+
+.release-board .order-items{
+    min-height:136px;
+    flex-wrap:nowrap;
+    gap:6px;
+}
+
+.release-board .order-game{
+    width:118px;
+}
+
+@media(max-width:1100px){
+    .wiki-order-board{padding-left:18px;padding-right:18px}
+    .chronological-board .order-items{grid-template-columns:repeat(6,minmax(80px,1fr));column-gap:2px}
+    .order-game{width:112px}
+    .order-visual,.order-game img{width:102px}
+}
+
+@media(max-width:820px){
+    .chronological-board .order-items,
+    .release-board .order-items{
+        overflow-x:auto;
+        justify-content:flex-start;
+        padding:0 6px 8px;
+        scrollbar-width:thin;
+    }
+
+    .chronological-board .order-items{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        min-height:250px;
+        padding-left:26px;
+        padding-right:26px;
+    }
+
+    .chronological-board .order-game{width:110px}
+    .chronological-board .order-game:nth-child(7){margin-top:4px}
+    .chronological-board .order-items::before{left:46px;right:46px;top:42px}
+    .chronological-board .order-items::after{right:26px}
+
+    .release-board .order-items{
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        min-height:138px;
+    }
+
+    .release-board .order-items::before{left:20px;right:20px}
+    .release-board .order-items::after{right:8px}
+}
+
+@media(max-width:560px){
+    .chronological-board .order-items{justify-content:center;gap:2px 6px}
+    .order-game{width:100px;min-height:116px}
+    .order-visual,.order-game img{width:92px;height:70px}
+    .order-game small{font-size:.51rem}
+    .order-fallback{width:88px;height:62px}
+}
+
+/* ==========================================================
+   ESTRUTURA DA SÉRIE — VISUAL COMPACTO
+========================================================== */
+.wiki-structure{padding:24px 0 92px}
+.structure-heading{max-width:900px}
+.wiki-structure-grid{
+    width:min(1000px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+}
+.wiki-structure-card{
+    overflow:hidden;
+    border:1px solid #293447;
+    border-radius:22px;
+    background:linear-gradient(155deg,#151b24,#10151b);
+    box-shadow:0 18px 48px rgba(0,0,0,.18);
+}
+.wiki-structure-card-media{
+    min-height:210px;
+    display:grid;
+    place-items:center;
+    padding:14px;
+    background:radial-gradient(circle at 50% 40%,rgba(255,170,0,.045),transparent 58%),#0c1015;
+}
+.wiki-structure-card-media img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    border-radius:14px;
+    filter:drop-shadow(0 12px 20px rgba(0,0,0,.5));
+}
+.wiki-structure-card .logo-media img{object-fit:cover}
+.wiki-structure-card-copy{padding:18px 20px 20px}
+.wiki-structure-card-kicker{
+    display:block;
+    margin-bottom:7px;
+    color:#ff0d25;
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+.wiki-structure-card h3{margin:0 0 8px;font-size:1.28rem;letter-spacing:-.025em}
+.wiki-structure-card p{margin:0;color:var(--color-text-light);font-size:.86rem;line-height:1.65}
+
+.wiki-structure-difficulties{display:grid;gap:7px;margin-top:15px}
+.wiki-structure-difficulties span{
+    display:grid;
+    grid-template-columns:76px 1fr auto;
+    align-items:center;
+    gap:8px;
+    padding:9px 10px;
+    border:1px solid #2a3443;
+    border-radius:12px;
+    background:#0d1218;
+}
+.wiki-structure-difficulties b{font-size:.55rem;letter-spacing:.08em;color:#ffaa00}
+.wiki-structure-difficulties strong{font-size:.75rem;letter-spacing:.08em}
+.wiki-structure-difficulties small{font-size:.58rem;color:#788292;font-weight:800;text-align:right}
+.wiki-structure-difficulties span:nth-child(2) b{color:#ff0d25}
+.wiki-structure-difficulties span:nth-child(3) b{color:#d35cf2}
+.wiki-structure-note{
+    width:min(1000px,100%);
+    margin:12px auto 0;
+    padding:15px 18px;
+    border-left:3px solid #ffaa00;
+    border-radius:0 14px 14px 0;
+    background:rgba(255,170,0,.035);
+}
+.wiki-structure-note p{margin:0;color:#9da6b2;font-size:.82rem;line-height:1.7}
+.wiki-structure-note code{
+    padding:2px 6px;
+    border-radius:6px;
+    background:#191f28;
+    color:#dfe4ea;
+    font-size:.78rem;
+}
+
+@media(max-width:900px){
+    .wiki-structure-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+    .chronological-board .order-items,
+    .release-board .order-items{display:flex;flex-wrap:wrap;justify-content:center;min-height:0;gap:5px}
+    .order-game{width:96px}
+    .order-game.button-only{width:108px}
+    .wiki-game-logo{min-height:210px}
+    .wiki-structure-card-media img{height:190px}
+    .wiki-structure-difficulties span{grid-template-columns:64px 1fr}
+    .wiki-structure-difficulties small{grid-column:2;text-align:left}
+}
+
+
+/* ==========================================================
+   JOGOS DA FRANQUIA
+========================================================== */
+.wiki-games{
+    padding:76px 0 92px;
+    background:linear-gradient(180deg,#0d1117 0%,#0b0f14 100%);
+}
+.games-heading{max-width:900px}
+.wiki-filter{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:0 auto 28px;
+}
+.wiki-filter-btn{
+    min-width:96px;
+    padding:9px 15px;
+    border-radius:999px;
+    border:1px solid #2e394c;
+    background:#0f141b;
+    color:#aeb7c4;
+    font:inherit;
+    font-size:.75rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s ease;
+}
+.wiki-filter-btn:hover{border-color:#ffaa00;color:#ffaa00;transform:translateY(-2px)}
+.wiki-filter-btn.active{background:#ffaa00;border-color:#ffaa00;color:#101217;box-shadow:0 8px 20px rgba(255,170,0,.18)}
+
+.wiki-games-grid{
+    width:min(1120px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+}
+.wiki-game-tile{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    border:1px solid #2a3445;
+    padding:16px;
+    background:linear-gradient(155deg,#181e28,#11161e);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+    transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.wiki-game-tile::before{
+    content:"";
+    position:absolute;
+    left:-15%; right:-15%; top:-45%;
+    height:210px;
+    background:radial-gradient(circle,rgba(255,170,0,.13),transparent 68%);
+    opacity:0;
+    transition:opacity .3s ease;
+    pointer-events:none;
+}
+.wiki-game-tile:hover{transform:translateY(-7px);box-shadow:0 28px 60px rgba(0,0,0,.28)}
+.wiki-game-tile.available:hover{border-color:rgba(255,170,0,.5)}
+.wiki-game-tile.available:hover::before{opacity:1}
+.wiki-game-meta{display:flex;justify-content:space-between;align-items:center;padding:0 2px 10px}
+.wiki-game-meta span{font-size:.68rem;color:#737d8d;font-weight:900;letter-spacing:.14em}
+.wiki-game-meta b{padding:5px 9px;border-radius:999px;background:#222936;color:#b7c0cb;font-size:.56rem;letter-spacing:.11em}
+.wiki-game-tile.available .wiki-game-meta b{background:#53d68c;color:#08130d}
+.wiki-game-logo{
+    position:relative;
+    min-height:220px;
+    display:grid;
+    place-items:center;
+    border-radius:18px;
+    overflow:hidden;
+    background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.04),transparent 55%),#0b0f14;
+}
+.wiki-game-logo::after{
+    content:"";
+    position:absolute;
+    left:12%;right:12%;bottom:-12px;height:92px;
+    background:radial-gradient(ellipse,rgba(0,0,0,.72),transparent 68%);
+    pointer-events:none;
+}
+.wiki-game-logo img.game-logo{
+    position:relative;
+    z-index:2;
+    width:min(300px,88%);
+    height:190px;
+    object-fit:contain;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.72));
+}
+.wiki-game-tile.locked .wiki-game-logo img.game-logo{filter:grayscale(1) brightness(.48) contrast(.92) drop-shadow(0 18px 30px rgba(0,0,0,.78))}
+.wiki-logo-fallback{
+    display:none;
+    position:absolute;
+    z-index:1;
+    width:82%;height:112px;
+    place-items:center;
+    border-radius:16px;
+    border:1px dashed #384252;
+    color:#5e6775;
+    background:linear-gradient(145deg,#171d26,#0c1015);
+    text-align:center;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.11em;
+}
+.wiki-game-logo img.game-logo.asset-missing{display:none}
+.wiki-game-logo img.game-logo.asset-missing + .wiki-logo-fallback{display:grid}
+
+.wiki-lock{position:absolute;inset:0;display:grid;place-items:center;z-index:4;pointer-events:none}
+.lock-glow{
+    position:absolute;
+    width:150px;height:150px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,170,0,.32),rgba(255,170,0,.06) 42%,transparent 72%);
+    animation:wikiLockPulse 2s ease-in-out infinite;
+}
+.lock-image{
+    position:relative;
+    z-index:2;
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    display:block;
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.12)) drop-shadow(0 14px 20px rgba(0,0,0,.48));
+    transform:translateZ(0) scale(.98);
+    opacity:.96;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s ease,opacity .35s ease;
+    animation:wikiLockFloat 2.8s ease-in-out infinite;
+}
+.wiki-game-tile.locked:hover .lock-image{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.36)) drop-shadow(0 0 24px rgba(255,170,0,.28)) drop-shadow(0 18px 24px rgba(0,0,0,.52));
+    opacity:1;
+}
+.wiki-game-tile.locked:hover .lock-glow{
+    animation:wikiLockHover 1.15s ease-in-out infinite;
+    opacity:.85;
+}
+.lock-shackle{
+    position:absolute;
+    width:68px;height:54px;
+    border:9px solid rgba(220,226,232,.72);
+    border-bottom:0;border-radius:44px 44px 0 0;
+    transform:translateY(-15px);
+    filter:drop-shadow(0 0 10px rgba(255,170,0,.15));
+}
+.lock-body{
+    position:absolute;
+    width:82px;height:62px;
+    display:grid;place-items:center;
+    border-radius:13px;
+    border:1px solid #aeb7c2;
+    background:linear-gradient(160deg,#747d87,#3a4149);
+    box-shadow:0 15px 28px rgba(0,0,0,.55);
+    color:#111;
+    font-size:1.28rem;
+    transform:translateY(15px);
+}
+.wiki-game-copy{padding:14px 2px 12px}
+.wiki-game-eyebrow{display:block;margin-bottom:6px;color:#777f8d;font-size:.61rem;font-weight:900;letter-spacing:.14em}
+.wiki-game-tile.available .wiki-game-eyebrow{color:#ffaa00}
+.wiki-game-copy h3{margin:0 0 7px;font-size:1.25rem;letter-spacing:-.025em}
+.wiki-game-copy p{margin:0;min-height:40px;color:var(--color-text-light);font-size:.86rem;line-height:1.55}
+.wiki-game-button{
+    width:100%;min-height:46px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    border-radius:12px;border:1px solid rgba(255,170,0,.3);
+    background:rgba(255,170,0,.07);
+    color:#ffaa00;
+    font:inherit;font-weight:900;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s ease;
+}
+.wiki-game-button:hover{background:#ffaa00;color:#101217;transform:translateY(-2px)}
+.wiki-game-button.disabled{background:#10141a;border-color:#28303c;color:#687180;cursor:not-allowed}
+
+/* ==========================================================
+   ESTRUTURA / TEXTO DO CRIADOR
+========================================================== */
+.wiki-structure{padding:0 0 100px}
+.wiki-structure-panel{
+    width:min(1000px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.3fr .8fr;
+    gap:28px;
+    align-items:center;
+    padding:32px;
+    border-radius:24px;
+    border:1px solid #293447;
+    background:linear-gradient(135deg,rgba(255,13,37,.04),rgba(255,170,0,.04)),#11161d;
+}
+.wiki-structure-copy{text-align:left}
+.wiki-structure-copy h2{margin:9px 0 10px;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.05;letter-spacing:-.045em}
+.wiki-structure-copy p{margin:0;color:var(--color-text-light);line-height:1.78}
+.wiki-difficulty-list{display:grid;gap:8px}
+.wiki-difficulty-list span{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;border-radius:13px;background:#0e1218;border:1px solid #292f3a}
+.wiki-difficulty-list span b{font-size:.66rem;letter-spacing:.09em}.wiki-difficulty-list span small{font-weight:900;color:#8e97a4;letter-spacing:.07em}
+.difficulty-normal{border-color:rgba(255,170,0,.24)!important}.difficulty-normal b{color:#ffaa00}
+.difficulty-hard{border-color:rgba(255,13,37,.22)!important}.difficulty-hard b{color:#ff0d25}
+.difficulty-impossible b{color:#d35cf2}
+
+@keyframes wikiLockPulse{
+    0%,100%{opacity:.26;transform:scale(.96)}
+    50%{opacity:.62;transform:scale(1.08)}
+}
+@keyframes wikiLockFloat{
+    0%,100%{transform:translateY(0) scale(.98)}
+    50%{transform:translateY(-3px) scale(1)}
+}
+@keyframes wikiLockHover{
+    0%,100%{opacity:.62;transform:scale(1)}
+    50%{opacity:1;transform:scale(1.14)}
+}
+@media (prefers-reduced-motion:reduce){
+    .lock-image,.lock-glow{animation:none!important}
+    .wiki-game-tile.locked:hover .lock-image{transform:none}
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+@media(max-width:1050px){
+    .wiki-games-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .wiki-order-board{padding-left:22px;padding-right:22px}
+    .order-game{width:112px}
+    .order-game img{width:100px}
+}
+
+@media(max-width:760px){
+    .wiki-intro{min-height:auto;padding:92px 0 72px}
+    .wiki-intro h1{font-size:clamp(2.7rem,11vw,4.5rem)}
+    .wiki-intro-text{font-size:.92rem}
+    .wiki-actions{gap:12px}
+    .wiki-order,.wiki-games{padding:64px 0}
+    .wiki-games-grid{grid-template-columns:1fr}
+    .wiki-order-board{padding:22px 16px 28px}
+    .order-items{gap:4px}
+    .order-game{width:94px;min-height:104px}
+    .order-game img{width:86px;height:68px}
+    .order-fallback{width:84px;height:66px}
+    .chronological-board .order-items .order-game[data-game="legends"]{transform:none}
+    .order-arrow{margin-top:10px}
+    .wiki-structure-panel{grid-template-columns:1fr;padding:24px}
+    .wiki-structure-copy{text-align:center}
+}
+
+@media(max-width:520px){
+    .wiki-intro h1{font-size:2.55rem}
+    .wiki-section-heading h2{font-size:2.35rem}
+    .wiki-section-heading p{font-size:.88rem}
+    .order-game{width:86px}
+    .order-game img{width:78px;height:62px}
+    .order-fallback{width:76px;height:60px;font-size:.5rem}
+    .order-game small{font-size:.47rem;max-width:80px}
+    .wiki-game-logo{min-height:210px}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .wiki-action,.wiki-game-tile,.wiki-filter-btn,.wiki-game-button,.order-game,.lock-glow{transition:none;animation:none}
+}
+
+/* Logos dos cards com uma caixa de palco fixa, evitando distorção/proporção diferente. */
+.wiki-game-logo{
+    min-height:220px;
+    padding:20px;
+}
+.wiki-game-logo img.game-logo{
+    width:min(280px,82%);
+    height:165px;
+    max-width:100%;
+    object-fit:contain;
+    object-position:center;
+}
+.wiki-game-logo.asset-missing::before{
+    content:"LOGO EM PREPARAÇÃO";
+    position:absolute;
+    z-index:1;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:#4f5867;
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+.wiki-game-logo.asset-missing .wiki-lock{z-index:5}
+
+
+body.wiki-modal-open{overflow:hidden}
+
+
+/* FINAL CLEANUP — override legacy v4 structure rules */
+.wiki-structure{padding:24px 0 92px}
+.wiki-structure-panel,.wiki-structure-copy,.wiki-difficulty-list{display:none !important}
+.wiki-structure-grid{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+@media(max-width:900px){.wiki-structure-grid{grid-template-columns:1fr !important}}
+@media(max-width:760px){
+    .chronological-board .order-items,.release-board .order-items{display:flex !important;flex-wrap:wrap !important;justify-content:center !important}
+}
+
+
+/* ==========================================================
+   AJUSTES FINAIS — ORDEM, TÍTULO MOBILE E LOGOS
+========================================================== */
+
+/* Datas visíveis na trilha de lançamento. */
+.release-board .order-game small{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+}
+.release-board .order-game .release-date{
+    display:block;
+    color:#697382;
+    font-size:.49rem;
+    font-weight:800;
+    letter-spacing:.06em;
+}
+.release-board .order-game.active .release-date{
+    color:#d7a62b;
+}
+
+/* Zoom sutil e centralizado nos logos da área "Jogos da franquia". */
+.wiki-games .wiki-game-logo img.game-logo{
+    width:min(320px,92%);
+    height:195px;
+    transform:scale(1.14);
+    transform-origin:center center;
+}
+
+/* O título da estrutura permanece em uma única linha no celular. */
+@media(max-width:760px){
+    .structure-heading h2{
+        font-size:clamp(1.15rem,5vw,2rem);
+        white-space:nowrap;
+        letter-spacing:-.045em;
+    }
+    .wiki-games .wiki-game-logo img.game-logo{
+        width:92%;
+        height:185px;
+        transform:scale(1.12);
+    }
+}
+@media(max-width:380px){
+    .structure-heading h2{
+        font-size:clamp(1.05rem,4.8vw,1.8rem);
+    }
+}
+
+/* ==========================================================
+   AJUSTES FINAIS — CRONOLOGIA, ESTRUTURA E LOGOS
+========================================================== */
+
+/* A ordem cronológica usa somente blocos/botões de texto, sem imagens ou datas. */
+.chronological-board .order-items{
+    align-items:stretch;
+    min-height:0;
+}
+.chronological-board .order-game.button-only{
+    min-height:68px;
+    width:clamp(112px,13vw,150px);
+    padding:0;
+    justify-content:stretch;
+}
+.chronological-board .release-button-visual{
+    min-height:56px;
+    padding:10px 9px;
+    font-size:.58rem;
+    border-radius:14px;
+    line-height:1.25;
+}
+.chronological-board .order-game small{
+    display:none;
+}
+.chronological-board .order-game.active .release-button-visual{
+    border-color:rgba(255,170,0,.62);
+    color:#ffd27a;
+    background:linear-gradient(160deg,rgba(255,170,0,.12),rgba(255,170,0,.04));
+}
+
+/* O título da estrutura fica sempre em uma única linha. */
+.structure-heading{
+    max-width:1180px;
+}
+.structure-heading h2{
+    white-space:nowrap;
+    font-size:clamp(1.1rem,4.4vw,4rem);
+    letter-spacing:-.06em;
+}
+
+/* Terceiro esclarecimento com o print enviado. */
+.wiki-structure-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    align-items:stretch;
+}
+.interpretation-media img{
+    object-fit:cover;
+    object-position:center top;
+}
+.wiki-structure-card-copy p + p{
+    margin-top:12px;
+}
+
+/* Logos dos jogos maiores, preenchendo o palco sem perder o centro. */
+.wiki-games .wiki-game-logo{
+    min-height:270px;
+}
+.wiki-games .wiki-game-logo img.game-logo{
+    width:100%;
+    max-width:none;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    transform:scale(1.08);
+    transform-origin:center center;
+}
+
+/* O placeholder bloqueado fica realmente centralizado no palco. */
+.wiki-games .wiki-game-logo .wiki-logo-fallback.static{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:82%;
+    height:112px;
+    transform:translate(-50%,-50%);
+    margin:0;
+}
+
+/* O cadeado reage ao mouse com um brilho mais forte. */
+.wiki-games .wiki-lock{
+    pointer-events:auto;
+    cursor:help;
+}
+.wiki-games .wiki-lock .lock-glow{
+    opacity:.72;
+    transform:scale(.92);
+    transition:opacity .2s ease,transform .25s ease,filter .25s ease;
+}
+.wiki-games .wiki-lock .lock-shackle,
+.wiki-games .wiki-lock .lock-body{
+    transition:filter .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.wiki-games .wiki-lock:hover .lock-glow{
+    opacity:1;
+    transform:scale(1.18);
+    filter:brightness(1.28) saturate(1.2);
+}
+.wiki-games .wiki-lock:hover .lock-shackle{
+    filter:drop-shadow(0 0 8px rgba(255,170,0,.55)) drop-shadow(0 0 18px rgba(255,170,0,.25));
+    transform:translateY(-15px) scale(1.05);
+}
+.wiki-games .wiki-lock:hover .lock-body{
+    box-shadow:0 0 16px rgba(255,170,0,.35),0 15px 28px rgba(0,0,0,.55);
+    transform:translateY(15px) scale(1.05);
+}
+
+@media(max-width:1050px){
+    .wiki-structure-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+
+@media(max-width:900px){
+    .wiki-structure-grid{grid-template-columns:1fr !important}
+}
+
+@media(max-width:760px){
+    .structure-heading{
+        max-width:none;
+    }
+    .structure-heading h2{
+        font-size:clamp(.98rem,5vw,1.75rem);
+        white-space:nowrap;
+    }
+    .chronological-board .order-items{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+    }
+    .chronological-board .order-game.button-only{
+        width:auto;
+        min-height:62px;
+    }
+    .chronological-board .release-button-visual{
+        min-height:52px;
+    }
+    .wiki-games .wiki-game-logo{
+        min-height:260px;
+    }
+    .wiki-games .wiki-game-logo img.game-logo{
+        width:100%;
+        height:100%;
+        transform:scale(1.06);
+    }
+}
+
+@media(max-width:380px){
+    .chronological-board .order-items{
+        grid-template-columns:1fr;
+    }
+    .structure-heading h2{
+        font-size:.92rem;
+    }
+}
+
+/* Placeholders textuais para jogos bloqueados sem arquivos de logo. */
+.wiki-logo-fallback.static{
+    display:grid;
+    position:relative;
+    z-index:2;
+}
+
+
+/* ==========================================================
+   CORREÇÃO FINAL — IMAGENS INTEIRAS E CADEADOS CENTRALIZADOS
+========================================================== */
+.wiki-games .wiki-game-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:270px;
+    width:100%;
+}
+
+.wiki-games .wiki-game-logo img.game-logo{
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    object-position:center center;
+    transform:none;
+    transform-origin:center center;
+}
+
+/* O placeholder continua no centro, sem empurrar ou cortar conteúdo. */
+.wiki-games .wiki-game-logo .wiki-logo-fallback.static{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:82%;
+    height:112px;
+    transform:translate(-50%,-50%);
+    margin:0;
+}
+
+/* Centro geométrico garantido para o conjunto do cadeado. */
+.wiki-games .wiki-lock{
+    position:absolute;
+    inset:0;
+    display:block;
+    z-index:4;
+    pointer-events:auto;
+    cursor:help;
+}
+.wiki-games .wiki-lock .lock-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:150px;
+    height:150px;
+    margin:0;
+    transform:translate(-50%,-50%) scale(.92);
+}
+.wiki-games .wiki-lock .lock-shackle{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:68px;
+    height:54px;
+    margin:0;
+    transform:translate(-50%,-69%);
+}
+.wiki-games .wiki-lock .lock-body{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:82px;
+    height:62px;
+    margin:0;
+    transform:translate(-50%,-2%);
+}
+
+.wiki-games .wiki-lock:hover .lock-glow{
+    transform:translate(-50%,-50%) scale(1.18);
+}
+.wiki-games .wiki-lock:hover .lock-shackle{
+    transform:translate(-50%,-69%) scale(1.05);
+}
+.wiki-games .wiki-lock:hover .lock-body{
+    transform:translate(-50%,-2%) scale(1.05);
+}
+
+@media(max-width:760px){
+    .wiki-games .wiki-game-logo{
+        min-height:260px;
+    }
+    .wiki-games .wiki-game-logo img.game-logo{
+        width:100%;
+        height:100%;
+        max-width:100%;
+        max-height:100%;
+        object-fit:contain;
+        transform:none;
+    }
+}
+
+
+/* ==========================================================
+   AJUSTES — BEM-VINDO + LOGO ORIGINS SEM ÁREA PRETA
+========================================================== */
+.wiki-intro{
+    padding:92px 0 82px;
+}
+.wiki-intro-inner{
+    width:min(850px,100%);
+    margin:0 auto;
+}
+.wiki-intro h1{
+    margin:18px auto 24px;
+    font-size:clamp(3.3rem,7vw,6rem);
+    letter-spacing:-.065em;
+}
+.wiki-intro-text{
+    max-width:820px;
+    font-size:1rem;
+    line-height:1.8;
+}
+.wiki-intro-text p{
+    margin:0 auto 14px;
+}
+.wiki-intro-text strong{
+    color:var(--color-primary);
+    font-weight:800;
+}
+.wiki-actions{
+    margin-top:30px;
+}
+.wiki-action-primary{
+    min-width:170px;
+}
+.wiki-kicker{
+    padding:8px 18px;
+    border-radius:50px;
+    background:rgba(255,123,0,.15);
+    color:var(--color-primary);
+}
+
+.wiki-game-logo{
+    min-height:0;
+    aspect-ratio:16 / 9;
+    padding:0;
+    background:#6f4a7f;
+}
+.wiki-game-logo::after{
+    display:none;
+}
+.wiki-game-logo img.game-logo{
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:none;
+    object-fit:cover;
+    object-position:center;
+    filter:drop-shadow(0 16px 26px rgba(0,0,0,.58));
+}
+.wiki-game-logo + .wiki-game-copy{
+    padding-top:16px;
+}
+
+@media(max-width:760px){
+    .wiki-intro{min-height:auto;padding:82px 0 64px}
+    .wiki-intro h1{font-size:clamp(2.55rem,10vw,4.3rem)}
+    .wiki-intro-text{font-size:.92rem;line-height:1.72}
+    .wiki-actions{gap:12px;margin-top:26px}
+    .wiki-game-logo{aspect-ratio:16/9}
+}
+
+/* ==========================================================
+   CORREÇÃO FINAL — LINHA DA CRONOLOGIA + CONECTOR DO LEGENDS
+========================================================== */
+.chronological-board .order-items{
+    position:relative;
+}
+
+/* A linha horizontal passa pelo centro da primeira fileira. */
+.chronological-board .order-items::before{
+    top:42px;
+    z-index:0;
+}
+
+/* Conecta o Legends diretamente à linha central, sem deixar espaço. */
+.chronological-board .branch-item::before{
+    top:-100px;
+    height:100px;
+    width:2px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1;
+    background:linear-gradient(180deg,rgba(255,170,0,.16),rgba(255,170,0,.82));
+}
+
+/* Mantém a seta sempre na ponta da linha. */
+.chronological-board .order-items::after{
+    top:35px;
+    z-index:2;
+}
+
+@media(max-width:1100px){
+    .chronological-board .branch-item::before{top:-100px;height:100px}
+}
+
+@media(max-width:760px){
+    .chronological-board .branch-item::before{
+        top:-76px;
+        height:76px;
+    }
+}
+
+/* ==========================================================
+   CORREÇÃO FINAL — IDENTIFICAÇÃO DAS FASES ESPECIAIS
+========================================================== */
+.phase-item.special{
+    grid-template-columns:76px minmax(0,1fr) auto;
+}
+
+.phase-item.special .phase-num{
+    width:66px;
+    min-width:66px;
+    height:54px;
+    min-height:54px;
+    padding:6px 5px;
+    box-sizing:border-box;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    white-space:normal;
+    overflow-wrap:normal;
+    word-break:normal;
+    line-height:1.05;
+    font-size:.58rem;
+    letter-spacing:.02em;
+    border-radius:17px;
+}
+
+.phase-item.special .phase-name{
+    min-width:0;
+}
+
+@media(max-width:600px){
+    .phase-item.special{
+        grid-template-columns:72px minmax(0,1fr);
+    }
+
+    .phase-item.special .phase-num{
+        width:64px;
+        min-width:64px;
+        height:54px;
+        min-height:54px;
+        font-size:.57rem;
+    }
+}
+
+
+/* ==========================================================
+   KINGDOM RUSH — LOGOS REAIS NA CENTRAL DA WIKI
+   Ativos = logos vivos; bloqueados = logos reais escurecidos,
+   com cadeado/brilho por cima.
+========================================================== */
+.wiki-games .wiki-game-logo{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:270px;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(255,170,0,.08), transparent 42%),
+        linear-gradient(180deg, #151a23 0%, #0e1218 100%);
+}
+
+.wiki-games .wiki-game-logo img.game-logo{
+    position:relative;
+    z-index:1;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    object-position:center;
+    padding:18px 24px;
+    filter:drop-shadow(0 16px 26px rgba(0,0,0,.62));
+    transition:filter .3s ease, transform .3s ease, opacity .3s ease;
+}
+
+.wiki-games .wiki-game-tile.available .wiki-game-logo img.game-logo{
+    filter:drop-shadow(0 16px 26px rgba(0,0,0,.62));
+}
+
+.wiki-games .wiki-game-tile.available:hover .wiki-game-logo img.game-logo{
+    transform:translateY(-3px) scale(1.035);
+    filter:drop-shadow(0 20px 32px rgba(255,170,0,.16));
+}
+
+.wiki-games .wiki-game-tile.locked .wiki-game-logo img.game-logo{
+    filter:grayscale(.72) brightness(.43) saturate(.5) contrast(.95)
+            drop-shadow(0 16px 28px rgba(0,0,0,.78));
+    opacity:.9;
+}
+
+.wiki-games .wiki-game-tile.locked:hover .wiki-game-logo img.game-logo{
+    filter:grayscale(.48) brightness(.56) saturate(.68) contrast(.98)
+            drop-shadow(0 18px 32px rgba(255,170,0,.08));
+    transform:scale(1.015);
+}
+
+.wiki-games .wiki-game-logo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:radial-gradient(circle at 50% 52%, transparent 24%, rgba(4,7,11,.05) 52%, rgba(4,7,11,.42) 100%);
+}
+
+.wiki-games .wiki-game-tile.locked .wiki-game-logo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:3;
+    pointer-events:none;
+    background:linear-gradient(180deg, rgba(3,6,10,.10), rgba(3,6,10,.28));
+}
+
+.wiki-games .wiki-game-tile.available .wiki-game-logo::after{
+    display:none;
+}
+
+.wiki-games .wiki-lock{
+    z-index:5;
+}
+
+.wiki-games .wiki-lock .lock-glow{
+    background:radial-gradient(circle, rgba(255,170,0,.24) 0%, rgba(255,170,0,.08) 38%, transparent 72%);
+    filter:blur(1px);
+}
+
+.wiki-games .wiki-lock .lock-shackle{
+    border-color:#9da7b5;
+    box-shadow:0 0 10px rgba(255,255,255,.05);
+}
+
+.wiki-games .wiki-lock .lock-body{
+    background:linear-gradient(180deg,#6d7785,#343c47);
+    border-color:#8b95a3;
+    box-shadow:0 0 0 1px rgba(255,255,255,.04) inset, 0 12px 24px rgba(0,0,0,.58);
+}
+
+@media(max-width:760px){
+    .wiki-games .wiki-game-logo{min-height:250px}
+    .wiki-games .wiki-game-logo img.game-logo{padding:16px 18px}
+}
+
+
+/* ==========================================================
+   MONSTER LOCK — CADEADO METÁLICO + BRILHO NO HOVER
+========================================================== */
+.wiki-games .wiki-lock{
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    z-index:6;
+    pointer-events:auto;
+    cursor:pointer;
+}
+.wiki-games .wiki-lock .lock-glow{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:190px;
+    height:190px;
+    margin:0;
+    transform:translate(-50%,-50%) scale(.82);
+    border-radius:50%;
+    background:
+        radial-gradient(circle,
+            rgba(255,255,255,.52) 0%,
+            rgba(238,242,247,.28) 18%,
+            rgba(208,216,225,.15) 34%,
+            rgba(255,255,255,.06) 52%,
+            transparent 72%);
+    filter:blur(2px);
+    opacity:.28;
+    transition:opacity .28s ease, transform .35s ease, filter .35s ease;
+    animation:monsterLockBreathe 2.6s ease-in-out infinite;
+    pointer-events:none;
+}
+.wiki-games .wiki-lock .lock-image{
+    position:relative;
+    z-index:2;
+    width:118px;
+    height:138px;
+    max-width:none;
+    object-fit:contain;
+    opacity:.93;
+    filter:
+        drop-shadow(0 10px 18px rgba(0,0,0,.58))
+        drop-shadow(0 0 5px rgba(255,255,255,.25));
+    transform:translateY(2px) scale(.96);
+    transform-origin:center;
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        filter .35s ease,
+        opacity .25s ease;
+    pointer-events:none;
+}
+.wiki-games .wiki-lock::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:124px;
+    height:124px;
+    transform:translate(-50%,-50%) scale(.82);
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:
+        0 0 20px rgba(255,255,255,.12),
+        inset 0 0 18px rgba(255,255,255,.05);
+    opacity:.32;
+    transition:opacity .3s ease, transform .35s ease, box-shadow .35s ease;
+    pointer-events:none;
+}
+.wiki-games .wiki-lock:hover .lock-glow,
+.wiki-games .wiki-lock:focus-visible .lock-glow{
+    opacity:.9;
+    transform:translate(-50%,-50%) scale(1.12);
+    filter:blur(0);
+}
+.wiki-games .wiki-lock:hover .lock-image,
+.wiki-games .wiki-lock:focus-visible .lock-image{
+    opacity:1;
+    transform:translateY(0) scale(1.08);
+    filter:
+        brightness(1.12)
+        drop-shadow(0 12px 22px rgba(0,0,0,.62))
+        drop-shadow(0 0 10px rgba(255,255,255,.64))
+        drop-shadow(0 0 26px rgba(255,255,255,.20));
+}
+.wiki-games .wiki-lock:hover::after,
+.wiki-games .wiki-lock:focus-visible::after{
+    opacity:.78;
+    transform:translate(-50%,-50%) scale(1.12);
+    box-shadow:
+        0 0 32px rgba(255,255,255,.28),
+        inset 0 0 22px rgba(255,255,255,.10);
+}
+@keyframes monsterLockBreathe{
+    0%,100%{opacity:.22;transform:translate(-50%,-50%) scale(.82)}
+    50%{opacity:.42;transform:translate(-50%,-50%) scale(.94)}
+}
+@media (max-width:760px){
+    .wiki-games .wiki-lock .lock-image{
+        width:108px;
+        height:128px;
+    }
+}
+@media (prefers-reduced-motion:reduce){
+    .wiki-games .wiki-lock .lock-glow{animation:none}
+}

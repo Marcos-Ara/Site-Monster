@@ -1,0 +1,631 @@
+.footer{
+    position:relative;
+    margin-top:100px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 0%, rgba(255,123,0,.10), transparent 32%),
+        radial-gradient(circle at 90% 100%, rgba(255,123,0,.07), transparent 28%),
+        linear-gradient(180deg, #111722 0%, #0d1117 100%);
+    border-top:1px solid rgba(255,123,0,.20);
+    box-shadow:0 -18px 55px rgba(0,0,0,.28);
+}
+
+.footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    width:min(620px,70%);
+    height:2px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    box-shadow:0 0 22px rgba(255,123,0,.55);
+}
+
+.footer::after{
+    content:"";
+    position:absolute;
+    inset:auto -10% -120px;
+    height:240px;
+    background:radial-gradient(circle, rgba(255,123,0,.08), transparent 65%);
+    pointer-events:none;
+}
+
+.footer .container{
+    position:relative;
+    z-index:1;
+    padding:78px 0 28px;
+}
+
+/* ==========================================================
+                    CONTEÚDO PRINCIPAL
+========================================================== */
+
+.footer-content{
+    display:grid;
+    grid-template-columns:minmax(0,1.65fr) minmax(180px,.9fr) minmax(180px,.9fr);
+    gap:24px;
+    margin-bottom:28px;
+}
+
+.footer-content > div{
+    min-width:0;
+    padding:28px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035), 0 14px 35px rgba(0,0,0,.16);
+}
+
+.footer-content > div:hover{
+    border-color:rgba(255,123,0,.22);
+    transform:translateY(-3px);
+    box-shadow:0 16px 40px rgba(0,0,0,.22), 0 0 24px rgba(255,123,0,.05);
+}
+
+.footer-brand,
+.footer-links,
+.footer-social{
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================================
+                    MARCA
+========================================================== */
+
+.footer-brand{
+    gap:20px;
+}
+
+.footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    width:max-content;
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+.footer-logo img{
+    width:64px;
+    height:64px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 12px rgba(255,123,0,.14));
+    transition:transform var(--transition), filter var(--transition);
+}
+
+.footer-logo span{
+    font-size:1.55rem;
+    font-weight:800;
+    letter-spacing:2.5px;
+    color:var(--color-text);
+    transition:var(--transition);
+}
+
+.footer-logo:hover{
+    transform:translateY(-3px);
+}
+
+.footer-logo:hover img{
+    transform:scale(1.07) rotate(-2deg);
+    filter:drop-shadow(0 0 17px rgba(255,123,0,.30));
+}
+
+.footer-logo:hover span{
+    color:var(--color-primary);
+}
+
+.footer-brand p{
+    max-width:520px;
+    margin:0;
+    color:var(--color-text-light);
+    line-height:1.85;
+}
+
+/* ==========================================================
+                    TÍTULOS DE COLUNA
+========================================================== */
+
+.footer-links h3,
+.footer-social h3{
+    position:relative;
+    display:inline-block;
+    width:max-content;
+    margin-bottom:18px;
+    padding-bottom:10px;
+    color:var(--color-text);
+    font-size:1.05rem;
+    font-weight:700;
+    letter-spacing:.6px;
+}
+
+.footer-links h3::after,
+.footer-social h3::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:34px;
+    height:2px;
+    border-radius:999px;
+    background:var(--color-primary);
+    box-shadow:0 0 10px rgba(255,123,0,.45);
+}
+
+/* ==========================================================
+                    LINKS
+========================================================== */
+
+.footer-links ul{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    list-style:none;
+}
+
+.footer-links a,
+.footer-social a{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 13px;
+    border:1px solid transparent;
+    border-radius:12px;
+    color:var(--color-text-light);
+    text-decoration:none;
+    transition:transform var(--transition), color var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.footer-links a::after,
+.footer-social a::after{
+    content:"›";
+    color:var(--color-primary);
+    font-size:1.25rem;
+    line-height:1;
+    opacity:.55;
+    transform:translateX(-3px);
+    transition:var(--transition);
+}
+
+.footer-links a:hover,
+.footer-social a:hover{
+    color:var(--color-text);
+    background:rgba(255,123,0,.075);
+    border-color:rgba(255,123,0,.20);
+    transform:translateX(4px);
+    box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+.footer-links a:hover::after,
+.footer-social a:hover::after{
+    opacity:1;
+    transform:translateX(2px);
+}
+
+/* ==========================================================
+                    CRÉDITOS / CONTATO
+========================================================== */
+
+.footer-credits{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    margin:8px 0 28px;
+    padding:22px 24px;
+    border:1px solid rgba(255,123,0,.14);
+    border-radius:18px;
+    background:linear-gradient(90deg, rgba(255,123,0,.075), rgba(255,255,255,.025));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.footer-credit-text{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.footer-credit-text strong{
+    color:var(--color-text);
+}
+
+.footer-credit-text p{
+    margin:0;
+    color:var(--color-text-light);
+}
+
+.footer-credit-actions{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:11px;
+    flex-wrap:wrap;
+}
+
+.footer .footer-credit-actions .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid transparent;
+    text-decoration:none;
+    font-weight:700;
+    transition:transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.footer .footer-credit-actions .btn-secondary{
+    color:var(--color-text);
+    background:rgba(255,255,255,.04);
+    border-color:rgba(255,255,255,.10);
+}
+
+.footer .footer-credit-actions .btn-primary{
+    color:#151515;
+    background:linear-gradient(135deg, #ff9a2e, var(--color-primary));
+    border-color:rgba(255,255,255,.08);
+    box-shadow:0 8px 22px rgba(255,123,0,.16);
+}
+
+.footer .footer-credit-actions .btn:hover{
+    transform:translateY(-3px);
+}
+
+.footer .footer-credit-actions .btn-secondary:hover{
+    background:rgba(255,123,0,.08);
+    border-color:rgba(255,123,0,.24);
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+
+.footer .footer-credit-actions .btn-primary:hover{
+    box-shadow:0 12px 30px rgba(255,123,0,.28);
+    filter:brightness(1.04);
+}
+
+.footer .footer-credit-actions .btn:focus-visible,
+.footer a:focus-visible{
+    outline:2px solid var(--color-primary);
+    outline-offset:3px;
+}
+
+/* ==========================================================
+                    COPYRIGHT
+========================================================== */
+
+.footer-bottom{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.footer-bottom p{
+    margin:0;
+    color:var(--color-text-light);
+    font-size:.88rem;
+    text-align:center;
+    letter-spacing:.45px;
+}
+
+/* ==========================================================
+                    RESPONSIVIDADE
+========================================================== */
+
+@media (max-width:1100px){
+    .footer-content{
+        grid-template-columns:1.2fr 1fr 1fr;
+        gap:18px;
+    }
+
+    .footer-content > div{
+        padding:24px;
+    }
+}
+
+@media (max-width:900px){
+    .footer .container{
+        padding:64px 20px 24px;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-brand{
+        grid-column:1 / -1;
+    }
+}
+
+@media (max-width:680px){
+    .footer{
+        margin-top:78px;
+    }
+
+    .footer .container{
+        padding:54px 16px 20px;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .footer-brand{
+        grid-column:auto;
+    }
+
+    .footer-content > div{
+        padding:22px;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-social{
+        align-items:stretch;
+    }
+
+    .footer-brand p{
+        max-width:none;
+    }
+
+    .footer-credits{
+        flex-direction:column;
+        align-items:stretch;
+        text-align:center;
+        padding:20px;
+    }
+
+    .footer-credit-text{
+        align-items:center;
+    }
+
+    .footer-credit-actions{
+        justify-content:center;
+        width:100%;
+    }
+
+    .footer .footer-credit-actions .btn{
+        flex:1 1 170px;
+    }
+}
+
+@media (max-width:480px){
+    .footer-logo img{
+        width:54px;
+        height:54px;
+    }
+
+    .footer-logo span{
+        font-size:1.28rem;
+        letter-spacing:1.8px;
+    }
+
+    .footer-links a,
+    .footer-social a{
+        padding:10px 11px;
+        font-size:.94rem;
+    }
+
+    .footer .footer-credit-actions .btn{
+        width:100%;
+        flex-basis:100%;
+    }
+
+    .footer-bottom p{
+        font-size:.8rem;
+        line-height:1.6;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .footer,
+    .footer-content > div,
+    .footer-logo,
+    .footer-logo img,
+    .footer-links a,
+    .footer-social a,
+    .footer .footer-credit-actions .btn{
+        transition:none !important;
+        animation:none !important;
+    }
+}
+
+
+/* ==========================================================
+                 CRIADOR DO MAPA — PRÉ-FOOTER
+========================================================== */
+
+.map-creator{
+    position:relative;
+    margin-top:78px;
+    padding:0 0 18px;
+}
+
+.map-creator-card{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    overflow:hidden;
+    padding:22px 24px;
+    border:1px solid rgba(255,123,0,.18);
+    border-radius:20px;
+    background:
+        radial-gradient(circle at 0% 50%, rgba(255,123,0,.10), transparent 36%),
+        linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+    box-shadow:0 16px 40px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.035);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.map-creator-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:24px;
+    width:92px;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(90deg, var(--color-primary), transparent);
+    box-shadow:0 0 14px rgba(255,123,0,.35);
+}
+
+.map-creator-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(255,123,0,.34);
+    box-shadow:0 20px 46px rgba(0,0,0,.22), 0 0 28px rgba(255,123,0,.06);
+}
+
+.map-creator-info{
+    min-width:0;
+}
+
+.map-creator-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-bottom:7px;
+    color:var(--color-primary);
+    font-size:.76rem;
+    font-weight:800;
+    letter-spacing:1.4px;
+}
+
+.map-creator-title-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.map-creator-title-row h2{
+    margin:0;
+    color:var(--color-text);
+    font-size:1.18rem;
+    line-height:1.25;
+}
+
+.map-creator-title-row h2 strong{
+    color:var(--color-primary);
+}
+
+.map-creator-badge{
+    display:inline-flex;
+    align-items:center;
+    min-height:26px;
+    padding:0 9px;
+    border:1px solid rgba(255,123,0,.18);
+    border-radius:999px;
+    background:rgba(255,123,0,.06);
+    color:var(--color-text-light);
+    font-size:.66rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.map-creator-info p{
+    margin:7px 0 0;
+    color:var(--color-text-light);
+    line-height:1.55;
+    font-size:.92rem;
+}
+
+.map-creator-actions{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:10px;
+    flex-wrap:wrap;
+    flex-shrink:0;
+}
+
+.map-creator-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:44px;
+    padding:0 16px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.9rem;
+    transition:transform .22s ease, color .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.map-creator-btn span:first-child{
+    font-size:1rem;
+}
+
+.map-creator-btn-secondary{
+    color:var(--color-text-light);
+    background:rgba(255,255,255,.025);
+}
+
+.map-creator-btn-primary{
+    color:#101317;
+    border-color:transparent;
+    background:linear-gradient(135deg, var(--color-primary), #ff982f);
+    box-shadow:0 7px 18px rgba(255,123,0,.18);
+}
+
+.map-creator-btn:hover{
+    transform:translateY(-2px);
+}
+
+.map-creator-btn-secondary:hover{
+    color:var(--color-text);
+    border-color:rgba(255,123,0,.24);
+    background:rgba(255,123,0,.07);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.map-creator-btn-primary:hover{
+    box-shadow:0 10px 24px rgba(255,123,0,.28);
+    filter:brightness(1.04);
+}
+
+.map-creator-btn:focus-visible{
+    outline:2px solid var(--color-primary);
+    outline-offset:3px;
+}
+
+@media (max-width: 760px){
+    .map-creator{
+        margin-top:56px;
+    }
+
+    .map-creator-card{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:18px;
+        padding:22px 20px;
+    }
+
+    .map-creator-actions{
+        width:100%;
+        justify-content:flex-start;
+    }
+
+    .map-creator-btn{
+        flex:1 1 180px;
+    }
+}
+
+@media (max-width: 460px){
+    .map-creator-actions,
+    .map-creator-btn{
+        width:100%;
+    }
+
+    .map-creator-title-row h2{
+        font-size:1.08rem;
+    }
+}

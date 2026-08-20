@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Monster Wiki: estratégias, mapas e informações da franquia Kingdom Rush.">
+
+    <meta
+        name="keywords"
+        content="Monster Wiki, Kingdom Rush, estratégias, mapas, Origins, Frontiers, Vengeance, Alliance">
+
+    <meta name="author" content="Marcos">
+    <meta name="theme-color" content="#0B1120">
+
+    <title>Corvos Cinzentos • Ferreiro | Monster Wiki</title>
+
+    <link rel="icon" href="../../../assets/logo/LOGO CIMA.webp" type="image/webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../css/global/style.css">
+    <link rel="stylesheet" href="../../../css/global/header.css">
+    <link rel="stylesheet" href="../../../css/global/footer.css">
+    <link rel="stylesheet" href="../../../css/global/responsive.css">
+    <link rel="stylesheet" href="../../../css/wiki/wiki.css">
+    <link rel="stylesheet" href="../../../css/wiki/wiki-game.css?v=20260816-2130">
+    <link rel="stylesheet" href="../../../css/global/intro.css?v=20260818-1445">
+
+</head>
+
+<body data-page="wiki">
+    <!-- MONSTER INTRO -->
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="../../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="../../../assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <a href="../../../index.html" class="logo">
+            <img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+            <span>MONSTER</span>
+        </a>
+
+        <nav class="navbar" aria-label="Navegação principal">
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="../../../index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../../Kingdom Rush/kingdom.html">
+                            Kingdom Rush
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../../Jux/jux.html">
+                            JUX
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../../About/about.html">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        <div class="header-social">
+
+            <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">
+                YouTube
+            </a>
+
+            <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">
+                Twitch
+            </a>
+
+            <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">
+                Discord
+            </a>
+
+        </div>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir Menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+
+            <div class="quick-menu-head">
+                <div>
+                    <span class="quick-menu-kicker">MONSTER</span>
+                    <div class="quick-menu-title">Navegação</div>
+                </div>
+                <span class="quick-menu-live">● Online</span>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+                <a href="../../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+                <a href="../../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+                <a href="../../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="../wiki.html"><span>Wiki</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+                <a href="../../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+                <a href="../../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-social">
+                <div class="quick-menu-social-title">Siga o Monster</div>
+                <div class="quick-menu-social-links">
+                    <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                    <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+                </div>
+            </div>
+
+        </div>
+
+<main class="wiki-game-main">
+<section class="wiki-game-hero" id="topo">
+<div class="container wiki-game-hero-grid">
+<div class="wiki-game-hero-copy">
+<span class="wiki-kicker">JOGO • 01 • FERREIRO • EM ANDAMENTO</span>
+<h1>Corvos <span>Cinzentos</span></h1>
+<p>A análise da fase <strong>Corvos Cinzentos</strong> no desafio ferrenho, com as imagens e observações apresentadas na sequência do episódio.</p>
+<nav class="wiki-game-category-nav" aria-label="Dificuldades da fase">
+<a class="wiki-category-btn " href="wiki-game-normal.html">Normal</a>
+<a class="wiki-category-btn " href="wiki-game-heroi.html">Heróis</a>
+<a class="wiki-category-btn active" href="wiki-game-ferreiro.html">Ferreiro</a>
+</nav>
+<div class="wiki-actions wiki-game-actions">
+<a class="wiki-game-btn wiki-game-btn-primary" href="#analise">Ver análise <span>↓</span></a>
+<a class="wiki-game-btn wiki-game-btn-secondary" href="../wiki.html#jogos">Voltar à Wiki <span>←</span></a>
+</div>
+</div>
+<div class="wiki-game-hero-logo" id="game-hero-logo">
+<img src="../../../assets/wiki/logos/Kingdom Rush Origins.png" alt="Kingdom Rush Origins" id="game-hero-logo-image">
+</div>
+</div>
+</section>
+
+<section class="wiki-game-summary" aria-label="Resumo da fase">
+<div class="container wiki-game-summary-grid">
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">01</div><div><b>Corvos Cinzentos</b><span>fase de campanha</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">7</div><div><b>Imagens</b><span>na análise desta dificuldade</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">▶</div><div><b>Episódio 1</b><span>vídeo da partida</span></div></div>
+</div>
+</section>
+
+<section class="wiki-game-section" id="analise">
+<div class="container">
+<div class="wiki-game-heading">
+<span class="eyebrow">CORVOS CINZENTOS • FERREIRO</span>
+<h2>Desafio ferrenho passo a passo</h2>
+<p>A sequência abaixo acompanha a ordem do material enviado. As identificações internas das imagens foram usadas apenas para organização e não aparecem no site.</p>
+</div>
+<div class="corvos-video-card">
+<div class="corvos-video-frame"><iframe src="https://www.youtube.com/embed/aNqB63xAM2s?rel=0&modestbranding=1&playsinline=1" title="Kingdom Rush Origins — Corvos Cinzentos — Episódio 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="corvos-video-info">
+<div><span class="eyebrow">VÍDEO DA PARTIDA</span><h3>Primeiro episódio</h3><p>Os pontos de início e fim da partida podem ser abertos diretamente no vídeo.</p></div>
+<div class="corvos-time-links">
+    <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=731s" target="_blank" rel="noopener noreferrer"><span>Início</span><strong>12:11</strong></a>
+    <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=811s" target="_blank" rel="noopener noreferrer"><span>Fim</span><strong>13:31</strong></a>
+</div>
+</div>
+
+</div>
+<div class="corvos-steps">
+<article class="corvos-step-card">
+    <div class="corvos-step-index">1</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_1.png" alt="Corvos Cinzentos — FERREIRO — etapa 1" loading="lazy" decoding="async"></div>
+        <div class="corvos-step-copy"><p>Já me senti desorientado assim que descobri a limitação sobre arcos e magos.</p></div>
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">2</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media corvos-media-grid two">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_2.png" alt="Corvos Cinzentos — FERREIRO — etapa 2 — imagem 1" loading="lazy" decoding="async">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1H_9.png" alt="Corvos Cinzentos — FERREIRO — etapa 2 — imagem 2" loading="lazy" decoding="async">
+        </div>
+        <div class="corvos-step-copy"><p>Na minha perspectiva era um dilema complicado, as únicas opções eram uma torre barata e outra bem cara, o que me levou a ficar sem ideia alguma, apelando ao mais simples possível. Usando a mesma estratégia do desafio heroico, com dois quarteis (com elfos bem próximos) e dois druidas onde antes eram magos.</p></div>
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">3</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media corvos-media-grid two">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_3.png" alt="Corvos Cinzentos — FERREIRO — etapa 3 — imagem 1" loading="lazy" decoding="async">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_4.png" alt="Corvos Cinzentos — FERREIRO — etapa 3 — imagem 2" loading="lazy" decoding="async">
+        </div>
+        <div class="corvos-step-copy"><p>O desafio começa com 480 moedas iniciais, com dois quarteis (180) e dois druidas (250) sobram apenas 30. É nesse momento onde comento sobre a parcialidade dos desafios ferrenhos, que não te entregam a quantidade de inimigos por vir (talvez por ser uma onda a partida inteira).</p></div>
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">4</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media corvos-media-grid two">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_5.png" alt="Corvos Cinzentos — FERREIRO — etapa 4 — imagem 1" loading="lazy" decoding="async">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_6.png" alt="Corvos Cinzentos — FERREIRO — etapa 4 — imagem 2" loading="lazy" decoding="async">
+        </div>
+        <div class="corvos-step-copy"><p>Desistindo da ideia de usar dois quarteis junto de um druida, mas trocando a torre debaixo por um druida em meio a emergência, tinha muito inimigos de uma vez.</p></div>
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">5</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media corvos-media-grid two">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_7.png" alt="Corvos Cinzentos — FERREIRO — etapa 5 — imagem 1" loading="lazy" decoding="async">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_8.png" alt="Corvos Cinzentos — FERREIRO — etapa 5 — imagem 2" loading="lazy" decoding="async">
+        </div>
+<<<<<<< HEAD
+        <div class="corvos-step-copy"><p>Quando construí um quartel aonde ficaria o druida eu percebi que os elfos precisavam de comando, a situação se dividia em dois grupos batalhando gnolls e um deles já estava quase com o trabalho feito, então mandei o [grupo de gnolls (#00AACC)] para frente (podendo segurar com mais eficiência os incendiários), enquanto [os gnolls (#FF5500)] morreriam com o ultimo grupo da esquerda:
+=======
+        <div class="corvos-step-copy"><p>Quando construí um quartel aonde ficaria o druida eu percebi que os elfos precisavam de comando, a situação se dividia em dois grupos batalhando gnolls e um deles já estava quase com o trabalho feito, então mandei o grupo de gnolls para frente (podendo segurar com mais eficiência os incendiários), enquanto os outros gnolls morreriam com o último grupo da esquerda.</p></div>
+>>>>>>> acbff9c107f227b8ac74bcbb74e8258f1cbce176
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">6</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media corvos-media-grid two">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_9.png" alt="Corvos Cinzentos — FERREIRO — etapa 6 — imagem 1" loading="lazy" decoding="async">
+            <img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_10.png" alt="Corvos Cinzentos — FERREIRO — etapa 6 — imagem 2" loading="lazy" decoding="async">
+        </div>
+        <div class="corvos-step-copy"><p>A esse ponto sobraram apenas alguns incendiários, e um feitiço do herói já foi o suficiente.</p></div>
+    </div>
+</article>
+<article class="corvos-step-card">
+    <div class="corvos-step-index">7</div>
+    <div class="corvos-step-content">
+        <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-F/1F_11.png" alt="Corvos Cinzentos — FERREIRO — etapa 7" loading="lazy" decoding="async"></div>
+        <div class="corvos-step-copy"><p>Começando a ficar consciente de quando aparece muitos inimigos mas ainda é muito cedo para enxergar meus defeitos, principalmente sobre o desuso do herói no cenário.</p></div>
+<<<<<<< HEAD
+    <p>Essa partida acontece no primeiro episódio. Início = 12:11 • Fim = 13:31.</p>
+    <div class="corvos-time-links corvos-time-links-final" aria-label="Atalhos para os tempos da partida">
+        <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=731s" target="_blank" rel="noopener noreferrer"><span>Início</span><strong>12:11</strong></a>
+        <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=811s" target="_blank" rel="noopener noreferrer"><span>Fim</span><strong>13:31</strong></a>
+    </div>
+</div>
+    </div>
+</article>
+</div>
+=======
+    </div>
+</article>
+</div>
+<div class="corvos-video-final-row">
+    <p>Essa partida acontece no primeiro episódio. Início = 12:11 • Fim = 13:31.</p>
+    <div class="corvos-video-actions">
+        <a class="wiki-game-btn wiki-game-btn-primary" href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=731s" target="_blank" rel="noopener noreferrer">Abrir no início · 12:11 ↗</a>
+        <a class="wiki-game-btn wiki-game-btn-secondary" href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=811s" target="_blank" rel="noopener noreferrer">Ir para o fim · 13:31 ↗</a>
+    </div>
+</div>
+>>>>>>> acbff9c107f227b8ac74bcbb74e8258f1cbce176
+</div>
+</section>
+
+<section class="wiki-game-section alt" id="alternar-dificuldade">
+<div class="container">
+<div class="wiki-game-next">
+<div class="wiki-game-next-copy">
+<span class="eyebrow">OUTRAS DIFICULDADES</span>
+<h2>Continuar a análise</h2>
+<p>Use os botões para comparar a mesma fase entre Normal, Heróis e Ferreiro.</p>
+</div>
+<div class="corvos-next-actions">
+<a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-normal.html">Normal</a>
+<a class="wiki-game-btn wiki-game-btn-primary" href="wiki-game-heroi.html">Heróis</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+
+<!-- ======================================================
+                    CRIADOR DO MAPA
+======================================================= -->
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary">
+                    <span aria-hidden="true">⌘</span>
+                    <span>Meu GitHub</span>
+                </a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary">
+                    <span aria-hidden="true">✉</span>
+                    <span>Entrar em contato</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="../../../index.html" class="footer-logo">
+                    <img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+                    <span>MONSTER</span>
+                </a>
+
+                <p>
+                    Aqui você vai encontrar de forma mais organizada
+                    e criativa todas as informações relevantes do canal Kazibro2.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="../../../index.html">Início</a></li>
+                    <li><a href="../../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                    <li><a href="../wiki.html">Wiki</a></li>
+                    <li><a href="../../Jux/jux.html">JUX</a></li>
+                    <li><a href="../../About/about.html">
+                            Sobre nós
+                        </a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h3>Comunidade</h3>
+
+                <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">
+                    YouTube
+                </a>
+
+                <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">
+                    Twitch
+                </a>
+
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">
+                    Discord
+                </a>
+
+            </div>
+
+        </div>
+
+<div class="footer-bottom">
+            <p>© 2026 Monster. Todos os direitos reservados.</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="../../../js/global/config.js?v=20260815-1535"></script>
+<script src="../../../js/global/data.js?v=20260815-1535"></script>
+<script src="../../../js/global/navigation.js?v=20260815-1535"></script>
+<script src="../../../js/global/animations.js?v=20260815-1535"></script>
+<script src="../../../js/global/app.js?v=20260816-1200"></script>
+
+    <script src="../../../js/global/hamburger.js?v=20260815-1535"></script>
+
+<script src="../../../js/wiki/wiki-game.js"></script>
+</body>
+</html>

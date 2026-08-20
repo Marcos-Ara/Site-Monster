@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-opacity=".45"/></filter>
+    <linearGradient id="pole" x1="0" x2="1"><stop offset="0" stop-color="#3a2416"/><stop offset=".5" stop-color="#6e4829"/><stop offset="1" stop-color="#2f1c11"/></linearGradient>
+    <linearGradient id="cloth" x1="0" x2="1"><stop offset="0" stop-color="#c9452b"/><stop offset="1" stop-color="#8f251c"/></linearGradient>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="45" y="8" width="10" height="105" rx="3" fill="url(#pole)"/>
+    <path d="M54 13h40l-13 22 13 22H54z" fill="url(#cloth)" stroke="#ffeab0" stroke-width="3"/>
+    <circle cx="74" cy="35" r="9" fill="#f4cf65"/>
+    <path d="M70 35l4-4 4 4-4 4z" fill="#8c3d1f"/>
+  </g>
+</svg>

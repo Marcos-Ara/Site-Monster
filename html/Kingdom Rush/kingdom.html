@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Conheça toda a franquia Kingdom Rush. Explore Kingdom Rush, Frontiers, Origins, Vengeance e Alliance com vídeos, estratégias e curiosidades.">
+
+    <meta
+        name="keywords"
+        content="Kingdom Rush, Frontiers, Origins, Vengeance, Alliance, Monster">
+
+    <meta
+        name="author"
+        content="Monster">
+
+    <meta
+        name="theme-color"
+        content="#0B1120">
+
+    <title>Kingdom Rush | Monster</title>
+
+    <link
+        rel="icon"
+        href="../../assets/logo/LOGO CIMA.webp"
+        type="image/webp">
+
+    <!-- ==================================================
+                        GOOGLE FONTS
+    =================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==================================================
+                            CSS
+    =================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/header.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/global/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../../css/kingdom/kingdom.css">
+
+    <link rel="stylesheet" href="../../css/global/intro.css?v=20260818-1445">
+
+    <link rel="stylesheet" href="../../css/kingdom/map-viewer.css">
+
+</head>
+
+
+<body data-page="kingdom">
+    <!-- MONSTER INTRO -->
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="../../assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+
+
+<!-- ======================================================
+                            HEADER
+======================================================= -->
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <!-- ==================================================
+                            LOGO
+        =================================================== -->
+
+        <a
+            href="../../index.html"
+            class="logo">
+
+            <img
+                src="../../assets/logo/Monster Logo.webp"
+                alt="Monster Logo">
+
+            <span>
+                MONSTER
+            </span>
+
+        </a>
+
+
+        <!-- ==================================================
+                            MENU
+        =================================================== -->
+
+        <nav class="navbar" aria-label="Navegação principal">
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="../../index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kingdom.html">
+                            Kingdom Rush
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../Jux/jux.html">
+                            JUX
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../About/about.html">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+        <!-- ==================================================
+                        REDES SOCIAIS
+        =================================================== -->
+
+        <div class="header-social">
+
+            <a
+                href="https://www.youtube.com/@kazibro2"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                YouTube
+
+            </a>
+
+            <a
+                href="https://www.twitch.tv/thesupermonsteragain"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Twitch
+
+            </a>
+
+            <a
+                href="https://linktr.ee/Kazibro2"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Discord
+
+            </a>
+
+        </div>
+
+
+        <!-- ==================================================
+                        MENU MOBILE
+        =================================================== -->
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menu" aria-expanded="false" aria-controls="quick-menu">
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+
+            <div class="quick-menu-head">
+                <div>
+                    <span class="quick-menu-kicker">MONSTER</span>
+                    <div class="quick-menu-title">Navegação</div>
+                </div>
+                <span class="quick-menu-live">● Online</span>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+                <a href="../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+                <a href="kingdom.html"><span>Home</span><b>›</b></a>
+                <a href="kingdom.html#games#games"><span>Mapa</span><b>›</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="../Wiki/wiki.html"><span>Wiki</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+                <a href="../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+            </div>
+
+            <div class="quick-menu-section">
+                <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+                <a href="../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+            </div>
+
+            <div class="quick-menu-social">
+                <div class="quick-menu-social-title">Siga o Monster</div>
+                <div class="quick-menu-social-links">
+                    <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                    <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+<!-- ======================================================
+                            MAIN
+======================================================= -->
+
+<main>
+
+
+    <!-- ==================================================
+                        HERO
+    =================================================== -->
+
+    <section class="kingdom-hero">
+
+        <div class="container">
+
+            <div class="kingdom-hero-content">
+
+                <span class="hero-badge">
+
+                    👑 Franquia Kingdom Rush
+
+                </span>
+
+
+                <h1>
+
+                    
+                    Explore o universo completo de
+                    <br>
+                    <span>Kingdom Rush</span>
+
+                </h1>
+
+
+                <p>
+
+                    Descubra a minha experiência dentro do universo
+                    da franquia, e quais foram os meus problemas
+                    em meio à trajetória.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#games"
+                        class="btn btn-primary">
+
+                        Explorar Mapa
+
+                    </a>
+
+
+                    <a
+                        href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary">
+
+                        Assistir Vídeos
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+                        MAPA
+    =================================================== -->
+
+    <section
+        class="kingdom-section"
+        id="games">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Mapa Kingdom Rush
+                </span>
+
+                <h2>
+                    Escolha uma bandeira
+                </h2>
+
+                <p>
+
+                    Navegue rapidamente pelos episódios e jogos
+                    através das bandeiras, passe o mouse para ver
+                    as informações do episódio e clique para assistir.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                            MAPA KINGDOM
+            =================================================== -->
+
+            <div class="kingdom-map">
+
+
+                <div class="map-header">
+
+                    <a
+                        href="https://www.reddit.com/r/kingdomrush/comments/1boh2if/kingdom_rush_all_maps_combined_updated_2024/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Criador do mapa :)
+
+                    </a>
+
+                </div>
+
+
+                <h2>
+                    Explore o mapa de Kingdom Rush
+                </h2>
+
+
+                <p>
+
+                    Passe o mouse sobre uma fase para visualizar
+                    as informações e clique para abrir o conteúdo.
+
+                </p>
+
+
+
+                <!-- ==================================================
+                                MAP CONTAINER
+                =================================================== -->
+
+                <div class="map-container">
+
+                    <img
+                        src="../../assets/maps/Mapa Kingdom.png"
+                        alt="Mapa Kingdom Rush"
+                        class="map-image">
+
+                    <div
+                        id="monster-map-dynamic"
+                        class="monster-map-dynamic"
+                        aria-label="Fases do mapa Kingdom Rush"
+                        data-map-data="../../assets/map-data/phases.json">
+                    </div>
+                    <!-- ==================================================
+                                    FASE 02
+                    =================================================== -->
+<!-- ==================================================
+                                    FASE 04
+                    =================================================== -->
+</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+                    PREVIEW DA FASE
+    =================================================== -->
+
+    <section class="kingdom-preview-section">
+
+        <div class="container">
+
+            <div
+                class="preview"
+                id="stage-preview">
+
+
+                <!-- ==================================================
+                                IMAGEM
+                =================================================== -->
+
+                <div class="preview-image">
+
+                    <img
+                        id="preview-image"
+                        src="../../assets/wiki/logos/Kingdom Rush Origins.png"
+                        alt="Prévia da fase">
+
+                </div>
+
+
+                <!-- ==================================================
+                                CONTEÚDO
+                =================================================== -->
+
+                <div class="preview-content">
+
+                    <span id="preview-game">
+
+                        Kingdom Rush
+
+                    </span>
+
+
+                    <h3 id="preview-title">
+
+                        Não Sabe Para Onde Ir ?
+
+                    </h3>
+
+
+                    <p id="preview-description">
+
+                        Veja  A Playlist completa de Kingdom Rush. 
+
+                    </p>
+
+
+                    <a
+                        id="preview-button"
+                        href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=ZMjnTJHTmjfpifxU"
+                        class="btn btn-primary">
+
+                        Assistir
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ======================================================
+                    MODAL DA PLAYLIST
+======================================================= -->
+
+<div
+    class="kingdom-modal"
+    id="kingdom-modal"
+    aria-hidden="true">
+
+
+    <!-- ==================================================
+                        FUNDO ESCURO
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="modal-overlay">
+    </div>
+
+
+
+    <!-- ==================================================
+                        MODAL CONTENT
+    =================================================== -->
+
+    <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title">
+
+
+        <!-- ==================================================
+                        BOTÃO FECHAR
+        =================================================== -->
+
+        <button
+            class="modal-close"
+            id="modal-close"
+            type="button"
+            aria-label="Fechar">
+
+            ×
+
+        </button>
+
+
+
+        <!-- ==================================================
+                            BANNER
+        =================================================== -->
+
+        <div class="modal-banner">
+
+            <img
+                id="modal-banner-image"
+                src="../../assets/maps/Mapa Kingdom.png"
+                alt="Banner Kingdom Rush">
+
+        </div>
+
+
+
+        <!-- ==================================================
+                        ÁREA PRETA / VÍDEO
+        =================================================== -->
+
+        <div class="modal-video-area">
+
+            <div class="modal-video-placeholder">
+
+                <!--
+
+                    Esta área fica preta propositalmente,
+                    seguindo o desenho enviado.
+
+                    O JS poderá utilizar o iframe abaixo
+                    quando houver um vídeo específico.
+
+                -->
+
+                <iframe
+                    id="modal-video"
+                    title="Vídeo da fase"
+                    src="about:blank"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+                        INFORMAÇÕES
+        =================================================== -->
+
+        <div class="modal-info">
+
+
+            <span id="modal-game">
+
+                Kingdom Rush
+
+            </span>
+
+
+            <h2 id="modal-title">
+
+                Não sabe para onde ir ?
+
+            </h2>
+
+
+            <p id="modal-description">
+
+                Clique no botão e seja direcionado para a playlist
+                para começar a assistir.
+
+            </p>
+
+
+
+            <!-- ==================================================
+                        BOTÕES
+            =================================================== -->
+
+            <div class="modal-buttons">
+
+                <a
+                    id="modal-youtube"
+                    href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary">
+
+                    ▶ Playlist
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- ==================================================
+                        WIKI MONSTER
+    =================================================== -->
+
+    <section class="wiki-home wiki-kingdom" id="wiki-kingdom">
+
+        <div class="container">
+
+            <div class="wiki-home-card">
+
+                <div class="wiki-home-content">
+
+                    <span>📚 MONSTER WIKI</span>
+
+                    <h2>Estratégias do Kingdom Rush</h2>
+
+                    <p>
+                        Acesse a Wiki para ver mapas, jogos da franquia e as estratégias do Monster organizadas por conteúdo.
+                    </p>
+
+                    <a href="../Wiki/wiki.html" class="btn btn-primary wiki-home-button">
+                        Explorar a Monster Wiki <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- ======================================================
+                            FOOTER
+======================================================= -->
+
+
+<!-- ======================================================
+                    CRIADOR DO MAPA
+======================================================= -->
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary">
+                    <span aria-hidden="true">⌘</span>
+                    <span>Meu GitHub</span>
+                </a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary">
+                    <span aria-hidden="true">✉</span>
+                    <span>Entrar em contato</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+
+            <!-- ==================================================
+                            LOGO
+            =================================================== -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="../../index.html"
+                    class="footer-logo">
+
+                    <img
+                        src="../../assets/logo/Monster Logo.webp"
+                        alt="Monster Logo">
+
+                    <span>
+                        MONSTER
+                    </span>
+
+                </a>
+
+
+                <p>
+
+                    Aqui você vai encontrar de forma mais organizada
+                    e criativa todas as informações relevantes
+                    do meu canal Kazibro2.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                        NAVEGAÇÃO
+            =================================================== -->
+
+            <div class="footer-links">
+
+                <h3>
+                    Navegação
+                </h3>
+
+
+                <ul>
+
+                    <li>
+
+                        <a href="../../index.html">
+                            Início
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="kingdom.html">
+                            Kingdom Rush
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="../Jux/jux.html">
+                            JUX
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="../About/about.html">
+                            Sobre nós
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                        COMUNIDADE
+            =================================================== -->
+
+            <div class="footer-social">
+
+                <h3>
+                    Comunidade
+                </h3>
+
+
+                <a
+                    href="https://www.youtube.com/@kazibro2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    YouTube
+
+                </a>
+
+
+                <a
+                    href="https://www.twitch.tv/thesupermonsteragain"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Twitch
+
+                </a>
+
+
+                <a
+                    href="https://linktr.ee/Kazibro2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Discord
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+                        COPYRIGHT
+        =================================================== -->
+
+<div class="footer-bottom">
+
+            <p>
+
+                © 2026 Monster. Todos os direitos reservados.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ======================================================
+                        JAVASCRIPT
+======================================================= -->
+
+<script src="../../js/global/config.js?v=20260815-1535"></script>
+<script src="../../js/global/data.js?v=20260815-1535"></script>
+<script src="../../js/global/navigation.js?v=20260815-1535"></script>
+<script src="../../js/global/animations.js?v=20260815-1535"></script>
+<script src="../../js/global/app.js?v=20260816-1200"></script>
+
+    <script src="../../js/global/hamburger.js?v=20260815-1535"></script>
+<script src="../../js/kingdom/kingdom.js"></script>
+    <script src="../../js/kingdom/map-viewer.js?v=20260818-1445" defer></script>
+
+
+</body>
+
+</html>

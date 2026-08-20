@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom Rush — Editor</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar container">
+      <div class="gold-line"></div>
+      <p class="eyebrow">OFICINA DO CARTÓGRAFO</p>
+      <div class="header-row">
+        <div>
+          <h1>Editor do Mapa</h1>
+          <p class="subtitle">Clique no mapa, escolha a bandeira e defina o vídeo. Não precisa de login. O mapa público atualiza sozinho.</p>
+        </div>
+        <div class="legend editor-legend">
+          <span>EDITOR</span>
+          <button type="button" id="openPublic" class="public-link">Abrir mapa público ↗</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container editor-main">
+      <section class="map-card">
+        <div class="map-stage" id="mapStage">
+          <img id="mapImage" class="map-image" src="assets/maps/kingdom-rush-map.png" alt="Mapa de Kingdom Rush">
+          <div id="markers" class="markers" aria-label="Editor de fases"></div>
+          <div class="editor-hint">Clique em um ponto vazio para criar uma bandeira</div>
+        </div>
+      </section>
+
+      <aside class="editor-panel">
+        <div class="panel-head">
+          <div>
+            <span>CONFIGURAÇÃO</span>
+            <h2 id="panelTitle">Nova bandeira</h2>
+          </div>
+          <div class="panel-icon">⚑</div>
+        </div>
+
+        <div id="positionBox" class="position-box">Clique no mapa para escolher onde colocar a bandeira.</div>
+
+        <form id="phaseForm" hidden>
+          <label for="title">Nome / título da fase</label>
+          <input id="title" maxlength="120" required placeholder="Ex.: Fase 1 — Portões de Linirea">
+
+          <label for="youtube">Link do vídeo no YouTube</label>
+          <input id="youtube" type="url" required placeholder="https://www.youtube.com/watch?v=...">
+          <small>O vídeo será aberto no pop-up ao passar o mouse ou tocar na bandeira.</small>
+
+          <label for="description">Sobre o vídeo</label>
+          <textarea id="description" maxlength="500" rows="4" placeholder="Ex.: Gameplay da fase, caminho usado, torres e estratégia principal."></textarea>
+          <small>Esse texto aparece para quem tocar na bandeira pelo celular.</small>
+
+          <label for="flagFile">Bandeira personalizada</label>
+          <input id="flagFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+
+          <div class="pixel-control" aria-label="Ajuste fino da posição da bandeira">
+            <div class="size-control-head">
+              <label>Ajuste em pixels</label>
+              <strong>1 px / 10 px</strong>
+            </div>
+            <div class="pixel-nudge-grid">
+              <button type="button" class="pixel-nudge" data-dx="-10" data-dy="0" aria-label="Mover 10 pixels para a esquerda">← 10</button>
+              <button type="button" class="pixel-nudge" data-dx="0" data-dy="-10" aria-label="Mover 10 pixels para cima">↑ 10</button>
+              <button type="button" class="pixel-nudge" data-dx="0" data-dy="10" aria-label="Mover 10 pixels para baixo">↓ 10</button>
+              <button type="button" class="pixel-nudge" data-dx="10" data-dy="0" aria-label="Mover 10 pixels para a direita">10 →</button>
+              <button type="button" class="pixel-nudge pixel-nudge-small" data-dx="-1" data-dy="0" aria-label="Mover 1 pixel para a esquerda">← 1</button>
+              <button type="button" class="pixel-nudge pixel-nudge-small" data-dx="0" data-dy="-1" aria-label="Mover 1 pixel para cima">↑ 1</button>
+              <button type="button" class="pixel-nudge pixel-nudge-small" data-dx="0" data-dy="1" aria-label="Mover 1 pixel para baixo">↓ 1</button>
+              <button type="button" class="pixel-nudge pixel-nudge-small" data-dx="1" data-dy="0" aria-label="Mover 1 pixel para a direita">1 →</button>
+            </div>
+            <small class="size-note">Selecione uma bandeira e use os botões ou as setas do teclado. O ajuste só é gravado quando você clicar em “Salvar bandeira”.</small>
+          </div>
+
+          <div class="size-control">
+            <div class="size-control-head">
+              <label for="sizeRange">Tamanho da bandeira</label>
+              <strong id="sizeValue">210 × 118 px</strong>
+            </div>
+            <input id="sizeRange" class="size-range" type="range" min="100" max="200" step="5" value="100">
+            <small class="size-note">Novas bandeiras começam em <strong>210 × 118 px</strong>. Aumente aqui quando a imagem enviada ainda parecer pequena.</small>
+          </div>
+
+          <div class="flag-preview-wrap">
+            <img id="flagPreview" src="assets/flags/flag-default.svg" alt="Prévia da bandeira">
+            <div>
+              <strong>Prévia da bandeira</strong>
+              <p>Você pode escolher qualquer imagem PNG/JPG/WEBP/GIF de até 2 MB.</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit" id="saveButton">Salvar bandeira</button>
+            <button class="btn secondary" type="button" id="cancel">Cancelar</button>
+            <button class="btn danger" type="button" id="delete" hidden>Excluir bandeira</button>
+          </div>
+
+          <p id="status" class="status" aria-live="polite"></p>
+          <p class="sync-note">Cada salvamento sincroniza automaticamente <strong>assets/map-data/phases.json</strong> e as imagens para o mapa público local.</p>
+        </form>
+
+        <div id="emptyEditor" class="empty-editor">
+          <strong>Mapa pronto para editar</strong>
+          <p>1. Clique no mapa.<br>2. Dê um nome e cole o YouTube.<br>3. Escolha sua bandeira.<br>4. Arraste uma bandeira existente para corrigir a posição.<br>5. Clique em “Salvar bandeira” para gravar.</p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="js/editor.js"></script>
+</body>
+</html>

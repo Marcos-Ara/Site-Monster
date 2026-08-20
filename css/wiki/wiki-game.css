@@ -1,0 +1,488 @@
+/* ==========================================================
+   MONSTER WIKI — PÁGINA DO JOGO
+   Estilos totalmente externalizados para wiki-game.html.
+========================================================== */
+
+.wiki-game-main{overflow:hidden;background:transparent !important}
+
+.wiki-game-hero{
+    padding:118px 0 72px;
+    position:relative;
+    isolation:isolate;
+}
+.wiki-game-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:
+        radial-gradient(circle at 18% 30%,rgba(174,74,255,.12),transparent 28%),
+        radial-gradient(circle at 84% 18%,rgba(255,170,0,.08),transparent 30%),
+        linear-gradient(180deg,rgba(13,17,24,.35),rgba(11,15,21,.08) 82%);
+}
+.wiki-game-hero-grid{
+    width:min(1120px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+    gap:46px;
+    align-items:center;
+}
+.wiki-game-hero-copy{text-align:left}
+.wiki-game-hero h1{
+    margin:14px 0 18px;
+    font-size:clamp(2.8rem,6vw,5.7rem);
+    line-height:.98;
+    letter-spacing:-.065em;
+}
+.wiki-game-hero h1 span{color:#b45aff}
+.wiki-game-hero p{
+    max-width:680px;
+    margin:0;
+    color:var(--color-text-light);
+    line-height:1.85;
+}
+.wiki-game-hero-logo{
+    min-height:330px;
+    display:grid;
+    place-items:center;
+    padding:26px;
+    border:1px solid #293447;
+    border-radius:28px;
+    background:
+        radial-gradient(circle at 50% 40%,rgba(179,84,255,.22),transparent 58%),
+        linear-gradient(145deg,#111723,#0b0f15);
+    box-shadow:0 30px 70px rgba(0,0,0,.25);
+}
+.wiki-game-hero-logo img{
+    width:min(390px,88%);
+    height:245px;
+    object-fit:contain;
+    filter:drop-shadow(0 24px 35px rgba(0,0,0,.65));
+}
+.wiki-game-hero-logo.asset-missing{
+    position:relative;
+}
+.wiki-game-hero-logo.asset-missing::after{
+    content:"ORIGINS";
+    color:#677181;
+    font-size:1.1rem;
+    font-weight:900;
+    letter-spacing:.18em;
+}
+.wiki-game-hero-logo.asset-missing img{display:none}
+
+.wiki-game-actions{justify-content:flex-start;margin-top:28px}
+.wiki-game-btn{
+    min-height:48px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:0 20px;
+    border:1px solid #2d394d;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:900;
+    transition:.25s ease;
+}
+.wiki-game-btn-primary{background:#ffaa00;border-color:#ffaa00;color:#111}
+.wiki-game-btn-secondary{background:#10151d;color:#eef1f5}
+.wiki-game-btn:hover{transform:translateY(-3px)}
+.wiki-game-btn-secondary:hover{border-color:#ffaa00;color:#ffaa00}
+
+.wiki-game-summary{padding:0 0 72px}
+.wiki-game-summary-grid{
+    width:min(1120px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+.wiki-game-stat{
+    min-height:112px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px 20px;
+    border:1px solid #293447;
+    border-radius:18px;
+    background:#10151d;
+}
+.wiki-game-stat-icon{
+    width:44px;height:44px;
+    display:grid;place-items:center;
+    border-radius:14px;
+    background:#1a202a;
+    color:#ffaa00;
+    font-weight:900;
+}
+.wiki-game-stat b{display:block;font-size:1.2rem;color:#fff}
+.wiki-game-stat span{display:block;margin-top:2px;color:#8e98a7;font-size:.76rem}
+
+.wiki-game-section{padding:76px 0 100px}
+.wiki-game-section.alt{background:#0f141c}
+.wiki-game-heading{text-align:center;max-width:800px;margin:0 auto 30px}
+.wiki-game-heading .eyebrow{display:block;color:#ffaa00;font-size:.67rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.wiki-game-heading h2{margin:11px 0 11px;font-size:clamp(2.25rem,4.4vw,4rem);letter-spacing:-.055em;line-height:1.02}
+.wiki-game-heading p{margin:0;color:var(--color-text-light);line-height:1.8}
+
+.phase-toolbar{
+    width:min(960px,100%);
+    margin:0 auto 22px;
+    display:flex;
+    gap:12px;
+    justify-content:space-between;
+    align-items:center;
+}
+.phase-search{
+    flex:1;
+    min-height:50px;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding:0 15px;
+    border:1px solid #2b3648;
+    border-radius:14px;
+    background:#0b1016;
+}
+.phase-search span{color:#ffaa00;font-size:1.1rem}
+.phase-search input{
+    width:100%;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:#f3f5f7;
+    font:inherit;
+}
+.phase-search input::placeholder{color:#6d7684}
+.phase-count{min-width:82px;text-align:right;color:#7f8a99;font-size:.76rem;font-weight:800}
+
+.phase-filter-bar{
+    width:min(960px,100%);
+    margin:0 auto 18px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+.phase-filter-btn{
+    min-height:36px;
+    padding:0 14px;
+    border:1px solid #2c3748;
+    border-radius:999px;
+    background:#111720;
+    color:#9ca5b2;
+    font:inherit;
+    font-size:.72rem;
+    font-weight:900;
+    cursor:pointer;
+    transition:.2s ease;
+}
+.phase-filter-btn:hover{border-color:#ffaa00;color:#ffaa00}
+.phase-filter-btn.active{background:#ffaa00;border-color:#ffaa00;color:#111}
+
+.phase-list{
+    width:min(960px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+.phase-item{
+    position:relative;
+    display:grid;
+    grid-template-columns:58px minmax(0,1fr) auto;
+    align-items:center;
+    gap:14px;
+    min-height:92px;
+    padding:14px 16px;
+    border:1px solid #293447;
+    border-radius:18px;
+    background:linear-gradient(145deg,#131923,#0f141b);
+    transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.phase-item:hover{transform:translateY(-3px);border-color:#3a4659;box-shadow:0 16px 35px rgba(0,0,0,.2)}
+.phase-num{
+    width:48px;height:48px;
+    display:grid;place-items:center;
+    border-radius:14px;
+    border:1px solid rgba(255,170,0,.23);
+    background:rgba(255,170,0,.07);
+    color:#ffaa00;
+    font-size:.67rem;
+    font-weight:900;
+    letter-spacing:.06em;
+    text-align:center;
+}
+.phase-item.special .phase-num{border-color:rgba(255,13,37,.24);background:rgba(255,13,37,.07);color:#ff0d25}
+.phase-name{font-size:1rem;font-weight:800;color:#f4f5f7}
+.phase-type{margin-top:4px;color:#7e8795;font-size:.67rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.phase-open{
+    min-width:76px;
+    min-height:38px;
+    padding:0 12px;
+    border:1px solid #2e394a;
+    border-radius:10px;
+    background:#111720;
+    color:#c0c7d0;
+    font:inherit;
+    font-size:.68rem;
+    font-weight:900;
+    cursor:pointer;
+    transition:.2s ease;
+}
+.phase-open:hover{background:#ffaa00;border-color:#ffaa00;color:#111}
+
+.phase-empty{
+    grid-column:1/-1;
+    padding:45px 20px;
+    text-align:center;
+    border:1px dashed #2d384a;
+    border-radius:18px;
+    color:#7c8593;
+}
+
+.wiki-game-next{
+    width:min(960px,100%);
+    margin:0 auto;
+    padding:28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    border:1px solid #2b3648;
+    border-radius:22px;
+    background:linear-gradient(135deg,rgba(255,170,0,.05),rgba(255,13,37,.035)),#11161e;
+}
+.wiki-game-next-copy .eyebrow{color:#ff0d25;font-size:.67rem;font-weight:900;letter-spacing:.15em}
+.wiki-game-next-copy h2{margin:8px 0 8px;font-size:1.7rem;letter-spacing:-.04em}
+.wiki-game-next-copy p{margin:0;color:#9ba4b0;line-height:1.65}
+
+.phase-modal[hidden]{display:none}
+.phase-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px}
+.phase-modal::before{content:"";position:absolute;inset:0;background:rgba(2,5,9,.78);backdrop-filter:blur(10px)}
+.phase-modal-panel{position:relative;z-index:1;width:min(560px,100%);padding:28px;border:1px solid #334056;border-radius:24px;background:linear-gradient(155deg,#171d27,#0f141b);box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.phase-modal[aria-hidden="false"] .phase-modal-panel{animation:phaseModalIn .28s ease-out both}
+@keyframes phaseModalIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.phase-modal-description{animation:phaseDescriptionIn .35s ease-out .06s both}
+@keyframes phaseDescriptionIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.phase-modal-kicker{color:#ffaa00;font-size:.65rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.phase-modal h2{margin:9px 0 10px;font-size:2rem;letter-spacing:-.04em}
+.phase-modal p{margin:0;color:#9ea7b3;line-height:1.75}
+.phase-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+.phase-modal-close{width:42px;height:42px;position:absolute;right:12px;top:12px;border:1px solid #303b4c;border-radius:12px;background:#111720;color:#d6dbe2;font-size:1.15rem;cursor:pointer}
+.phase-modal-close:hover{border-color:#ffaa00;color:#ffaa00}
+
+@media(max-width:900px){
+    .wiki-game-hero-grid{grid-template-columns:1fr;gap:28px}
+    .wiki-game-hero-copy{text-align:center}
+    .wiki-game-hero p{margin:0 auto}
+    .wiki-game-actions{justify-content:center}
+    .wiki-game-summary-grid{grid-template-columns:1fr}
+    .phase-list{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+    .wiki-game-hero{padding-top:92px}
+    .wiki-game-hero-logo{min-height:260px}
+    .wiki-game-hero-logo img{height:190px}
+    .phase-toolbar{align-items:stretch;flex-direction:column}
+    .phase-count{text-align:left}
+    .phase-item{grid-template-columns:48px minmax(0,1fr)}
+    .phase-num{width:42px;height:42px}
+    .phase-open{grid-column:1/-1;width:100%}
+    .wiki-game-next{flex-direction:column;align-items:flex-start}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .wiki-game-btn,.phase-item,.phase-open,.phase-filter-btn{transition:none}
+}
+
+
+/* Ajuste do hero para o novo recorte do logo do Origins. */
+.wiki-game-hero-logo img{
+    width:92%;
+    height:82%;
+    max-height:330px;
+    object-fit:contain;
+    object-position:center;
+}
+
+
+/* Navegação entre categorias da Wiki do jogo */
+.wiki-game-category-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+}
+.wiki-category-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:118px;
+    min-height:42px;
+    padding:0 16px;
+    border:1px solid #2d394b;
+    border-radius:12px;
+    background:#10161f;
+    color:#aeb6c2;
+    text-decoration:none;
+    font:inherit;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    transition:.2s ease;
+}
+.wiki-category-btn:hover{
+    border-color:#ffaa00;
+    color:#ffaa00;
+    transform:translateY(-2px);
+}
+.wiki-category-btn.active{
+    border-color:#ffaa00;
+    background:linear-gradient(135deg,rgba(255,170,0,.16),rgba(255,170,0,.05));
+    color:#ffaa00;
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+@media(max-width:600px){
+    .wiki-game-category-nav{
+        display:grid;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        width:100%;
+    }
+    .wiki-category-btn{
+        min-width:0;
+        width:100%;
+        padding:0 8px;
+        font-size:.66rem;
+    }
+}
+
+
+.phase-category-actions{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+    margin-top:22px;
+}
+
+.phase-category-actions .wiki-game-btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+}
+
+@media (max-width:640px){
+    .phase-category-actions{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* ==========================================================
+   CORVOS CINZENTOS — CONTEÚDO DA FASE
+========================================================== */
+.corvos-video-card{
+    width:min(960px,100%);
+    margin:34px auto 46px;
+    padding:18px;
+    border:1px solid #293447;
+    border-radius:24px;
+    background:linear-gradient(145deg,#131923,#0f141b);
+    box-shadow:0 22px 55px rgba(0,0,0,.24);
+}
+.corvos-video-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:18px;
+    background:#070a0e;
+    border:1px solid #202a3a;
+}
+.corvos-video-frame iframe{width:100%;height:100%;display:block;border:0}
+.corvos-video-info{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px;
+    padding:18px 4px 4px;
+}
+.corvos-video-info h3{margin:7px 0 6px;font-size:1.35rem}
+.corvos-video-info p{margin:0;color:#939dab;line-height:1.65}
+.corvos-time-links{display:flex;gap:10px;flex-wrap:wrap}
+.corvos-time-links a{min-width:92px;padding:11px 13px;border:1px solid #2b3648;border-radius:14px;background:#0e141c;text-decoration:none;color:#f0f3f6;text-align:center}
+.corvos-time-links a:hover{border-color:#ffaa00;transform:translateY(-2px)}
+.corvos-time-links span{display:block;font-size:.62rem;color:#7f8998;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.corvos-time-links strong{display:block;margin-top:3px;color:#ffaa00;font-size:1rem}
+.corvos-time-note{padding:12px 14px;border:1px solid #2b3648;border-radius:14px;color:#7f8998;font-size:.74rem}
+.corvos-video-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:14px}
+.corvos-video-final-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;margin-top:10px;padding-top:0}
+.corvos-video-final-row>p{margin:0;color:#9ba4b0;line-height:1.5;min-width:0}
+<<<<<<< HEAD
+.corvos-video-final-row .corvos-time-links-final{justify-content:flex-end; margin:0; min-width:max-content;}
+.corvos-video-final-row .corvos-time-links-final a{min-width:92px;}
+=======
+.corvos-video-final-row .corvos-video-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:nowrap;margin:0;min-width:max-content}
+.corvos-video-final-row .corvos-video-actions .wiki-game-btn{white-space:nowrap}
+>>>>>>> acbff9c107f227b8ac74bcbb74e8258f1cbce176
+.phase-open:disabled{opacity:.5;cursor:not-allowed;transform:none!important;border-color:#273243;background:#0d141d;color:#697384}
+.phase-open:disabled:hover{border-color:#273243;transform:none}
+@media (max-width:760px){
+    .corvos-video-final-row{grid-template-columns:1fr;align-items:stretch}
+<<<<<<< HEAD
+    .corvos-video-final-row .corvos-time-links-final{justify-content:stretch;flex-wrap:wrap}
+    .corvos-video-final-row .corvos-time-links-final a{flex:1}
+=======
+    .corvos-video-final-row .corvos-video-actions{justify-content:stretch;flex-wrap:wrap}
+    .corvos-video-final-row .corvos-video-actions .wiki-game-btn{flex:1}
+>>>>>>> acbff9c107f227b8ac74bcbb74e8258f1cbce176
+}
+
+.corvos-steps{width:min(960px,100%);margin:0 auto;display:grid;gap:18px}
+.corvos-step-card{
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr);
+    gap:16px;
+    padding:14px;
+    border:1px solid #293447;
+    border-radius:22px;
+    background:linear-gradient(145deg,#131923,#0f141b);
+}
+.corvos-step-index{
+    width:44px;height:44px;display:grid;place-items:center;border-radius:13px;
+    border:1px solid rgba(255,170,0,.25);background:rgba(255,170,0,.08);color:#ffaa00;font-weight:900
+}
+.corvos-step-content{min-width:0}
+.corvos-step-media{border:1px solid #202a3a;border-radius:16px;overflow:hidden;background:#070a0e}
+.corvos-step-media img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
+.corvos-step-media.corvos-media-grid{
+    display:grid;
+    gap:10px;
+    padding:10px;
+    background:#070a0e;
+}
+.corvos-step-media.corvos-media-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.corvos-step-media.corvos-media-grid img{
+    width:100%;
+    height:auto;
+    max-height:460px;
+    border-radius:12px;
+    background:#0b0f15;
+}
+.corvos-step-copy{padding:14px 3px 2px}
+.corvos-step-copy p{margin:0;color:#c4cad2;line-height:1.78}
+.corvos-next-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:760px){
+    .corvos-step-media.corvos-media-grid.two{grid-template-columns:1fr}
+    .corvos-video-info{flex-direction:column;align-items:flex-start}
+    .corvos-time-links{width:100%}
+    .corvos-time-links a{flex:1}
+    .corvos-video-actions .wiki-game-btn{width:100%}
+    .corvos-step-card{grid-template-columns:1fr}
+    .corvos-step-index{width:38px;height:38px}
+    .corvos-next-actions{width:100%;display:grid;grid-template-columns:1fr}
+    .corvos-next-actions .wiki-game-btn{width:100%}
+}

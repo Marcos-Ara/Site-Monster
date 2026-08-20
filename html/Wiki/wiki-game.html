@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            try{
+                if(sessionStorage.getItem("monsterIntroSeen")==="1")
+                    document.documentElement.classList.add("intro-seen");
+            }catch(e){}
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monster Wiki — Kingdom Rush Origins: lista de fases, dificuldades e conteúdo disponível.">
+    <meta name="author" content="Marcos">
+    <meta name="theme-color" content="#0B1120">
+    <title>Kingdom Rush Origins • Monster Wiki</title>
+
+    <link rel="icon" href="../../assets/logo/LOGO CIMA.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/global/style.css">
+    <link rel="stylesheet" href="../../css/global/header.css">
+    <link rel="stylesheet" href="../../css/global/footer.css">
+    <link rel="stylesheet" href="../../css/global/responsive.css">
+    <link rel="stylesheet" href="../../css/wiki/wiki.css">
+    <link rel="stylesheet" href="../../css/wiki/wiki-game.css">
+    <link rel="stylesheet" href="../../css/global/intro.css?v=20260818-1445">
+</head>
+
+<body data-page="wiki">
+    <div id="monster-intro" aria-hidden="true">
+        <video id="monster-intro-video" src="../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
+        <div class="monster-intro-overlay"></div>
+        <div class="monster-intro-brand">
+            <img src="../../assets/logo/Monster Logo.webp" alt="Monster">
+            <p class="monster-intro-brand-name">MONSTER</p>
+            <p class="monster-intro-brand-subtitle">Preparando o site</p>
+        </div>
+        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
+            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
+        </button>
+        <div class="monster-intro-bottom">
+            <span class="monster-intro-status">Entrando...</span>
+            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+                <span>MONSTER</span>
+            </a>
+
+            <nav class="navbar" aria-label="Navegação principal">
+                <ul class="nav-menu">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                    <li><a href="../Jux/jux.html">JUX</a></li>
+                    <li><a href="../About/about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-social">
+                <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">Twitch</a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">Discord</a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir Menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <div class="quick-menu" id="quick-menu" aria-hidden="true">
+        <div class="quick-menu-head">
+            <div>
+                <span class="quick-menu-kicker">MONSTER</span>
+                <div class="quick-menu-title">Navegação</div>
+            </div>
+            <span class="quick-menu-live">● Online</span>
+        </div>
+
+        <div class="quick-menu-section">
+            <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+            <a href="../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+        </div>
+
+        <div class="quick-menu-section">
+            <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+            <a href="../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+            <a href="../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+            <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+            <a href="wiki.html"><span>Wiki</span><b>›</b></a>
+        </div>
+
+        <div class="quick-menu-section">
+            <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+            <a href="../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+            <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+            <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+            <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+            <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+        </div>
+
+        <div class="quick-menu-section">
+            <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+            <a href="../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+        </div>
+
+        <div class="quick-menu-social">
+            <div class="quick-menu-social-title">Siga o Monster</div>
+            <div class="quick-menu-social-links">
+                <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+                <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="wiki-game-main">
+        <section class="wiki-game-hero" id="topo">
+            <div class="container wiki-game-hero-grid">
+                <div class="wiki-game-hero-copy">
+                    <span class="wiki-kicker">JOGO • 01 • NORMAL • EM ANDAMENTO</span>
+                    <h1>Kingdom Rush <span>Origins</span></h1>
+                    <p>
+                        Esta página reúne o conteúdo de <strong>Kingdom Rush Origins</strong> e mantém a organização da Wiki.
+                        Abra uma fase para escolher a dificuldade que deseja consultar.
+                    </p>
+                    <div class="wiki-actions wiki-game-actions">
+                        <a class="wiki-game-btn wiki-game-btn-primary" href="#fases">Ver fases <span>↓</span></a>
+                        <a class="wiki-game-btn wiki-game-btn-secondary" href="wiki.html#jogos">Voltar aos jogos <span>←</span></a>
+                    </div>
+                </div>
+
+                <div class="wiki-game-hero-logo" id="game-hero-logo">
+                    <img src="../../assets/wiki/logos/Kingdom Rush Origins.png"
+                         alt="Kingdom Rush Origins"
+                         id="game-hero-logo-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="wiki-game-summary" aria-label="Resumo do jogo">
+            <div class="container wiki-game-summary-grid">
+                <div class="wiki-game-stat">
+                    <div class="wiki-game-stat-icon">22</div>
+                    <div><b>Fases</b><span>cadastradas na Wiki</span></div>
+                </div>
+                <div class="wiki-game-stat">
+                    <div class="wiki-game-stat-icon">15</div>
+                    <div><b>Campanha</b><span>fases principais</span></div>
+                </div>
+                <div class="wiki-game-stat">
+                    <div class="wiki-game-stat-icon">7</div>
+                    <div><b>Especiais</b><span>fases separadas</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wiki-game-section" id="fases">
+            <div class="container">
+                <div class="wiki-game-heading">
+                    <span class="eyebrow">LISTA DE FASES</span>
+                    <h2>Todas as fases</h2>
+                    <p>Os nomes abaixo seguem a lista da Wiki. Abra uma fase para escolher a dificuldade que deseja consultar.</p>
+                </div>
+
+                <div class="phase-toolbar">
+                    <label class="phase-search" for="phase-search">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="phase-search" type="search" autocomplete="off" placeholder="Pesquisar fase..." aria-label="Pesquisar fase">
+                    </label>
+                    <div class="phase-count" id="phase-count" aria-live="polite">22 fases</div>
+                </div>
+
+                <div class="phase-filter-bar" role="tablist" aria-label="Filtrar fases">
+                    <button class="phase-filter-btn active" type="button" data-group="all" role="tab" aria-selected="true">Todas</button>
+                    <button class="phase-filter-btn" type="button" data-group="base" role="tab" aria-selected="false">Campanha</button>
+                    <button class="phase-filter-btn" type="button" data-group="special" role="tab" aria-selected="false">Especiais</button>
+                </div>
+
+                <div class="phase-list" id="phase-list" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="wiki-game-section alt">
+            <div class="container">
+                <div class="wiki-game-next">
+                    <div class="wiki-game-next-copy">
+                        <span class="eyebrow">WIKI</span>
+                        <h2>Mais conteúdo será adicionado</h2>
+                        <p>As demais fases já estão organizadas na lista, mas só terão páginas próprias quando o conteúdo de cada dificuldade for criado.</p>
+                    </div>
+                    <a class="wiki-game-btn wiki-game-btn-secondary" href="wiki.html#jogos">Voltar à Wiki <span>←</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="phase-modal" id="phase-modal" aria-hidden="true" hidden>
+        <div class="phase-modal-panel" role="dialog" aria-modal="true" aria-labelledby="phase-modal-title">
+            <button class="phase-modal-close" id="phase-modal-close" type="button" aria-label="Fechar">×</button>
+            <span class="phase-modal-kicker" id="phase-modal-kicker">01 • CAMPANHA</span>
+            <h2 id="phase-modal-title">Corvos Cinzentos</h2>
+            <p class="phase-modal-description" id="phase-modal-description"></p>
+
+            <div class="phase-category-actions" id="phase-category-actions">
+                <a class="wiki-game-btn wiki-game-btn-primary" data-category="normal" data-content-only="true" href="Corvos%20Cinzentos/wiki-game-normal.html">Normal</a>
+                <a class="wiki-game-btn wiki-game-btn-secondary" data-category="heroi" data-content-only="true" href="Corvos%20Cinzentos/wiki-game-heroi.html">Heróis</a>
+                <a class="wiki-game-btn wiki-game-btn-secondary" data-category="ferreiro" data-content-only="true" href="Corvos%20Cinzentos/wiki-game-ferreiro.html">Ferreiro</a>
+            </div>
+
+            <div class="phase-modal-actions">
+                <button class="wiki-game-btn wiki-game-btn-secondary" type="button" id="phase-modal-done">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/global/config.js"></script>
+    <script src="../../js/global/data.js"></script>
+    <script src="../../js/global/navigation.js"></script>
+    <script src="../../js/global/animations.js"></script>
+    <script src="../../js/global/hamburger.js"></script>
+    <script src="../../js/global/app.js"></script>
+    <script src="../../js/wiki/wiki-game.js"></script>
+</body>
+</html>

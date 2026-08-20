@@ -1,0 +1,12 @@
+{
+  "video": "https://www.youtube.com/watch?v=aNqB63xAM2s",
+  "normal_images": 8,
+  "heroi_images": 11,
+  "ferreiro_images": 12,
+  "timestamps": {
+    "normal_start": "3:21",
+    "normal_end": "8:34",
+    "ferreiro_start": "12:11",
+    "ferreiro_end": "13:31"
+  }
+}
