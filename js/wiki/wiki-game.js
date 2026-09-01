@@ -2,8 +2,8 @@
     'use strict';
 
     const phases = [
-        { n: '01', name: 'Corvos cinzentos', group: 'base' },
-        { n: '02', name: 'Cruzamento alto', group: 'base' },
+        { n: '01', name: 'Corvos cinzentos', group: 'base', contentFolder: 'Corvos%20Cinzentos' },
+        { n: '02', name: 'Cruzamento alto', group: 'base', contentFolder: 'Cruzamento%20alto' },
         { n: '03', name: 'Trilha da caichoeira', group: 'base' },
         { n: '04', name: 'Defesa do bosque rubro', group: 'base' },
         { n: '05', name: 'Jardins reais', group: 'base' },
@@ -41,8 +41,8 @@
     let lastTrigger = null;
 
     function phaseDescription(phase) {
-        if (phase.n === '01') {
-            return 'Você abriu “Corvos Cinzentos”. Escolha abaixo a dificuldade que deseja consultar. As páginas Normal, Heróis e Ferreiro já estão disponíveis.';
+        if (phase.contentFolder) {
+            return `Você abriu “${phase.name}”. Escolha abaixo a dificuldade que deseja consultar. As páginas Normal, Heróis e Ferreiro estão disponíveis.`;
         }
         const kind = phase.group === 'special' ? 'fase especial' : 'fase de campanha';
         return `Você abriu “${phase.name}”, uma ${kind}. O conteúdo desta fase ainda não possui uma página própria na Wiki.`;
@@ -57,10 +57,13 @@
         modalDescription.textContent = phaseDescription(phase);
         modalDescription.hidden = false;
 
-        const hasContent = phase.n === '01';
+        const hasContent = Boolean(phase.contentFolder);
         if (modalActions) {
             modalActions.hidden = !hasContent;
             modalActions.querySelectorAll('a').forEach((link) => {
+                const category = link.dataset.category || 'normal';
+                const pageName = category === 'heroi' ? 'wiki-game-heroi.html' : category === 'ferreiro' ? 'wiki-game-ferreiro.html' : 'wiki-game-normal.html';
+                link.href = `${phase.contentFolder}/${pageName}`;
                 link.tabIndex = hasContent ? 0 : -1;
                 link.setAttribute('aria-hidden', hasContent ? 'false' : 'true');
             });
@@ -100,7 +103,7 @@
             list.innerHTML = '<div class="phase-empty">Nenhuma fase encontrada para essa busca.</div>';
         } else {
             list.innerHTML = filtered.map((phase) => {
-                const available = phase.n === '01';
+                const available = Boolean(phase.contentFolder);
                 return `
                 <article class="phase-item ${phase.group === 'special' ? 'special' : ''}">
                     <div class="phase-num">${phase.n}</div>
@@ -121,7 +124,7 @@
         list.querySelectorAll('.phase-open:not(:disabled)').forEach((button) => {
             button.addEventListener('click', () => {
                 const phase = phases.find((item) => item.n === button.dataset.phase);
-                if (phase && phase.n === '01') openModal(phase, button);
+                if (phase && phase.contentFolder) openModal(phase, button);
             });
         });
     }
@@ -144,15 +147,68 @@
     modal?.addEventListener('click', (event) => {
         if (event.target === modal) closeModal();
     });
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modal && !modal.hidden) closeModal();
-    });
-
     const heroImage = document.getElementById('game-hero-logo-image');
     heroImage?.addEventListener('error', () => {
         document.getElementById('game-hero-logo')?.classList.add('asset-missing');
         heroImage.hidden = true;
     }, { once: true });
+
+    // Referências sublinhadas: hover/foco mostra a imagem anexada; clique mantém aberta no toque.
+    document.querySelectorAll('.wiki-ref-wrap').forEach((wrap) => {
+        const trigger = wrap.querySelector('.wiki-reference');
+        if (!trigger) return;
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            const wasOpen = wrap.classList.contains('is-open');
+            document.querySelectorAll('.wiki-ref-wrap.is-open').forEach((item) => item.classList.remove('is-open'));
+            wrap.classList.toggle('is-open', !wasOpen);
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.wiki-ref-wrap')) {
+            document.querySelectorAll('.wiki-ref-wrap.is-open').forEach((item) => item.classList.remove('is-open'));
+        }
+    });
+
+    const lightbox = document.getElementById('wiki-lightbox');
+    const lightboxImage = document.getElementById('wiki-lightbox-image');
+    let lastImageTrigger = null;
+
+    function openLightbox(trigger) {
+        if (!lightbox || !lightboxImage) return;
+        const src = trigger?.dataset.lightboxSrc;
+        if (!src) return;
+        lastImageTrigger = trigger;
+        lightboxImage.src = src;
+        lightboxImage.alt = trigger.dataset.lightboxAlt || 'Imagem ampliada';
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('wiki-modal-open');
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.hidden = true;
+        lightbox.setAttribute('aria-hidden', 'true');
+        if (lightboxImage) lightboxImage.src = '';
+        document.body.classList.remove('wiki-modal-open');
+        lastImageTrigger?.focus();
+        lastImageTrigger = null;
+    }
+
+    document.querySelectorAll('[data-lightbox-src]').forEach((trigger) => {
+        trigger.addEventListener('click', () => openLightbox(trigger));
+    });
+    lightbox?.addEventListener('click', (event) => {
+        if (event.target.matches('[data-lightbox-close]')) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            if (lightbox && !lightbox.hidden) closeLightbox();
+            else if (modal && !modal.hidden) closeModal();
+        }
+    });
 
     render();
 })();

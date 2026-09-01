@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{if(sessionStorage.getItem("monsterIntroSeen")==="1")document.documentElement.classList.add("intro-seen");}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Monster Wiki: Cruzamento alto — Ferreiro — Kingdom Rush Origins.">
+<meta name="author" content="Marcos">
+<meta name="theme-color" content="#0B1120">
+<title>Cruzamento alto • Ferreiro | Monster Wiki</title>
+<link rel="icon" href="../../../assets/logo/LOGO CIMA.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/global/style.css">
+<link rel="stylesheet" href="../../../css/global/header.css">
+<link rel="stylesheet" href="../../../css/global/footer.css">
+<link rel="stylesheet" href="../../../css/global/responsive.css">
+<link rel="stylesheet" href="../../../css/wiki/wiki.css">
+<link rel="stylesheet" href="../../../css/wiki/wiki-game.css?v=20260901-ep2">
+<link rel="stylesheet" href="../../../css/global/intro.css?v=20260818-1445">
+</head>
+<body data-page="wiki">
+<div id="monster-intro" aria-hidden="true"><video id="monster-intro-video" src="../../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video><div class="monster-intro-overlay"></div><div class="monster-intro-brand"><img src="../../../assets/logo/Monster Logo.webp" alt="Monster"><p class="monster-intro-brand-name">MONSTER</p><p class="monster-intro-brand-subtitle">Preparando o site</p></div><button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução"><span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som</button><div class="monster-intro-bottom"><span class="monster-intro-status">Entrando...</span><div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div></div></div>
+
+<header class="header">
+    <div class="container header-container">
+        <a href="../../../index.html" class="logo">
+            <img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+            <span>MONSTER</span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul class="nav-menu">
+                <li><a href="../../../index.html">Início</a></li>
+                <li><a href="../../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                <li><a href="../../Jux/jux.html">JUX</a></li>
+                <li><a href="../../About/about.html">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="header-social">
+            <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">Twitch</a>
+            <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">Discord</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir Menu" aria-expanded="false">☰</button>
+    </div>
+</header>
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+    <div class="quick-menu-head">
+        <div><span class="quick-menu-kicker">MONSTER</span><div class="quick-menu-title">Navegação</div></div>
+        <span class="quick-menu-live">● Online</span>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+        <a href="../../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+        <a href="../../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+        <a href="../../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+        <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+        <a href="../wiki.html"><span>Wiki</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+        <a href="../../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+        <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+        <a href="../../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-social">
+        <div class="quick-menu-social-title">Siga o Monster</div>
+        <div class="quick-menu-social-links">
+            <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+            <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+            <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+        </div>
+    </div>
+</div>
+
+<main class="wiki-game-main wiki-episode-main">
+<section class="wiki-game-hero" id="topo"><div class="container wiki-game-hero-grid">
+<div class="wiki-game-hero-copy"><span class="wiki-kicker">JOGO • 02 • FERREIRO • EPISÓDIO 1</span><h1>Cruzamento <span>alto</span></h1><p>A análise do desafio ferrenho de Cruzamento alto, preservando a separação visual em balões enumerados usada no material.</p><nav class="wiki-game-category-nav" aria-label="Dificuldades da fase"><a class="wiki-category-btn" href="wiki-game-normal.html">Normal</a><a class="wiki-category-btn" href="wiki-game-heroi.html">Heróis</a><a class="wiki-category-btn active" href="wiki-game-ferreiro.html">Ferreiro</a></nav><div class="wiki-actions wiki-game-actions"><a class="wiki-game-btn wiki-game-btn-primary" href="#analise">Ver análise <span>↓</span></a><a class="wiki-game-btn wiki-game-btn-secondary" href="../wiki.html#jogos">Voltar à Wiki <span>←</span></a></div></div>
+<div class="wiki-game-hero-logo" id="game-hero-logo"><img src="../../../assets/wiki/logos/Kingdom Rush Origins.png" alt="Kingdom Rush Origins" id="game-hero-logo-image"></div>
+</div></section>
+<section class="wiki-game-summary" aria-label="Resumo da fase"><div class="container wiki-game-summary-grid">
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">02</div><div><b>Cruzamento alto</b><span>fase de campanha</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">21</div><div><b>Imagens</b><span>na análise desta dificuldade</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">▶</div><div><b>Episódio 1</b><span>vídeo da partida</span></div></div>
+</div></section>
+<section class="wiki-game-section" id="analise"><div class="container"><div class="wiki-game-heading"><span class="eyebrow">CRUZAMENTO ALTO • FERREIRO</span><h2>Desafio ferrenho passo a passo</h2><p>Os identificadores internos das imagens servem apenas para organização. As palavras sublinhadas usam o conteúdo entre parênteses como anexo, enquanto os trechos coloridos seguem os hex codes do material enviado.</p></div>
+
+<div class="corvos-video-card">
+    <div class="corvos-video-frame"><iframe src="https://www.youtube.com/embed/aNqB63xAM2s?rel=0&modestbranding=1&playsinline=1" title="Kingdom Rush Origins — Cruzamento alto — Episódio 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="corvos-video-info">
+        <div><span class="eyebrow">VÍDEO DA PARTIDA</span><h3>Primeiro episódio</h3><p>A fase foi registrada em duas tentativas no mesmo episódio.</p></div>
+        <div class="corvos-time-links corvos-time-links-multi">
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1331s" target="_blank" rel="noopener noreferrer"><span>Tentativa 1 • início</span><strong>22:11</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1457s" target="_blank" rel="noopener noreferrer"><span>Tentativa 1 • fim</span><strong>24:17</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1455s" target="_blank" rel="noopener noreferrer"><span>Tentativa 2 • início</span><strong>24:15</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1535s" target="_blank" rel="noopener noreferrer"><span>Tentativa 2 • fim</span><strong>25:35</strong></a>
+        </div>
+    </div>
+</div>
+<div class="wiki-steps"><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(1)</span></div>
+        <div class="wiki-balloon-body"><p>Sem mago e sem druida? mas pelo menos recebi dois quarteis obrigatórios</p></div>
+        <div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_1.webp" data-lightbox-alt="Cruzamento alto — 2F_1"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_1.webp" alt="Cruzamento alto — 2F_1" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_2.webp" data-lightbox-alt="Cruzamento alto — 2F_2"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_2.webp" alt="Cruzamento alto — 2F_2" loading="lazy" decoding="async"></button></div>
+    </section><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(2)</span></div>
+        <div class="wiki-balloon-body"><p>Como o desafio ferrenho só possui uma onda, eu consigo anotar aqui as informações sobre os inimigos (que no caso seriam apenas nomes, esse tipo de desafio não revela os números)</p><p><strong>Caminho de cima:</strong> Larápio / Incendiário</p><p><strong>Caminho do meio:</strong> (Mordiscador / Larápio / Incendiário) / (Mordiscador / Incendiário)</p><p><strong>Caminho de baixo:</strong> Mordiscador / Larápio / Incendiário</p><p>Como o meio tinha dois balões de inimigos <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2F_3.webp" aria-label="Ver imagem de balões">balões</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_3.webp" alt="Imagem de balões" loading="lazy"></span></span>, chutei sobre vir bastante gente de uma só vez no final da partida. Depois de um tempo pensando tentei conectar os pontos, quarteis e arcos, ataque e defesa.</p><p>Arcos não fazem dano se os inimigos não desaceleram e elfos são obsoletos quando estão sozinhos, por isso as duas sempre necessitam de complement0. No modo normal eu aprendi sobre <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_7.webp" aria-label="Ver imagem de vulnerabilidade">a vulnerabilidade</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2N_7.webp" alt="Imagem de vulnerabilidade" loading="lazy"></span></span> desses dois lugares com menos slots enquanto no modo heroico eu aprendi eu aprendi sobre <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2H_21.webp" aria-label="Ver imagem de melhorar as torres no tempo certo">melhorar as torres no tempo certo</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2H_21.webp" alt="Imagem de melhorar as torres no tempo certo" loading="lazy"></span></span>, a melhor forma que encontrei foi colocar 1 quartel e 2 arcos em cada caminho, mas o dinheiro deixou a desejar.</p><p>O desafio me entrega <strong class="wiki-colored" style="--wiki-color:#FFCC00">225 moedas</strong>, se já tenho dois quarteis iniciais fica <strong class="wiki-colored" style="--wiki-color:#FAC101">210 moedas</strong> para os três arcos construídos, sobrando <strong class="wiki-colored" style="--wiki-color:#AC8F1A">15 moedas</strong>, mas já fica em mente aonde o resto das torres vão ficar:</p><p>A lógica é manter <strong class="wiki-colored" style="--wiki-color:#FFAA00">esses pontos</strong> como <strong class="wiki-colored" style="--wiki-color:#004DE6">âncoras</strong>, as partes principais e dignas de atenção enquanto as <strong class="wiki-colored" style="--wiki-color:#B31564">torres complementares</strong> vigiam as <strong class="wiki-colored" style="--wiki-color:#D2008C">partes vulneráveis</strong>.</p></div>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_4.webp" data-lightbox-alt="Cruzamento alto — 2F_4"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_4.webp" alt="Cruzamento alto — 2F_4" loading="lazy" decoding="async"></button></figure>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_5.webp" data-lightbox-alt="Cruzamento alto — 2F_5"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_5.webp" alt="Cruzamento alto — 2F_5" loading="lazy" decoding="async"></button></figure>
+    </section><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(3)</span></div>
+        <div class="wiki-balloon-body"><p>Com tudo <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2F_6.webp" aria-label="Ver imagem de planejado">planejado</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_6.webp" alt="Imagem de planejado" loading="lazy"></span></span>, a partida começa! Assim que tenho chance coloco o arco aonde faltava no caminho inferior e um quartel no caminho superior:</p></div>
+        <div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_7.webp" data-lightbox-alt="Cruzamento alto — 2F_7"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_7.webp" alt="Cruzamento alto — 2F_7" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_8.webp" data-lightbox-alt="Cruzamento alto — 2F_8"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_8.webp" alt="Cruzamento alto — 2F_8" loading="lazy" decoding="async"></button></div>
+    </section><article class="wiki-step-card ">
+        <div class="wiki-step-index">4</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_9.webp" data-lightbox-alt="Cruzamento alto — 2F_9"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_9.webp" alt="Cruzamento alto — 2F_9" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>Os Mordiscadores começam a pressionar enquanto jogo o feitiço</p></div></div>
+    </article><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(4)</span></div>
+        <div class="wiki-balloon-body"><p>Isso deixa de ser o suficiente quando os de cima passam</p></div>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_10.webp" data-lightbox-alt="Cruzamento alto — 2F_10"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_10.webp" alt="Cruzamento alto — 2F_10" loading="lazy" decoding="async"></button></figure>
+    </section><article class="wiki-step-card ">
+        <div class="wiki-step-index">5</div>
+        <div class="wiki-step-content"><div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_11.webp" data-lightbox-alt="Cruzamento alto — 2F_11"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_11.webp" alt="Cruzamento alto — 2F_11" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_13.webp" data-lightbox-alt="Cruzamento alto — 2F_13"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_13.webp" alt="Cruzamento alto — 2F_13" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_14.webp" data-lightbox-alt="Cruzamento alto — 2F_14"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_14.webp" alt="Cruzamento alto — 2F_14" loading="lazy" decoding="async"></button></div><div class="wiki-step-copy"><p>Como vieram no final da fase, eu já não tinha nenhum feitiço <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2F_12.webp" aria-label="Ver imagem de carregado">carregado</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_12.webp" alt="Imagem de carregado" loading="lazy"></span></span> e não deu para aguentar</p></div></div>
+    </article><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(5)</span></div>
+        <div class="wiki-balloon-body"><p>Sem saída, tentei verificar a <strong class="wiki-colored" style="--wiki-color:#AF9E50">sala de heróis</strong> na esperança do <strong class="wiki-colored" style="--wiki-color:#88A52A">Eridan</strong> ter subido de nível, mas não aconteceu (apesar de muito perto).</p></div>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_15.webp" data-lightbox-alt="Cruzamento alto — 2F_15"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_15.webp" alt="Cruzamento alto — 2F_15" loading="lazy" decoding="async"></button></figure>
+    </section><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(6)</span></div>
+        <div class="wiki-balloon-body"><p>Frustrado, percebi que havia outro herói desbloqueado, o <strong class="wiki-colored" style="--wiki-color:#A83307">Arivan</strong> e fiz algumas melhorias para que ele ficasse mais ofensivo!</p><ul class="wiki-fact-list"><li>Mar de Fogo (nível 2): Lança 6 bolas de fogo que causam de 20 a 40 de dano em área.</li><li>Para-raios (nível 1): lança um raio altamente concentrado que causa de 100 a 180 de dano direto.</li><li>Prisão Gelada (nível 1): Congela um inimigo por 4 segundos, causando 50 de dano de frio.</li><li>Dança das Pedras (Nível 2): Invoca 3 escudos de pedra que protegem <strong class="wiki-colored" style="--wiki-color:#A83307">Arivan</strong> de um total de 105 de dano.</li></ul></div>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_16.webp" data-lightbox-alt="Cruzamento alto — 2F_16"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_16.webp" alt="Cruzamento alto — 2F_16" loading="lazy" decoding="async"></button></figure>
+    </section><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(7)</span></div>
+        <div class="wiki-balloon-body"><p>As bolas de fogo são bem úteis (quando é utilizada)</p></div>
+        <figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_17.webp" data-lightbox-alt="Cruzamento alto — 2F_17"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_17.webp" alt="Cruzamento alto — 2F_17" loading="lazy" decoding="async"></button></figure>
+    </section><article class="wiki-step-card ">
+        <div class="wiki-step-index">8</div>
+        <div class="wiki-step-content"><div class="wiki-step-copy"><p>Quando repeti a mesma estratégia com o novo herói, percebi a facilidade em relação a antes, o problema era a fraqueza criada pelo <strong class="wiki-colored" style="--wiki-color:#88A52A">Eridan</strong> e isso me fazia gastar parte dos meus recursos para lidar com o que ele não conseguia sozinho. Como o <strong class="wiki-colored" style="--wiki-color:#A83307">Arivan</strong> ataca de longe, mesmo com um dano fraco batalhando individualmente os inimigos tudo isso é compensado pelo seu feitiço <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" style="--ref-color:#CEC1ED" type="button" data-ref-image="2F_18.webp" aria-label="Ver imagem de Tempestade Elemental">Tempestade Elemental</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_18.webp" alt="Imagem de Tempestade Elemental" loading="lazy"></span></span>.</p></div></div>
+    </article><section class="wiki-balloon-section">
+        <div class="wiki-balloon-head"><span class="wiki-balloon-marker">(8)</span></div>
+        <div class="wiki-balloon-body"><p>Foi muito tranquilo, usando o raio mais cedo para enfraquecer os Mordiscadores em específico muitos deles nem ao menos chegaram perto do final, os que conseguiam eram simplesmente esmagados.</p></div>
+        <div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_19.webp" data-lightbox-alt="Cruzamento alto — 2F_19"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_19.webp" alt="Cruzamento alto — 2F_19" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_20.webp" data-lightbox-alt="Cruzamento alto — 2F_20"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_20.webp" alt="Cruzamento alto — 2F_20" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-F/2F_21.webp" data-lightbox-alt="Cruzamento alto — 2F_21"><img src="../../../assets/wiki/Cruzamento alto/2-F/2F_21.webp" alt="Cruzamento alto — 2F_21" loading="lazy" decoding="async"></button></div>
+         <div class="corvos-time-links corvos-time-links-multi">
+            <p> Tentativa 1 </p>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1331s" target="_blank" rel="noopener noreferrer"><span>Tentativa 1 • início</span><strong>22:11</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1457s" target="_blank" rel="noopener noreferrer"><span>Tentativa 1 • fim</span><strong>24:17</strong></a>
+             
+            <p> Tentativa 2 </p>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1455s" target="_blank" rel="noopener noreferrer"><span>Tentativa 2 • início</span><strong>24:15</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1535s" target="_blank" rel="noopener noreferrer"><span>Tentativa 2 • fim</span><strong>25:35</strong></a>
+        </div>
+    </section></div>
+</div></section>
+<section class="wiki-game-section alt" id="alternar-dificuldade"><div class="container"><div class="wiki-game-next"><div class="wiki-game-next-copy"><span class="eyebrow">OUTRAS DIFICULDADES</span><h2>Continuar a análise</h2><p>Use os botões para comparar a mesma fase entre Normal, Heróis e Ferreiro.</p></div><div class="corvos-next-actions"><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-normal.html">Normal</a><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-heroi.html">Heróis</a><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-ferreiro.html">Ferreiro</a></div></div></div></section>
+</main>
+
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary"><span aria-hidden="true">⌘</span><span>Meu GitHub</span></a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary"><span aria-hidden="true">✉</span><span>Entrar em contato</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="../../../index.html" class="footer-logo"><img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo"><span>MONSTER</span></a>
+                <p>Aqui você vai encontrar de forma mais organizada e criativa todas as informações relevantes do canal Kazibro2.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="../../../index.html">Início</a></li>
+                    <li><a href="../../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                    <li><a href="../wiki.html">Wiki</a></li>
+                    <li><a href="../../Jux/jux.html">JUX</a></li>
+                    <li><a href="../../About/about.html">Sobre nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Comunidade</h3>
+                <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">Twitch</a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Monster. Todos os direitos reservados.</p></div>
+    </div>
+</footer>
+
+<div class="wiki-lightbox" id="wiki-lightbox" hidden aria-hidden="true"><div class="wiki-lightbox-backdrop" data-lightbox-close></div><div class="wiki-lightbox-panel" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button type="button" class="wiki-lightbox-close" data-lightbox-close aria-label="Fechar imagem">×</button><img id="wiki-lightbox-image" src="" alt=""></div></div>
+<script src="../../../js/global/config.js?v=20260901"></script><script src="../../../js/global/data.js?v=20260901"></script><script src="../../../js/global/navigation.js?v=20260901"></script><script src="../../../js/global/animations.js?v=20260901"></script><script src="../../../js/global/hamburger.js?v=20260901"></script><script src="../../../js/global/app.js?v=20260901"></script><script src="../../../js/wiki/wiki-game.js?v=20260901-ep2"></script>
+</body></html>

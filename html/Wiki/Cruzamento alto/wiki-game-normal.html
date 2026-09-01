@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{if(sessionStorage.getItem("monsterIntroSeen")==="1")document.documentElement.classList.add("intro-seen");}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Monster Wiki: Cruzamento alto — Normal — Kingdom Rush Origins.">
+<meta name="author" content="Marcos">
+<meta name="theme-color" content="#0B1120">
+<title>Cruzamento alto • Normal | Monster Wiki</title>
+<link rel="icon" href="../../../assets/logo/LOGO CIMA.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/global/style.css">
+<link rel="stylesheet" href="../../../css/global/header.css">
+<link rel="stylesheet" href="../../../css/global/footer.css">
+<link rel="stylesheet" href="../../../css/global/responsive.css">
+<link rel="stylesheet" href="../../../css/wiki/wiki.css">
+<link rel="stylesheet" href="../../../css/wiki/wiki-game.css?v=20260901-ep2">
+<link rel="stylesheet" href="../../../css/global/intro.css?v=20260818-1445">
+</head>
+<body data-page="wiki">
+<div id="monster-intro" aria-hidden="true"><video id="monster-intro-video" src="../../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video><div class="monster-intro-overlay"></div><div class="monster-intro-brand"><img src="../../../assets/logo/Monster Logo.webp" alt="Monster"><p class="monster-intro-brand-name">MONSTER</p><p class="monster-intro-brand-subtitle">Preparando o site</p></div><button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução"><span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som</button><div class="monster-intro-bottom"><span class="monster-intro-status">Entrando...</span><div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div></div></div>
+
+<header class="header">
+    <div class="container header-container">
+        <a href="../../../index.html" class="logo">
+            <img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo">
+            <span>MONSTER</span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul class="nav-menu">
+                <li><a href="../../../index.html">Início</a></li>
+                <li><a href="../../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                <li><a href="../../Jux/jux.html">JUX</a></li>
+                <li><a href="../../About/about.html">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="header-social">
+            <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">Twitch</a>
+            <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">Discord</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir Menu" aria-expanded="false">☰</button>
+    </div>
+</header>
+<div class="quick-menu" id="quick-menu" aria-hidden="true">
+    <div class="quick-menu-head">
+        <div><span class="quick-menu-kicker">MONSTER</span><div class="quick-menu-title">Navegação</div></div>
+        <span class="quick-menu-live">● Online</span>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">⌂</span>Início</div>
+        <a href="../../../index.html#featured-video"><span>Vídeos mais recentes</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
+        <a href="../../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
+        <a href="../../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
+        <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+        <a href="../wiki.html"><span>Wiki</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
+        <a href="../../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
+        <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
+        <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+    </div>
+    <div class="quick-menu-section">
+        <div class="quick-menu-heading"><span class="quick-menu-icon">●</span>Sobre</div>
+        <a href="../../About/about.html"><span>Sobre o Monster</span><b>›</b></a>
+    </div>
+    <div class="quick-menu-social">
+        <div class="quick-menu-social-title">Siga o Monster</div>
+        <div class="quick-menu-social-links">
+            <a class="social-youtube" href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+            <a class="social-twitch" href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer" aria-label="Twitch">TW</a>
+            <a class="social-discord" href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" aria-label="Discord / Linktree">DC</a>
+        </div>
+    </div>
+</div>
+
+<main class="wiki-game-main wiki-episode-main">
+<section class="wiki-game-hero" id="topo"><div class="container wiki-game-hero-grid">
+<div class="wiki-game-hero-copy"><span class="wiki-kicker">JOGO • 02 • NORMAL • EPISÓDIO 1</span><h1>Cruzamento <span>alto</span></h1><p>A análise de Cruzamento alto em dificuldade normal, seguindo a sequência de imagens e anotações do episódio.</p><nav class="wiki-game-category-nav" aria-label="Dificuldades da fase"><a class="wiki-category-btn active" href="wiki-game-normal.html">Normal</a><a class="wiki-category-btn" href="wiki-game-heroi.html">Heróis</a><a class="wiki-category-btn" href="wiki-game-ferreiro.html">Ferreiro</a></nav><div class="wiki-actions wiki-game-actions"><a class="wiki-game-btn wiki-game-btn-primary" href="#analise">Ver análise <span>↓</span></a><a class="wiki-game-btn wiki-game-btn-secondary" href="../wiki.html#jogos">Voltar à Wiki <span>←</span></a></div></div>
+<div class="wiki-game-hero-logo" id="game-hero-logo"><img src="../../../assets/wiki/logos/Kingdom Rush Origins.png" alt="Kingdom Rush Origins" id="game-hero-logo-image"></div>
+</div></section>
+<section class="wiki-game-summary" aria-label="Resumo da fase"><div class="container wiki-game-summary-grid">
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">02</div><div><b>Cruzamento alto</b><span>fase de campanha</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">22</div><div><b>Imagens</b><span>na análise desta dificuldade</span></div></div>
+<div class="wiki-game-stat"><div class="wiki-game-stat-icon">▶</div><div><b>Episódio 1</b><span>vídeo da partida</span></div></div>
+</div></section>
+<section class="wiki-game-section" id="analise"><div class="container"><div class="wiki-game-heading"><span class="eyebrow">CRUZAMENTO ALTO • NORMAL</span><h2>Estratégia passo a passo</h2><p>Os identificadores internos das imagens servem apenas para organização. As palavras sublinhadas usam o conteúdo entre parênteses como anexo, enquanto os trechos coloridos seguem os hex codes do material enviado.</p></div>
+
+<div class="corvos-video-card">
+    <div class="corvos-video-frame"><iframe src="https://www.youtube.com/embed/aNqB63xAM2s?rel=0&modestbranding=1&playsinline=1" title="Kingdom Rush Origins — Cruzamento alto — Episódio 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="corvos-video-info">
+        <div><span class="eyebrow">VÍDEO DA PARTIDA</span><h3>Primeiro episódio</h3><p>Os pontos de início e fim da partida podem ser abertos diretamente no vídeo.</p></div>
+        <div class="corvos-time-links">
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=843s" target="_blank" rel="noopener noreferrer"><span>Início</span><strong>14:03</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1093s" target="_blank" rel="noopener noreferrer"><span>Fim</span><strong>18:13</strong></a>
+        </div>
+    </div>
+</div>
+<div class="wiki-steps"><article class="wiki-step-card ">
+        <div class="wiki-step-index">1</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_3.webp" data-lightbox-alt="Cruzamento alto — 2N_3"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_3.webp" alt="Cruzamento alto — 2N_3" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>Com as melhorias <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_1.webp" aria-label="Ver imagem de melhorias">melhorias</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_1.webp" alt="Imagem de melhorias" loading="lazy"></span></span> desbloqueadas, eu olhei o cenário e a primeira coisa que eu pensei foi um <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" style="--ref-color:#00AACC" type="button" data-ref-image="2N_2.webp" aria-label="Ver imagem de quartel">quartel</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_2.webp" alt="Imagem de quartel" loading="lazy"></span></span> no caminho de cima, porém me chamou atenção a <strong class="wiki-colored" style="--wiki-color:#600080">falta de grama no meio do tabuleiro</strong>, o que seria sso? os inimigos usarão esse espaço?</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">2</div>
+        <div class="wiki-step-content"><div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_5.webp" data-lightbox-alt="Cruzamento alto — 2N_5"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_5.webp" alt="Cruzamento alto — 2N_5" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_6.webp" data-lightbox-alt="Cruzamento alto — 2N_6"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_6.webp" alt="Cruzamento alto — 2N_6" loading="lazy" decoding="async"></button></div><div class="wiki-step-copy"><p>Ignorando essa pergunta por enquanto, pulo a <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_4.webp" aria-label="Ver imagem de dica">dica</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_4.webp" alt="Imagem de dica" loading="lazy"></span></span> que eu já sabia e monto um plano de como usar os triângulos com apenas dois arcos e um mago de início, a expectativa é essa (ou o contrário na direita):</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">3</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_7.webp" data-lightbox-alt="Cruzamento alto — 2N_7"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_7.webp" alt="Cruzamento alto — 2N_7" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>É melhor transmitir a minha mensagem utilizando minhas próprias palavras vindas do episódio no youtube: "O arco complementa as pontas dos triângulos porque ele tem um alcance maior..."</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">4</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_8.webp" data-lightbox-alt="Cruzamento alto — 2N_8"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_8.webp" alt="Cruzamento alto — 2N_8" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>"...o mago fica nas extremidades mais perto da base, pra que ele consiga defender qualquer um que passar..."</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">5</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_9.webp" data-lightbox-alt="Cruzamento alto — 2N_9"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_9.webp" alt="Cruzamento alto — 2N_9" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>"...e a pedra pra dar dano maciço neles assim que chegarem."</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">6</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_12.webp" data-lightbox-alt="Cruzamento alto — 2N_12"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_12.webp" alt="Cruzamento alto — 2N_12" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>Pulando a <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_10.webp" aria-label="Ver imagem de dica">dica</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_10.webp" alt="Imagem de dica" loading="lazy"></span></span> que eu já coloquei em prática, <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_11.webp" aria-label="Ver imagem de Mordiscadores">Mordiscadores</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_11.webp" alt="Imagem de Mordiscadores" loading="lazy"></span></span> enfim são introduzidos, me trazendo alguns problemas novos quando percebi a ineficácia das torres nível 1 contra eles. Com todos os slots ocupados o foco muda para a única interação restante: melhorar seus níveis.</p><p>Só que com a insegurança de não saber qual lado os inimigos escolhem, me rendi a ficar sempre alerta, mesmo em situações de perigo de vez em quando...</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">7</div>
+        <div class="wiki-step-content"><div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_13.webp" data-lightbox-alt="Cruzamento alto — 2N_13"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_13.webp" alt="Cruzamento alto — 2N_13" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_14.webp" data-lightbox-alt="Cruzamento alto — 2N_14"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_14.webp" alt="Cruzamento alto — 2N_14" loading="lazy" decoding="async"></button></div><div class="wiki-step-copy"><p>Deu para descobrir na prática que esse herói não é muito bom com <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_15.webp" aria-label="Ver imagem de lutas">lutas</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_15.webp" alt="Imagem de lutas" loading="lazy"></span></span>, especialmente pelo fato do <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_16.webp" aria-label="Ver imagem de mordiscador">mordiscador</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_16.webp" alt="Imagem de mordiscador" loading="lazy"></span></span> ser mais forte e aplicar mais dano mesmo tendo a desvantagem da vida que as torres tiraram, então deixei anotado na mente para tomar cuidado e não botar muita confiança nele porque ele morre logo depois...</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">8</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_17.webp" data-lightbox-alt="Cruzamento alto — 2N_17"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_17.webp" alt="Cruzamento alto — 2N_17" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>Enfim, usei o <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_17.webp" aria-label="Ver imagem de raio">raio</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_17.webp" alt="Imagem de raio" loading="lazy"></span></span>:</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">9</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_18.webp" data-lightbox-alt="Cruzamento alto — 2N_18"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_18.webp" alt="Cruzamento alto — 2N_18" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p><strong class="wiki-colored" style="--wiki-color:#26E600">Melhorando os arcos</strong> para priorizar a velocidade de ataque e em seguida investindo em <strong class="wiki-colored" style="--wiki-color:#808285">pelo menos um quartel em cada estrada</strong></p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">10</div>
+        <div class="wiki-step-content"><div class="wiki-gallery"><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_20.webp" data-lightbox-alt="Cruzamento alto — 2N_20"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_20.webp" alt="Cruzamento alto — 2N_20" loading="lazy" decoding="async"></button><button type="button" class="wiki-gallery-item" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_21.webp" data-lightbox-alt="Cruzamento alto — 2N_21"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_21.webp" alt="Cruzamento alto — 2N_21" loading="lazy" decoding="async"></button></div><div class="wiki-step-copy"><p>É nesse ponto onde a série realmente começa! os primeiros <span class="wiki-ref-wrap"><button class="wiki-reference wiki-reference-bold" type="button" data-ref-image="2N_19.webp" aria-label="Ver imagem de assets">assets</button><span class="wiki-ref-popover" role="tooltip"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_19.webp" alt="Imagem de assets" loading="lazy"></span></span> finalmente apareceram, essas setas verdes aparecem toda vez que eu melhoro uma torre comum. De qualquer forma, alguns momentos depois eu falo sobre desejar melhorar um dos druidas, mas nem da tempo, usei o feitiço do herói e o raio nos últimos mordiscadores.</p></div></div>
+    </article><article class="wiki-step-card ">
+        <div class="wiki-step-index">11</div>
+        <div class="wiki-step-content"><figure class="wiki-step-media wiki-image-zoom"><button type="button" class="wiki-image-button" data-lightbox-src="../../../assets/wiki/Cruzamento alto/2-N/2N_22.webp" data-lightbox-alt="Cruzamento alto — 2N_22"><img src="../../../assets/wiki/Cruzamento alto/2-N/2N_22.webp" alt="Cruzamento alto — 2N_22" loading="lazy" decoding="async"></button></figure><div class="wiki-step-copy"><p>"Finalizar com o raio é muito chique, né?"</p></div></div>
+         <div class="corvos-time-links">
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=843s" target="_blank" rel="noopener noreferrer"><span>Início</span><strong>14:03</strong></a>
+            <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=1093s" target="_blank" rel="noopener noreferrer"><span>Fim</span><strong>18:13</strong></a>
+        </div>
+    </article></div>
+</div></section>
+<section class="wiki-game-section alt" id="alternar-dificuldade"><div class="container"><div class="wiki-game-next"><div class="wiki-game-next-copy"><span class="eyebrow">OUTRAS DIFICULDADES</span><h2>Continuar a análise</h2><p>Use os botões para comparar a mesma fase entre Normal, Heróis e Ferreiro.</p></div><div class="corvos-next-actions"><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-normal.html">Normal</a><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-heroi.html">Heróis</a><a class="wiki-game-btn wiki-game-btn-secondary" href="wiki-game-ferreiro.html">Ferreiro</a></div></div></div></section>
+</main>
+
+<section class="map-creator" aria-label="Criador do mapa">
+    <div class="container">
+        <div class="map-creator-card">
+            <div class="map-creator-info">
+                <span class="map-creator-kicker">🗺️ CRIADOR DO MAPA</span>
+                <div class="map-creator-title-row">
+                    <h2>Mapa criado por <strong>Marcos</strong></h2>
+                    <span class="map-creator-badge">Segue ai :) E Valeu Monster</span>
+                </div>
+                <p>Conheça o criador do mapa e acesse seus links diretamente.</p>
+            </div>
+            <div class="map-creator-actions">
+                <a href="https://github.com/Marcos-Ara" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-secondary"><span aria-hidden="true">⌘</span><span>Meu GitHub</span></a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer" class="map-creator-btn map-creator-btn-primary"><span aria-hidden="true">✉</span><span>Entrar em contato</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="../../../index.html" class="footer-logo"><img src="../../../assets/logo/Monster Logo.webp" alt="Monster Logo"><span>MONSTER</span></a>
+                <p>Aqui você vai encontrar de forma mais organizada e criativa todas as informações relevantes do canal Kazibro2.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="../../../index.html">Início</a></li>
+                    <li><a href="../../Kingdom Rush/kingdom.html">Kingdom Rush</a></li>
+                    <li><a href="../wiki.html">Wiki</a></li>
+                    <li><a href="../../Jux/jux.html">JUX</a></li>
+                    <li><a href="../../About/about.html">Sobre nós</a></li> 
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Comunidade</h3>
+                <a href="https://www.youtube.com/@kazibro2" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.twitch.tv/thesupermonsteragain" target="_blank" rel="noopener noreferrer">Twitch</a>
+                <a href="https://linktr.ee/Kazibro2" target="_blank" rel="noopener noreferrer">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Monster. Todos os direitos reservados.</p></div>
+    </div>
+</footer>
+
+<div class="wiki-lightbox" id="wiki-lightbox" hidden aria-hidden="true"><div class="wiki-lightbox-backdrop" data-lightbox-close></div><div class="wiki-lightbox-panel" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button type="button" class="wiki-lightbox-close" data-lightbox-close aria-label="Fechar imagem">×</button><img id="wiki-lightbox-image" src="" alt=""></div></div>
+<script src="../../../js/global/config.js?v=20260901"></script><script src="../../../js/global/data.js?v=20260901"></script><script src="../../../js/global/navigation.js?v=20260901"></script><script src="../../../js/global/animations.js?v=20260901"></script><script src="../../../js/global/hamburger.js?v=20260901"></script><script src="../../../js/global/app.js?v=20260901"></script><script src="../../../js/wiki/wiki-game.js?v=20260901-ep2"></script>
+</body></html>
