@@ -748,3 +748,46 @@
 
 }
 
+
+
+/* ==========================================================
+   ZOOM / VIEWPORT ROBUSTEZ
+   Evita quebra de layout em zoom baixo ou alto do navegador.
+========================================================== */
+html, body {
+    max-width: 100%;
+}
+
+*, *::before, *::after {
+    min-width: 0;
+}
+
+.container {
+    width: min(100% - clamp(16px, 4vw, 48px), var(--container-width));
+}
+
+section, main, header, footer, article, .card, .info-card, .game-card, .video-card, .episode-card {
+    max-width: 100%;
+}
+
+img, video, iframe, svg, canvas {
+    max-width: 100%;
+}
+
+button, input, select, textarea {
+    max-width: 100%;
+}
+
+.navbar, .nav-menu, .header-social, .footer-content, .footer-credits, .hero-buttons, .featured-buttons {
+    min-width: 0;
+}
+
+.nav-menu a, .header-social a, .footer a, .btn {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+    .footer-credits {
+        flex-wrap: wrap;
+    }
+}

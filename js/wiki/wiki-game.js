@@ -153,17 +153,52 @@
         heroImage.hidden = true;
     }, { once: true });
 
-    // Referências sublinhadas: hover/foco mostra a imagem anexada; clique mantém aberta no toque.
+    // Referências sublinhadas: o popover usa posição fixa para nunca ficar atrás de outro texto/link.
+    function positionReferencePopover(wrap) {
+        const trigger = wrap?.querySelector('.wiki-reference');
+        const popover = wrap?.querySelector('.wiki-ref-popover');
+        if (!trigger || !popover) return;
+
+        const rect = trigger.getBoundingClientRect();
+        const viewportPadding = 10;
+        const width = Math.min(360, Math.max(0, window.innerWidth - viewportPadding * 2));
+        popover.style.width = `${width}px`;
+        popover.style.setProperty('--ref-popover-left', `${Math.max(viewportPadding, Math.min(rect.left, window.innerWidth - width - viewportPadding))}px`);
+        popover.style.setProperty('--ref-popover-top', `${Math.max(viewportPadding, rect.bottom + 10)}px`);
+
+        // Deixe o navegador medir a altura real da imagem e, se necessário, abra acima do link.
+        requestAnimationFrame(() => {
+            if (!document.body.contains(popover)) return;
+            const measured = popover.getBoundingClientRect();
+            let top = rect.bottom + 10;
+            if (measured.bottom > window.innerHeight - viewportPadding) {
+                top = rect.top - measured.height - 10;
+            }
+            if (top < viewportPadding) top = viewportPadding;
+            popover.style.setProperty('--ref-popover-top', `${top}px`);
+        });
+    }
+
     document.querySelectorAll('.wiki-ref-wrap').forEach((wrap) => {
         const trigger = wrap.querySelector('.wiki-reference');
         if (!trigger) return;
+
+        wrap.addEventListener('mouseenter', () => positionReferencePopover(wrap));
+        wrap.addEventListener('focusin', () => positionReferencePopover(wrap));
         trigger.addEventListener('click', (event) => {
             event.preventDefault();
             const wasOpen = wrap.classList.contains('is-open');
             document.querySelectorAll('.wiki-ref-wrap.is-open').forEach((item) => item.classList.remove('is-open'));
             wrap.classList.toggle('is-open', !wasOpen);
+            if (!wasOpen) positionReferencePopover(wrap);
         });
     });
+
+    const repositionOpenReferences = () => {
+        document.querySelectorAll('.wiki-ref-wrap:hover, .wiki-ref-wrap.is-open').forEach(positionReferencePopover);
+    };
+    window.addEventListener('resize', repositionOpenReferences);
+    window.addEventListener('scroll', repositionOpenReferences, { passive: true });
 
     document.addEventListener('click', (event) => {
         if (!event.target.closest('.wiki-ref-wrap')) {

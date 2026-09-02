@@ -3,16 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <script>
-        (function(){
-            try{
-                if(sessionStorage.getItem("monsterIntroSeen")==="1")
-                    document.documentElement.classList.add("intro-seen");
-            }catch(e){}
-        })();
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
@@ -42,28 +33,10 @@
     <link rel="stylesheet" href="../../../css/global/responsive.css">
     <link rel="stylesheet" href="../../../css/wiki/wiki.css">
     <link rel="stylesheet" href="../../../css/wiki/wiki-game.css?v=20260816-2130">
-    <link rel="stylesheet" href="../../../css/global/intro.css?v=20260818-1445">
-
 </head>
 
 <body data-page="wiki">
-    <!-- MONSTER INTRO -->
-    <div id="monster-intro" aria-hidden="true">
-        <video id="monster-intro-video" src="../../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
-        <div class="monster-intro-overlay"></div>
-        <div class="monster-intro-brand">
-            <img src="../../../assets/logo/Monster Logo.webp" alt="Monster">
-            <p class="monster-intro-brand-name">MONSTER</p>
-            <p class="monster-intro-brand-subtitle">Preparando o site</p>
-        </div>
-        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
-            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
-        </button>
-        <div class="monster-intro-bottom">
-            <span class="monster-intro-status">Entrando...</span>
-            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
-        </div>
-    </div>
+</div>
 
 
 <header class="header">
@@ -155,17 +128,22 @@
                 <div class="quick-menu-heading"><span class="quick-menu-icon">♜</span>Kingdom Rush</div>
                 <a href="../../Kingdom Rush/kingdom.html"><span>Home</span><b>›</b></a>
                 <a href="../../Kingdom Rush/kingdom.html#games"><span>Mapa</span><b>›</b></a>
-                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLHHvBYie7YMA&si=ILM0iDKXDSCJeodD" target="_blank" rel="noopener noreferrer">
+                    <span>Playlist</span><b>↗</b></a>
                 <a href="../wiki.html"><span>Wiki</span><b>›</b></a>
             </div>
 
             <div class="quick-menu-section">
                 <div class="quick-menu-heading"><span class="quick-menu-icon">⚔</span>JUX</div>
                 <a href="../../Jux/jux.html#featured-video"><span>Vídeo mais recente</span><b>›</b></a>
-                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer"><span>Playlist</span><b>↗</b></a>
-                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer"><span>Temporada 1</span><b>↗</b></a>
-                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer"><span>Temporada 2</span><b>↗</b></a>
-                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer"><span>Temporada 3</span><b>↗</b></a>
+                <a href="https://www.youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr" target="_blank" rel="noopener noreferrer">
+                    <span>Playlist</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw6plVMSZymh2Pslvkf28lqr&si=uxDdncXXKraParqy" target="_blank" rel="noopener noreferrer">
+                <span>Temporada 1</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw7elHaGLVaI32jW2WX6HnSL&si=f0ij27urHSZ9vg6L" target="_blank" rel="noopener noreferrer">
+                    <span>Temporada 2</span><b>↗</b></a>
+                <a href="https://youtube.com/playlist?list=PLDhzVxgDzJw4Bj_qrRQs2zN1BlIgna_8M&si=p-naHgZcs4TL0pFW" target="_blank" rel="noopener noreferrer">
+                    <span>Temporada 3</span><b>↗</b></a>
             </div>
 
             <div class="quick-menu-section">
@@ -198,7 +176,7 @@
 </nav>
 <div class="wiki-actions wiki-game-actions">
 <a class="wiki-game-btn wiki-game-btn-primary" href="#analise">Ver análise <span>↓</span></a>
-<a class="wiki-game-btn wiki-game-btn-secondary" href="../wiki.html#jogos">Voltar à Wiki <span>←</span></a>
+<a class="wiki-game-btn wiki-game-btn-secondary" href="../../Kingdom Rush/kingdom.html#games">Voltar ao Kingdom Rush <span>←</span></a>
 </div>
 </div>
 <div class="wiki-game-hero-logo" id="game-hero-logo">
@@ -241,22 +219,20 @@
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_1.png" alt="Corvos Cinzentos — NORMAL — etapa 1" loading="lazy" decoding="async"></div>
 
-        <div class="corvos-step-copy"><p>Aqui não tem muito a ser explicado, colocar torres no lado esquerdo perto do escudo apenas me deixa vulnerável.</p></div>
-
-        <div class="corvos-step-copy"><p>Colocar torres no lado esquerdo perto do escudo apenas me deixa vulnerável.</p></div>
+        <div class="corvos-step-copy"><p></p></div>
 
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">2</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_2.png" alt="Corvos Cinzentos — NORMAL — etapa 2" loading="lazy" decoding="async"></div>
-        <div class="corvos-step-copy"><p>As torres mais no final são basicamente obsoletas pelo alcance delas, atacando somente uma parte da estrada onde os inimigos passam muito rápido.</p></div>
+        <div class="corvos-step-copy"><p>Aqui não tem muito a ser explicado, colocar torres no lado esquerdo perto do escudo apenas me deixa vulnerável.</p></div>
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">3</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_3.png" alt="Corvos Cinzentos — NORMAL — etapa 3" loading="lazy" decoding="async"></div>
-        <div class="corvos-step-copy"><p>Então o que pareceu satisfatório foi colocar as três torres juntas, bem próximas. No caso o quartel fica aonde está porque só precisa de pouco alcance, os elfos precisam ficar no meio para atrasar todo mundo. O arco e mago só vão atacar quem chegar, um complementando o outro.</p></div>
+        <div class="corvos-step-copy"><p>As torres mais no final são basicamente obsoletas pelo alcance delas, atacando somente uma parte da estrada onde os inimigos passam muito rápido</p></div>
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">4</div>
@@ -264,36 +240,34 @@
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_4.png" alt="Corvos Cinzentos — NORMAL — etapa 4" loading="lazy" decoding="async"></div>
 
         
-        <div class="corvos-step-copy"><p>A fase te entrega 320 moedas iniciais, com 1 mago, 1 arco e 1 quartel sobra 60, depois disso é só começar a fase.</p></div>
-         <p> Durante a partida eu coloquei um druida atrás do arco para complementar não só o dano mas para ajudar os reforços. Quando o inimigo passa pelos elfos eu os travo chamando os reforços e enfim recebem dano do druida.</p>                       
-
-         
-        <div class="corvos-step-copy"><p>A fase te entrega 320 moedas iniciais, com 1 mago, 1 arco e 1 quartel sobra 60, depois disso é só começar a fase. Durante a partida eu coloquei um druida atrás do arco para complementar não só o dano mas para ajudar os reforços. Quando o inimigo passa pelos elfos eu os travo chamando os reforços e enfim recebem dano do druida.</p></div>
+        <div class="corvos-step-copy"><p>Então o que pareceu satisfatório foi colocar as três torres juntas, bem próximas. No caso o quartel fica aonde está porque só precisa de pouco alcance, os elfos precisam ficar no meio para atrasar todo mundo. O arco e mago só vão atacar quem chegar, um complementando o outro.         <p> Durante a partida eu coloquei um druida atrás do arco para complementar não só o dano mas para ajudar os reforços. Quando o inimigo passa pelos elfos eu os travo chamando os reforços e enfim recebem dano do druida.</p>          
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">5</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_5.png" alt="Corvos Cinzentos — NORMAL — etapa 5" loading="lazy" decoding="async"></div>
-        <div class="corvos-step-copy"><p>Assim que tive chance, construí um quartel para substituir os meus reforços (já que demoram para recarregar), e na necessidade de um arco decido colocá-lo em cima por parecer ter mais alcance.</p></div>
+        <div class="corvos-step-copy"><p>A fase te entegra 320 moedas iniciais, com 1 mago, 1 arco e 1 quartel sobra 60, depois disso é só começar a fase.</p></div>
+        <p></p>
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">6</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_6.png" alt="Corvos Cinzentos — NORMAL — etapa 6" loading="lazy" decoding="async"></div>
-        <div class="corvos-step-copy"><p>Um problema meu bastante pertinente nesse jogo é a menção do uso dos heróis. Eu destaquei em 7:00 do episódio 1 que eles podem ser usados em qualquer lugar da fase, mas após essa partida eu simplesmente esqueci das minhas palavras e comecei a deixá-los no escudo azul ou próximo dele, em breve você irá entender... De qualquer forma, acabei me distraindo com a explicação dos feitiços únicos de cada herói e esqueci de colocar o arco e o druida que tinha planejado.</p></div>
+        <div class="corvos-step-copy"><p>Assim que tive chance, construí um quartel para substituir os meus reforços (já que demoram para recarregar), e no necessidade de um arco decido coloca-lo encima por parecer ter mais alcançe.</p>
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">7</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_7.png" alt="Corvos Cinzentos — NORMAL — etapa 7" loading="lazy" decoding="async"></div>
-        <div class="corvos-step-copy"><p>Por causa disso consegui colocar as últimas torres apenas na última onda, mesmo não fazendo muita diferença naquela altura.</p></div>
+        <div class="corvos-step-copy"><p>Um problema meu bastante pertinente nesse jogo é a menção do uso dos heróis, eu destaquei em 7:00 do episódio 1 que eles podem ser usados em qualquer lugar da fase, mas após essa partida eu simplesmente esqueci das minhas palavras e comecei a deixa-los no escudo azul ou próximo dele, em breve você irá entender...
+De qualquer forma, acabei me distraindo com a explicação dos feitiços únicos de cada herói e esqueci de colocar o arco e o druida que tinha planejado:</p></div>
     </div>
 </article><article class="corvos-step-card">
     <div class="corvos-step-index">8</div>
     <div class="corvos-step-content">
         <div class="corvos-step-media"><img src="../../../assets/wiki/Corvos Cinzentos/1-N/1N_8.png" alt="Corvos Cinzentos — NORMAL — etapa 8" loading="lazy" decoding="async"></div>
 
-        <div class="corvos-step-copy"></div> <p>A partida acontece no primeiro episódio. Início = 3:21 • Fim = 8:34.</p> 
+        <div class="corvos-step-copy"><p>Por causa disso consegui colocar as ultimas torres apenas na ultima onda, mesmo não fazendo muita diferença naquela altura.</p> 
          <div class="corvos-time-links corvos-time-links-final" aria-label="Atalhos para os tempos da partida">
         <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=201s" target="_blank" rel="noopener noreferrer"><span>Início</span><strong>3:21</strong></a>
         <a href="https://www.youtube.com/watch?v=aNqB63xAM2s&t=514s" target="_blank" rel="noopener noreferrer"><span>Fim</span><strong>8:34</strong></a>

@@ -266,6 +266,10 @@ MAPA
 
     position: relative;
 
+    z-index: 10;
+
+    isolation: isolate;
+
     width: 100%;
 
     padding:
@@ -328,6 +332,8 @@ MAPA
 .map-container {
 
     position: relative;
+
+    z-index: 1;
 
     width: 100%;
 

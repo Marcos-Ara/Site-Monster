@@ -2,15 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <script>
-        (function(){
-            try{
-                if(sessionStorage.getItem("monsterIntroSeen")==="1")
-                    document.documentElement.classList.add("intro-seen");
-            }catch(e){}
-        })();
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Monster Wiki — Kingdom Rush Origins: lista de fases, dificuldades e conteúdo disponível.">
     <meta name="author" content="Marcos">
     <meta name="theme-color" content="#0B1120">
@@ -27,26 +19,11 @@
     <link rel="stylesheet" href="../../css/global/responsive.css">
     <link rel="stylesheet" href="../../css/wiki/wiki.css">
     <link rel="stylesheet" href="../../css/wiki/wiki-game.css">
-    <link rel="stylesheet" href="../../css/global/intro.css?v=20260818-1445">
 </head>
 
 <body data-page="wiki">
-    <div id="monster-intro" aria-hidden="true">
-        <video id="monster-intro-video" src="../../assets/intro/monster-intro.mp4" autoplay playsinline preload="auto"></video>
-        <div class="monster-intro-overlay"></div>
-        <div class="monster-intro-brand">
-            <img src="../../assets/logo/Monster Logo.webp" alt="Monster">
-            <p class="monster-intro-brand-name">MONSTER</p>
-            <p class="monster-intro-brand-subtitle">Preparando o site</p>
-        </div>
-        <button id="monster-intro-sound" class="monster-intro-sound" type="button" aria-label="Ativar som da introdução">
-            <span class="monster-intro-sound-icon" aria-hidden="true">🔊</span> Ativar som
-        </button>
-        <div class="monster-intro-bottom">
-            <span class="monster-intro-status">Entrando...</span>
-            <div class="monster-intro-progress" aria-hidden="true"><span id="monster-intro-progress-bar"></span></div>
-        </div>
-    </div>
+    
+        
 
     <header class="header">
         <div class="container header-container">
@@ -195,7 +172,7 @@
                         <h2>Mais conteúdo será adicionado</h2>
                         <p>As demais fases já estão organizadas na lista, mas só terão páginas próprias quando o conteúdo de cada dificuldade for criado.</p>
                     </div>
-                    <a class="wiki-game-btn wiki-game-btn-secondary" href="wiki.html#jogos">Voltar à Wiki <span>←</span></a>
+                    <a class="wiki-game-btn wiki-game-btn-secondary" href="../Kingdom Rush/kingdom.html#games">Voltar ao Kingdom Rush <span>←</span></a>
                 </div>
             </div>
         </section>
