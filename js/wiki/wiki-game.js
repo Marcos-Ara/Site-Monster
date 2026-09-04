@@ -153,57 +153,101 @@
         heroImage.hidden = true;
     }, { once: true });
 
-    // Referências sublinhadas: o popover usa posição fixa para nunca ficar atrás de outro texto/link.
-    function positionReferencePopover(wrap) {
+    // Referências sublinhadas: o popover é portado para o <body> para ficar sobre todos os elementos da página.
+    let activeReference = null;
+    let referenceHideTimer = null;
+
+    function referenceParts(wrap) {
         const trigger = wrap?.querySelector('.wiki-reference');
-        const popover = wrap?.querySelector('.wiki-ref-popover');
+        let popover = wrap?.querySelector('.wiki-ref-popover');
+        if (!popover && wrap?.dataset.referenceId) popover = document.body.querySelector(`.wiki-ref-popover[data-reference-owner="${wrap.dataset.referenceId}"]`);
+        return { trigger, popover };
+    }
+
+    function positionReferencePopover(wrap) {
+        const { trigger, popover } = referenceParts(wrap);
         if (!trigger || !popover) return;
-
+        if (!wrap.dataset.referenceId) wrap.dataset.referenceId = `ref-${Math.random().toString(36).slice(2,10)}`;
+        popover.dataset.referenceOwner = wrap.dataset.referenceId;
+        if (popover.parentElement !== document.body) document.body.appendChild(popover);
         const rect = trigger.getBoundingClientRect();
-        const viewportPadding = 10;
-        const width = Math.min(360, Math.max(0, window.innerWidth - viewportPadding * 2));
+        const pad = 10, gap = 10;
+        const width = Math.min(360, Math.max(220, window.innerWidth - pad*2));
+        let left = Math.max(pad, Math.min(rect.left, window.innerWidth - width - pad));
+        let top = rect.bottom + gap;
         popover.style.width = `${width}px`;
-        popover.style.setProperty('--ref-popover-left', `${Math.max(viewportPadding, Math.min(rect.left, window.innerWidth - width - viewportPadding))}px`);
-        popover.style.setProperty('--ref-popover-top', `${Math.max(viewportPadding, rect.bottom + 10)}px`);
-
-        // Deixe o navegador medir a altura real da imagem e, se necessário, abra acima do link.
+        popover.style.maxWidth = `calc(100vw - ${pad*2}px)`;
+        popover.style.setProperty('--ref-popover-left', `${left}px`);
+        popover.style.setProperty('--ref-popover-top', `${top}px`);
         requestAnimationFrame(() => {
             if (!document.body.contains(popover)) return;
-            const measured = popover.getBoundingClientRect();
-            let top = rect.bottom + 10;
-            if (measured.bottom > window.innerHeight - viewportPadding) {
-                top = rect.top - measured.height - 10;
-            }
-            if (top < viewportPadding) top = viewportPadding;
+            const box = popover.getBoundingClientRect();
+            if (box.bottom > window.innerHeight - pad) top = rect.top - box.height - gap;
+            if (top < pad) top = pad;
+            left = Math.max(pad, Math.min(rect.left, window.innerWidth - width - pad));
+            popover.style.setProperty('--ref-popover-left', `${left}px`);
             popover.style.setProperty('--ref-popover-top', `${top}px`);
         });
     }
 
-    document.querySelectorAll('.wiki-ref-wrap').forEach((wrap) => {
-        const trigger = wrap.querySelector('.wiki-reference');
-        if (!trigger) return;
+    function openReference(wrap) {
+        const { trigger, popover } = referenceParts(wrap);
+        if (!trigger || !popover) return;
+        clearTimeout(referenceHideTimer);
+        document.querySelectorAll('.wiki-ref-wrap.is-open').forEach(item => item.classList.remove('is-open'));
+        document.querySelectorAll('.wiki-ref-popover.is-open').forEach(item => item.classList.remove('is-open'));
+        if (!wrap.dataset.referenceId) wrap.dataset.referenceId = `ref-${Math.random().toString(36).slice(2,10)}`;
+        popover.dataset.referenceOwner = wrap.dataset.referenceId;
+        if (popover.parentElement !== document.body) document.body.appendChild(popover);
+        wrap.classList.add('is-open');
+        popover.classList.add('is-open');
+        activeReference = wrap;
+        positionReferencePopover(wrap);
+    }
 
-        wrap.addEventListener('mouseenter', () => positionReferencePopover(wrap));
-        wrap.addEventListener('focusin', () => positionReferencePopover(wrap));
-        trigger.addEventListener('click', (event) => {
+    function scheduleCloseReference(wrap) {
+        clearTimeout(referenceHideTimer);
+        referenceHideTimer = setTimeout(() => {
+            if (activeReference !== wrap) return;
+            const { popover } = referenceParts(wrap);
+            if (popover?.matches(':hover')) return;
+            wrap.classList.remove('is-open');
+            popover?.classList.remove('is-open');
+            activeReference = null;
+        }, 140);
+    }
+
+    function closeAllReferences() {
+        clearTimeout(referenceHideTimer);
+        document.querySelectorAll('.wiki-ref-wrap.is-open').forEach(item => item.classList.remove('is-open'));
+        document.querySelectorAll('.wiki-ref-popover.is-open').forEach(item => item.classList.remove('is-open'));
+        activeReference = null;
+    }
+
+    document.querySelectorAll('.wiki-ref-wrap').forEach(wrap => {
+        const trigger = wrap.querySelector('.wiki-reference');
+        const popover = wrap.querySelector('.wiki-ref-popover');
+        if (!trigger || !popover) return;
+        wrap.dataset.referenceId = `ref-${Math.random().toString(36).slice(2,10)}`;
+        popover.dataset.referenceOwner = wrap.dataset.referenceId;
+        wrap.addEventListener('mouseenter', () => openReference(wrap));
+        wrap.addEventListener('mouseleave', () => scheduleCloseReference(wrap));
+        wrap.addEventListener('focusin', () => openReference(wrap));
+        wrap.addEventListener('focusout', () => scheduleCloseReference(wrap));
+        trigger.addEventListener('click', event => {
             event.preventDefault();
-            const wasOpen = wrap.classList.contains('is-open');
-            document.querySelectorAll('.wiki-ref-wrap.is-open').forEach((item) => item.classList.remove('is-open'));
-            wrap.classList.toggle('is-open', !wasOpen);
-            if (!wasOpen) positionReferencePopover(wrap);
+            const open = activeReference === wrap && popover.classList.contains('is-open');
+            if (open) closeAllReferences(); else openReference(wrap);
         });
+        popover.addEventListener('mouseenter', () => clearTimeout(referenceHideTimer));
+        popover.addEventListener('mouseleave', () => scheduleCloseReference(wrap));
+        popover.querySelector('img')?.addEventListener('load', () => positionReferencePopover(wrap));
     });
 
-    const repositionOpenReferences = () => {
-        document.querySelectorAll('.wiki-ref-wrap:hover, .wiki-ref-wrap.is-open').forEach(positionReferencePopover);
-    };
-    window.addEventListener('resize', repositionOpenReferences);
-    window.addEventListener('scroll', repositionOpenReferences, { passive: true });
-
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.wiki-ref-wrap')) {
-            document.querySelectorAll('.wiki-ref-wrap.is-open').forEach((item) => item.classList.remove('is-open'));
-        }
+    window.addEventListener('resize', () => { if (activeReference) positionReferencePopover(activeReference); });
+    window.addEventListener('scroll', () => { if (activeReference) positionReferencePopover(activeReference); }, { passive:true });
+    document.addEventListener('click', event => {
+        if (!event.target.closest?.('.wiki-ref-wrap') && !event.target.closest?.('.wiki-ref-popover')) closeAllReferences();
     });
 
     const lightbox = document.getElementById('wiki-lightbox');

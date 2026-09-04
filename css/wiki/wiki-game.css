@@ -595,3 +595,24 @@
     .corvos-final-time-title{align-items:flex-start;flex-direction:column;gap:4px}
     .corvos-final-time-groups{grid-template-columns:1fr}
 }
+
+
+/* ==========================================================
+   FIX FINAL — PASSOS VERTICAIS E POPOVERS
+========================================================== */
+.corvos-step-content,
+.wiki-step-content{display:flex;flex-direction:column;align-items:stretch;min-width:0;}
+.corvos-step-content > .corvos-step-copy,
+.wiki-step-content > .wiki-step-copy{order:1;width:100%;box-sizing:border-box;padding:4px 2px 18px;}
+.corvos-step-content > .corvos-step-media,
+.wiki-step-content > .wiki-step-media,
+.wiki-step-content > .wiki-gallery{order:2;width:100%;box-sizing:border-box;}
+.corvos-step-copy p.is-placeholder,
+.wiki-step-copy p.is-placeholder{color:#6f7988;font-style:italic;}
+
+/* Referência abre em uma camada própria do body e nunca fica atrás de texto, imagens ou cards. */
+.wiki-ref-popover{position:fixed !important;z-index:2147483647 !important;isolation:isolate;contain:paint;}
+.wiki-ref-popover.is-open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) translateZ(0);}
+.wiki-ref-popover img{position:relative;z-index:1;}
+
+.corvos-final-time-panel{width:min(960px,100%);margin:24px auto 0;}
