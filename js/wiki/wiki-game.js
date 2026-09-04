@@ -4,7 +4,7 @@
     const phases = [
         { n: '01', name: 'Corvos cinzentos', group: 'base', contentFolder: 'Corvos%20Cinzentos' },
         { n: '02', name: 'Cruzamento alto', group: 'base', contentFolder: 'Cruzamento%20alto' },
-        { n: '03', name: 'Trilha da caichoeira', group: 'base' },
+        { n: '03', name: 'Trilha da caichoeira', group: 'base', contentFolder: 'Trilha%20da%20caichoeira' },
         { n: '04', name: 'Defesa do bosque rubro', group: 'base' },
         { n: '05', name: 'Jardins reais', group: 'base' },
         { n: '06', name: 'Ponto dos grifos', group: 'base' },
@@ -153,7 +153,16 @@
         heroImage.hidden = true;
     }, { once: true });
 
-    // Referências sublinhadas: o popover é portado para o <body> para ficar sobre todos os elementos da página.
+    function restartGif(image) {
+        if (!image) return;
+        const source = image.dataset.gifSrc || image.getAttribute('src')?.split('?')[0];
+        if (!source) return;
+        image.dataset.gifSrc = source;
+        const separator = source.includes('?') ? '&' : '?';
+        image.src = `${source}${separator}restart=${Date.now()}`;
+    }
+
+    // Referências
     let activeReference = null;
     let referenceHideTimer = null;
 
@@ -201,6 +210,7 @@
         if (popover.parentElement !== document.body) document.body.appendChild(popover);
         wrap.classList.add('is-open');
         popover.classList.add('is-open');
+        restartGif(popover.querySelector('img[data-gif-src]'));
         activeReference = wrap;
         positionReferencePopover(wrap);
     }
@@ -236,8 +246,7 @@
         wrap.addEventListener('focusout', () => scheduleCloseReference(wrap));
         trigger.addEventListener('click', event => {
             event.preventDefault();
-            const open = activeReference === wrap && popover.classList.contains('is-open');
-            if (open) closeAllReferences(); else openReference(wrap);
+            openReference(wrap);
         });
         popover.addEventListener('mouseenter', () => clearTimeout(referenceHideTimer));
         popover.addEventListener('mouseleave', () => scheduleCloseReference(wrap));
@@ -248,6 +257,18 @@
     window.addEventListener('scroll', () => { if (activeReference) positionReferencePopover(activeReference); }, { passive:true });
     document.addEventListener('click', event => {
         if (!event.target.closest?.('.wiki-ref-wrap') && !event.target.closest?.('.wiki-ref-popover')) closeAllReferences();
+    });
+
+    // GIFs
+    document.querySelectorAll('.wiki-gif-restart[data-gif-target]').forEach((button) => {
+        const image = document.getElementById(button.dataset.gifTarget);
+        if (!image) {
+            button.disabled = true;
+            return;
+        }
+
+        image.dataset.gifSrc = image.dataset.gifSrc || image.getAttribute('src')?.split('?')[0];
+        button.addEventListener('click', () => restartGif(image));
     });
 
     const lightbox = document.getElementById('wiki-lightbox');

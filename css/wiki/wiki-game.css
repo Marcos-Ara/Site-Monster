@@ -1,9 +1,9 @@
-/* ==========================================================
-   MONSTER WIKI — PÁGINA DO JOGO
-   Estilos totalmente externalizados para wiki-game.html.
-========================================================== */
+/* == WIKI GAME == */
 
 .wiki-game-main{overflow:hidden;background:transparent !important}
+.wiki-game-hero-grid,
+.wiki-game-summary-grid,
+.wiki-game-section>.container{box-sizing:border-box;padding-inline:18px}
 
 .wiki-game-hero{
     padding:118px 0 72px;
@@ -28,7 +28,7 @@
     gap:46px;
     align-items:center;
 }
-.wiki-game-hero-copy{text-align:left}
+.wiki-game-hero-copy{text-align:center}
 .wiki-game-hero h1{
     margin:14px 0 18px;
     font-size:clamp(2.8rem,6vw,5.7rem);
@@ -38,9 +38,10 @@
 .wiki-game-hero h1 span{color:#b45aff}
 .wiki-game-hero p{
     max-width:680px;
-    margin:0;
+    margin:0 auto;
     color:var(--color-text-light);
     line-height:1.85;
+    text-align:left;
 }
 .wiki-game-hero-logo{
     min-height:330px;
@@ -72,7 +73,7 @@
 }
 .wiki-game-hero-logo.asset-missing img{display:none}
 
-.wiki-game-actions{justify-content:flex-start;margin-top:28px}
+.wiki-game-actions{justify-content:center;margin-top:28px}
 .wiki-game-btn{
     min-height:48px;
     display:inline-flex;
@@ -108,6 +109,8 @@
     border:1px solid #293447;
     border-radius:18px;
     background:#10151d;
+    justify-content:center;
+    text-align:center;
 }
 .wiki-game-stat-icon{
     width:44px;height:44px;
@@ -125,7 +128,7 @@
 .wiki-game-heading{text-align:center;max-width:800px;margin:0 auto 30px}
 .wiki-game-heading .eyebrow{display:block;color:#ffaa00;font-size:.67rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
 .wiki-game-heading h2{margin:11px 0 11px;font-size:clamp(2.25rem,4.4vw,4rem);letter-spacing:-.055em;line-height:1.02}
-.wiki-game-heading p{margin:0;color:var(--color-text-light);line-height:1.8}
+.wiki-game-heading p{margin:0;color:var(--color-text-light);line-height:1.8;text-align:left}
 
 .phase-toolbar{
     width:min(960px,100%);
@@ -248,7 +251,9 @@
     padding:28px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
     gap:20px;
     border:1px solid #2b3648;
     border-radius:22px;
@@ -261,15 +266,15 @@
 .phase-modal[hidden]{display:none}
 .phase-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px}
 .phase-modal::before{content:"";position:absolute;inset:0;background:rgba(2,5,9,.78);backdrop-filter:blur(10px)}
-.phase-modal-panel{position:relative;z-index:1;width:min(560px,100%);padding:28px;border:1px solid #334056;border-radius:24px;background:linear-gradient(155deg,#171d27,#0f141b);box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.phase-modal-panel{position:relative;z-index:1;width:min(560px,100%);padding:28px;border:1px solid #334056;border-radius:24px;background:linear-gradient(155deg,#171d27,#0f141b);box-shadow:0 30px 90px rgba(0,0,0,.45);text-align:center}
 .phase-modal[aria-hidden="false"] .phase-modal-panel{animation:phaseModalIn .28s ease-out both}
 @keyframes phaseModalIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 .phase-modal-description{animation:phaseDescriptionIn .35s ease-out .06s both}
 @keyframes phaseDescriptionIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .phase-modal-kicker{color:#ffaa00;font-size:.65rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
 .phase-modal h2{margin:9px 0 10px;font-size:2rem;letter-spacing:-.04em}
-.phase-modal p{margin:0;color:#9ea7b3;line-height:1.75}
-.phase-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+.phase-modal p{margin:0;color:#9ea7b3;line-height:1.75;text-align:left}
+.phase-modal-actions{display:flex;justify-content:center;gap:10px;margin-top:24px}
 .phase-modal-close{width:42px;height:42px;position:absolute;right:12px;top:12px;border:1px solid #303b4c;border-radius:12px;background:#111720;color:#d6dbe2;font-size:1.15rem;cursor:pointer}
 .phase-modal-close:hover{border-color:#ffaa00;color:#ffaa00}
 
@@ -291,7 +296,7 @@
     .phase-item{grid-template-columns:48px minmax(0,1fr)}
     .phase-num{width:42px;height:42px}
     .phase-open{grid-column:1/-1;width:100%}
-    .wiki-game-next{flex-direction:column;align-items:flex-start}
+    .wiki-game-next{align-items:center}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -315,6 +320,7 @@
     flex-wrap:wrap;
     gap:10px;
     margin-top:18px;
+    justify-content:center;
 }
 .wiki-category-btn{
     display:inline-flex;
@@ -381,9 +387,7 @@
 }
 
 
-/* ==========================================================
-   CORVOS CINZENTOS — CONTEÚDO DA FASE
-========================================================== */
+/* == CONTEÚDO DE FASE == */
 .corvos-video-card{
     width:min(960px,100%);
     margin:34px auto 46px;
@@ -410,18 +414,19 @@
     gap:22px;
     padding:18px 4px 4px;
 }
+.corvos-video-info>div:first-child{flex:1;text-align:center}
 .corvos-video-info h3{margin:7px 0 6px;font-size:1.35rem}
-.corvos-video-info p{margin:0;color:#939dab;line-height:1.65}
-.corvos-time-links{display:flex;gap:10px;flex-wrap:wrap}
+.corvos-video-info p{margin:0;color:#939dab;line-height:1.65;text-align:left}
+.corvos-time-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .corvos-time-links a{min-width:92px;padding:11px 13px;border:1px solid #2b3648;border-radius:14px;background:#0e141c;text-decoration:none;color:#f0f3f6;text-align:center}
 .corvos-time-links a:hover{border-color:#ffaa00;transform:translateY(-2px)}
 .corvos-time-links span{display:block;font-size:.62rem;color:#7f8998;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
 .corvos-time-links strong{display:block;margin-top:3px;color:#ffaa00;font-size:1rem}
 .corvos-time-note{padding:12px 14px;border:1px solid #2b3648;border-radius:14px;color:#7f8998;font-size:.74rem}
-.corvos-video-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:14px}
+.corvos-video-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
 .corvos-video-final-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;margin-top:10px;padding-top:0}
 .corvos-video-final-row>p{margin:0;color:#9ba4b0;line-height:1.5;min-width:0}
-.corvos-video-final-row .corvos-video-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:nowrap;margin:0;min-width:max-content}
+.corvos-video-final-row .corvos-video-actions{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:nowrap;margin:0;min-width:max-content}
 .corvos-video-final-row .corvos-video-actions .wiki-game-btn{white-space:nowrap}
 .phase-open:disabled{opacity:.5;cursor:not-allowed;transform:none!important;border-color:#273243;background:#0d141d;color:#697384}
 .phase-open:disabled:hover{border-color:#273243;transform:none}
@@ -464,7 +469,7 @@
 }
 .corvos-step-copy{padding:14px 3px 2px}
 .corvos-step-copy p{margin:0;color:#c4cad2;line-height:1.78}
-.corvos-next-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.corvos-next-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 @media(max-width:760px){
     .corvos-step-media.corvos-media-grid.two{grid-template-columns:1fr}
     .corvos-video-info{flex-direction:column;align-items:flex-start}
@@ -477,9 +482,7 @@
     .corvos-next-actions .wiki-game-btn{width:100%}
 }
 
-/* ==========================================================
-   EPISÓDIO 2 — CRUZAMENTO ALTO
-========================================================== */
+/* == PÁGINAS DE EPISÓDIO == */
 .wiki-episode-main .wiki-game-heading p{max-width:820px;margin-left:auto;margin-right:auto}
 .wiki-steps{width:min(960px,100%);margin:0 auto;display:grid;gap:18px}
 .wiki-step-card{
@@ -510,12 +513,14 @@
 .wiki-gallery-item{border:1px solid #202a3a;border-radius:15px;overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .wiki-gallery-item:hover,.wiki-image-button:hover{border-color:#44536a;box-shadow:0 12px 28px rgba(0,0,0,.2);transform:translateY(-2px)}
 .wiki-gallery-item img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;background:#070a0e}
+.wiki-gallery-four{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wiki-gallery .wiki-missing-asset{width:auto;min-height:180px;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 
 /* Sistema de anexos: sublinhado = conteúdo no parêntese; clique funciona no mobile e hover/foco no desktop. */
 .wiki-ref-wrap{position:relative;display:inline;z-index:1000;isolation:isolate}
 .wiki-reference{
     appearance:none;border:0;padding:0;margin:0;background:transparent;color:var(--ref-color,#f0f3f6);
-    font:inherit;font-weight:800;line-height:inherit;cursor:pointer;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px;
+    font:inherit;font-weight:inherit;line-height:inherit;cursor:pointer;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1.5px;text-underline-offset:3px;
 }
 .wiki-reference:hover,.wiki-reference:focus-visible{color:var(--ref-color,#ffaa00);text-decoration-style:solid;outline:0}
 .wiki-reference::after{content:" ↗";font-size:.67em;opacity:.58;text-decoration:none}
@@ -534,7 +539,7 @@
     position:relative;overflow:visible;isolation:auto;width:min(960px,100%);margin:4px auto 22px;padding:18px 18px 16px;
     border:1px solid #2b3648;border-radius:18px;background:linear-gradient(160deg,#141a23,#0f141a);box-shadow:0 18px 38px rgba(0,0,0,.16)
 }
-.wiki-balloon-head{display:flex;justify-content:flex-end;min-height:28px}
+.wiki-balloon-head{display:flex;justify-content:center;min-height:28px}
 .wiki-balloon-marker{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:28px;padding:0 9px;border-radius:999px;border:1px solid #39465b;background:#0b1017;color:#ffaa00;font-size:.68rem;font-weight:900;letter-spacing:.04em}
 .wiki-balloon-body{position:relative;z-index:1;overflow:visible;color:#d3d8df;line-height:1.82}
 .wiki-balloon-body p{margin:0 0 12px}.wiki-balloon-body p:last-child{margin-bottom:0}
@@ -576,15 +581,16 @@
 
 /* Tempos finais da partida — preserva os horários adicionados ao fim da análise. */
 .corvos-final-time-panel{
-    margin-top:16px;padding:16px;border:1px solid #2b3648;border-radius:18px;
+    margin-top:16px;padding:16px;border:1px solid #2b3648;border-radius:18px;text-align:center;
     background:linear-gradient(145deg,#111821,#0c1118);box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 14px 34px rgba(0,0,0,.16);
 }
-.corvos-final-time-title{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px}
+.corvos-final-time-title{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;margin-bottom:12px}
 .corvos-final-time-title strong{font-size:.9rem;color:#f0f3f6}
 .corvos-final-time-title span{font-size:.64rem;color:#7f8998;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
 .corvos-final-time-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.corvos-final-time-groups:has(> :only-child){grid-template-columns:minmax(0,520px);justify-content:center}
 .corvos-final-time-group{padding:12px;border:1px solid #253044;border-radius:14px;background:rgba(255,255,255,.018)}
-.corvos-final-time-group h4{display:flex;align-items:center;gap:8px;margin:0 0 9px;color:#dfe4ea;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+.corvos-final-time-group h4{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 9px;color:#dfe4ea;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
 .corvos-final-time-group h4::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffaa00;box-shadow:0 0 10px rgba(255,170,0,.45)}
 .corvos-final-time-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .corvos-final-time-links a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 11px;border:1px solid #2b3648;border-radius:11px;background:#0b1118;color:#cfd5dd;text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
@@ -592,14 +598,12 @@
 .corvos-final-time-links span{font-size:.61rem;color:#7f8998;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
 .corvos-final-time-links strong{color:#ffaa00;font-size:.95rem}
 @media(max-width:760px){
-    .corvos-final-time-title{align-items:flex-start;flex-direction:column;gap:4px}
+    .corvos-final-time-title{align-items:center;flex-direction:column;gap:4px}
     .corvos-final-time-groups{grid-template-columns:1fr}
 }
 
 
-/* ==========================================================
-   FIX FINAL — PASSOS VERTICAIS E POPOVERS
-========================================================== */
+/* == ORDEM E POPOVERS == */
 .corvos-step-content,
 .wiki-step-content{display:flex;flex-direction:column;align-items:stretch;min-width:0;}
 .corvos-step-content > .corvos-step-copy,
@@ -607,6 +611,7 @@
 .corvos-step-content > .corvos-step-media,
 .wiki-step-content > .wiki-step-media,
 .wiki-step-content > .wiki-gallery{order:2;width:100%;box-sizing:border-box;}
+.wiki-step-content > .wiki-gif-controls{order:3;width:100%;box-sizing:border-box;}
 .corvos-step-copy p.is-placeholder,
 .wiki-step-copy p.is-placeholder{color:#6f7988;font-style:italic;}
 
@@ -616,3 +621,27 @@
 .wiki-ref-popover img{position:relative;z-index:1;}
 
 .corvos-final-time-panel{width:min(960px,100%);margin:24px auto 0;}
+
+/* == ESTADOS E GIFS == */
+.wiki-time-links-unavailable,.wiki-final-time-unavailable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.wiki-time-links-unavailable{min-width:min(320px,100%)}
+.wiki-time-unavailable{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1px dashed #364155;border-radius:12px;background:#0b1118;color:#929dab;text-align:left}
+.wiki-time-unavailable small{font-size:.61rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.wiki-time-unavailable strong{color:#c5ccd5;font-size:.76rem}
+.wiki-gif-controls{display:flex;justify-content:center;padding:12px 0 2px}
+.wiki-gif-restart{min-width:92px;min-height:42px;padding:0 20px;border:1px solid #ffaa00;border-radius:12px;background:#ffaa00;color:#111;font:inherit;font-size:.75rem;font-weight:900;letter-spacing:.12em;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.wiki-gif-restart:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,170,0,.2)}
+.wiki-gif-restart:focus-visible{outline:3px solid rgba(255,170,0,.35);outline-offset:3px}
+.wiki-missing-asset,.wiki-content-pending{width:min(760px,100%);margin:0 auto;padding:22px;border:1px dashed #465166;border-radius:18px;background:linear-gradient(145deg,#111821,#0c1118);text-align:center;color:#aab3bf}
+.wiki-missing-asset strong,.wiki-content-pending strong{display:block;color:#f0f3f6}
+.wiki-missing-asset span{display:block;margin-top:5px;font-size:.78rem}
+.wiki-content-pending{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left}
+.wiki-content-pending>span{width:44px;height:44px;display:grid;place-items:center;flex:0 0 auto;border-radius:14px;background:rgba(255,170,0,.1);color:#ffaa00;font-size:1.4rem;font-weight:900}
+.wiki-content-pending p{margin:6px 0 0;line-height:1.7}
+
+@media(max-width:760px){
+    .wiki-game-stat{justify-content:flex-start;text-align:left}
+    .corvos-video-info>div:first-child{width:100%}
+    .wiki-time-links-unavailable,.wiki-final-time-unavailable{grid-template-columns:1fr;width:100%;min-width:0}
+    .wiki-content-pending{align-items:flex-start}
+}
