@@ -153,13 +153,20 @@
         heroImage.hidden = true;
     }, { once: true });
 
-    function restartGif(image) {
-        if (!image) return;
-        const source = image.dataset.gifSrc || image.getAttribute('src')?.split('?')[0];
+    function restartGif(media) {
+        if (!media) return;
+        if (media.tagName === 'VIDEO') {
+            media.pause();
+            try { media.currentTime = 0; } catch (error) { /* metadata may still be loading */ }
+            const playRequest = media.play();
+            playRequest?.catch?.(() => {});
+            return;
+        }
+        const source = media.dataset.gifSrc || media.getAttribute('src')?.split('?')[0];
         if (!source) return;
-        image.dataset.gifSrc = source;
+        media.dataset.gifSrc = source;
         const separator = source.includes('?') ? '&' : '?';
-        image.src = `${source}${separator}restart=${Date.now()}`;
+        media.src = `${source}${separator}restart=${Date.now()}`;
     }
 
     // Referências
@@ -181,9 +188,18 @@
         if (popover.parentElement !== document.body) document.body.appendChild(popover);
         const rect = trigger.getBoundingClientRect();
         const pad = 10, gap = 10;
+        const headerBottom = document.querySelector('.header')?.getBoundingClientRect().bottom || 0;
+        const safeTop = Math.max(pad, Math.ceil(headerBottom) + pad);
+        const safeBottom = window.innerHeight - pad;
+        if (rect.bottom <= safeTop || rect.top >= safeBottom) {
+            wrap.classList.remove('is-open');
+            popover.classList.remove('is-open');
+            if (activeReference === wrap) activeReference = null;
+            return;
+        }
         const width = Math.min(360, Math.max(220, window.innerWidth - pad*2));
         let left = Math.max(pad, Math.min(rect.left, window.innerWidth - width - pad));
-        let top = rect.bottom + gap;
+        let top = Math.max(safeTop, rect.bottom + gap);
         popover.style.width = `${width}px`;
         popover.style.maxWidth = `calc(100vw - ${pad*2}px)`;
         popover.style.setProperty('--ref-popover-left', `${left}px`);
@@ -191,8 +207,8 @@
         requestAnimationFrame(() => {
             if (!document.body.contains(popover)) return;
             const box = popover.getBoundingClientRect();
-            if (box.bottom > window.innerHeight - pad) top = rect.top - box.height - gap;
-            if (top < pad) top = pad;
+            if (box.bottom > safeBottom) top = rect.top - box.height - gap;
+            if (top < safeTop) top = safeTop;
             left = Math.max(pad, Math.min(rect.left, window.innerWidth - width - pad));
             popover.style.setProperty('--ref-popover-left', `${left}px`);
             popover.style.setProperty('--ref-popover-top', `${top}px`);
@@ -259,16 +275,39 @@
         if (!event.target.closest?.('.wiki-ref-wrap') && !event.target.closest?.('.wiki-ref-popover')) closeAllReferences();
     });
 
-    // GIFs
+    function showMissingAsset(media) {
+        if (!media) return;
+        media.dataset.assetError = 'true';
+        const scope = media.closest('[data-wiki-asset-wrap], .wiki-ref-popover');
+        const fallback = scope?.querySelector('.wiki-missing-asset, .wiki-ref-missing');
+        if (media.tagName === 'IMG') {
+            media.hidden = true;
+            media.closest('.wiki-image-button')?.setAttribute('hidden', '');
+        } else if (media.tagName === 'VIDEO') {
+            media.hidden = true;
+        }
+        if (fallback) fallback.hidden = false;
+    }
+
+    document.querySelectorAll('[data-wiki-asset]').forEach((media) => {
+        media.addEventListener('error', () => showMissingAsset(media), { once: true });
+        if (media.tagName === 'VIDEO') {
+            media.querySelectorAll('source').forEach((source) => source.addEventListener('error', () => showMissingAsset(media), { once: true }));
+        }
+    });
+
+    // GIFs e vídeos reiniciáveis
     document.querySelectorAll('.wiki-gif-restart[data-gif-target]').forEach((button) => {
-        const image = document.getElementById(button.dataset.gifTarget);
-        if (!image) {
+        const media = document.getElementById(button.dataset.gifTarget);
+        if (!media) {
             button.disabled = true;
             return;
         }
 
-        image.dataset.gifSrc = image.dataset.gifSrc || image.getAttribute('src')?.split('?')[0];
-        button.addEventListener('click', () => restartGif(image));
+        if (media.tagName !== 'VIDEO') media.dataset.gifSrc = media.dataset.gifSrc || media.getAttribute('src')?.split('?')[0];
+        if (media.dataset.assetError === 'true') button.disabled = true;
+        media.addEventListener('error', () => { button.disabled = true; }, { once: true });
+        button.addEventListener('click', () => restartGif(media));
     });
 
     const lightbox = document.getElementById('wiki-lightbox');
