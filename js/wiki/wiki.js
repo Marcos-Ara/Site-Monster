@@ -118,4 +118,43 @@
         image.addEventListener('error', markMissing, { once: true });
         if (image.complete && image.naturalWidth === 0) markMissing();
     });
+
+    const difficultyModal = document.getElementById('game-difficulty-modal');
+    const difficultyClose = document.getElementById('game-difficulty-close');
+    const difficultyDone = document.getElementById('game-difficulty-done');
+    let difficultyTrigger = null;
+
+    function openDifficultyModal(trigger) {
+        if (!difficultyModal) return;
+        difficultyTrigger = trigger || null;
+        difficultyModal.hidden = false;
+        difficultyModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('wiki-modal-open');
+        difficultyClose?.focus();
+    }
+
+    function closeDifficultyModal() {
+        if (!difficultyModal) return;
+        difficultyModal.hidden = true;
+        difficultyModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('wiki-modal-open');
+        difficultyTrigger?.focus();
+        difficultyTrigger = null;
+    }
+
+    document.querySelectorAll('[data-open-game-difficulty]').forEach((trigger) => {
+        trigger.addEventListener('click', (event) => {
+            if (!difficultyModal) return;
+            event.preventDefault();
+            openDifficultyModal(trigger);
+        });
+    });
+    difficultyClose?.addEventListener('click', closeDifficultyModal);
+    difficultyDone?.addEventListener('click', closeDifficultyModal);
+    difficultyModal?.addEventListener('click', (event) => {
+        if (event.target === difficultyModal) closeDifficultyModal();
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && difficultyModal && !difficultyModal.hidden) closeDifficultyModal();
+    });
 })();

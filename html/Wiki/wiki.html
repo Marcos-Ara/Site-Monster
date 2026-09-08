@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../../css/global/header.css">
     <link rel="stylesheet" href="../../css/global/footer.css">
     <link rel="stylesheet" href="../../css/global/responsive.css">
-    <link rel="stylesheet" href="../../css/wiki/wiki.css?v=20260816">
+    <link rel="stylesheet" href="../../css/wiki/wiki.css?v=20260908-mode1">
 </head>
 
 <body data-page="wiki">
@@ -317,7 +317,7 @@
                     <h3>Kingdom Rush Origins</h3>
                     <p>Fases, episódios, estratégias e organização da série.</p>
                 </div>
-                <a href="wiki-game.html" class="wiki-game-button">Abrir Wiki do jogo <span>→</span></a>
+                <a href="wiki-game.html" class="wiki-game-button" data-open-game-difficulty>Abrir Wiki do jogo <span>→</span></a>
             </article>
 
             <article class="wiki-game-tile locked" data-status="locked" data-game="kingdom">
@@ -398,6 +398,32 @@
 
 
 </main>
+
+<div aria-hidden="true" class="game-difficulty-modal" hidden id="game-difficulty-modal">
+    <div aria-labelledby="game-difficulty-modal-title" aria-modal="true" class="game-difficulty-panel" role="dialog">
+        <button aria-label="Fechar escolha de dificuldade" class="game-difficulty-close" id="game-difficulty-close" type="button">×</button>
+        <span class="game-difficulty-kicker">JOGO • 01 • KINGDOM RUSH ORIGINS</span>
+        <h2 id="game-difficulty-modal-title">Qual dificuldade você vai querer?</h2>
+        <p>Escolha uma dificuldade para abrir a Wiki. Os modos Difícil e Impossível ainda estão bloqueados para este jogo.</p>
+        <div aria-label="Dificuldades disponíveis" class="game-difficulty-options">
+            <a class="game-difficulty-option available" data-difficulty="normal" href="wiki-game.html">
+                <span class="game-difficulty-option-icon">✓</span>
+                <span><strong>Normal</strong><small>Wiki disponível</small></span>
+            </a>
+            <button aria-disabled="true" class="game-difficulty-option locked" data-difficulty="hard" disabled type="button">
+                <span class="game-difficulty-option-icon">⌑</span>
+                <span><strong>Difícil</strong><small>Em preparação</small></span>
+            </button>
+            <button aria-disabled="true" class="game-difficulty-option locked" data-difficulty="impossible" disabled type="button">
+                <span class="game-difficulty-option-icon">⌑</span>
+                <span><strong>Impossível</strong><small>Em preparação</small></span>
+            </button>
+        </div>
+        <div class="game-difficulty-actions">
+            <button class="wiki-game-btn wiki-game-btn-secondary" id="game-difficulty-done" type="button">Fechar</button>
+        </div>
+    </div>
+</div>
 
 
 
@@ -500,6 +526,6 @@
 
     <script src="../../js/global/hamburger.js?v=20260815-1535"></script>
 
-<script src="../../js/wiki/wiki.js?v=20260816"></script>
+<script src="../../js/wiki/wiki.js?v=20260908-mode1"></script>
 </body>
 </html>

@@ -42,7 +42,7 @@
 
     function phaseDescription(phase) {
         if (phase.contentFolder) {
-            return `Você abriu “${phase.name}”. Escolha abaixo a dificuldade que deseja consultar. As páginas Normal, Heróis e Ferreiro estão disponíveis.`;
+            return `Você abriu “${phase.name}”. Escolha abaixo o modo de jogo que deseja consultar: Campanha, Heróico ou Ferrenho.`;
         }
         const kind = phase.group === 'special' ? 'fase especial' : 'fase de campanha';
         return `Você abriu “${phase.name}”, uma ${kind}. O conteúdo desta fase ainda não possui uma página própria na Wiki.`;
@@ -61,7 +61,7 @@
         if (modalActions) {
             modalActions.hidden = !hasContent;
             modalActions.querySelectorAll('a').forEach((link) => {
-                const category = link.dataset.category || 'normal';
+                const category = link.dataset.category || 'campanha';
                 const pageName = category === 'heroi' ? 'wiki-game-heroi.html' : category === 'ferreiro' ? 'wiki-game-ferreiro.html' : 'wiki-game-normal.html';
                 link.href = `${phase.contentFolder}/${pageName}`;
                 link.tabIndex = hasContent ? 0 : -1;
@@ -75,7 +75,7 @@
         document.body.classList.add('wiki-modal-open');
 
         if (hasContent) {
-            modalActions?.querySelector('[data-category="normal"]')?.focus();
+            modalActions?.querySelector('[data-category="campanha"], [data-category="normal"]')?.focus();
         } else {
             modalClose?.focus();
         }

@@ -762,6 +762,34 @@
 
 body.wiki-modal-open{overflow:hidden}
 
+/* Seletor inicial: dificuldade do jogo antes da lista de fases. */
+.game-difficulty-modal[hidden]{display:none}
+.game-difficulty-modal{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:20px}
+.game-difficulty-modal::before{content:"";position:absolute;inset:0;background:rgba(2,5,9,.8);backdrop-filter:blur(10px)}
+.game-difficulty-panel{position:relative;z-index:1;width:min(620px,100%);padding:30px;border:1px solid #334056;border-radius:24px;background:linear-gradient(155deg,#171d27,#0f141b);box-shadow:0 30px 90px rgba(0,0,0,.48);text-align:center}
+.game-difficulty-modal[aria-hidden="false"] .game-difficulty-panel{animation:gameDifficultyIn .28s ease-out both}
+@keyframes gameDifficultyIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.game-difficulty-kicker{color:#ffaa00;font-size:.65rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.game-difficulty-panel h2{margin:10px 0 10px;font-size:clamp(1.55rem,4vw,2rem);letter-spacing:-.04em}
+.game-difficulty-panel p{margin:0;color:#9ea7b3;line-height:1.75;text-align:left}
+.game-difficulty-close{width:42px;height:42px;position:absolute;right:12px;top:12px;border:1px solid #303b4c;border-radius:12px;background:#111720;color:#d6dbe2;font-size:1.15rem;cursor:pointer}
+.game-difficulty-close:hover,.game-difficulty-close:focus-visible{border-color:#ffaa00;color:#ffaa00;outline:0}
+.game-difficulty-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+.game-difficulty-option{min-width:0;min-height:76px;display:flex;align-items:center;justify-content:flex-start;gap:11px;padding:12px 13px;border:1px solid #334056;border-radius:14px;background:#10161f;color:#f0f3f6;text-align:left;text-decoration:none;font:inherit;cursor:pointer;transition:transform .2s ease,border-color .2s ease,background .2s ease,filter .2s ease}
+.game-difficulty-option.available{border-color:#ffaa00;background:linear-gradient(155deg,#ffaa00,#f08a00);color:#111820}
+.game-difficulty-option.available:hover,.game-difficulty-option.available:focus-visible{transform:translateY(-2px);filter:brightness(1.06);outline:0}
+.game-difficulty-option.locked{border-color:#283344;background:#0e131b;color:#677283;cursor:not-allowed;opacity:.8}
+.game-difficulty-option-icon{width:28px;height:28px;display:grid;place-items:center;flex:0 0 auto;border-radius:9px;border:1px solid currentColor;font-size:.78rem;font-weight:900}
+.game-difficulty-option strong,.game-difficulty-option small{display:block}
+.game-difficulty-option strong{font-size:.78rem;font-weight:900}
+.game-difficulty-option small{margin-top:4px;font-size:.59rem;font-weight:800;letter-spacing:.05em;opacity:.72}
+.game-difficulty-actions{display:flex;justify-content:center;margin-top:22px}
+@media(max-width:640px){
+    .game-difficulty-panel{padding:26px 18px 22px}
+    .game-difficulty-options{grid-template-columns:1fr}
+    .game-difficulty-option{min-height:58px}
+}
+
 
 /* FINAL CLEANUP — override legacy v4 structure rules */
 .wiki-structure{padding:24px 0 92px}
