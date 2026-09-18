@@ -43,19 +43,6 @@
     pointer-events: auto;
 }
 
-.monster-map-marker::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 8px;
-    left: 50%;
-    bottom: 1px;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: rgba(0,0,0,.45);
-    filter: blur(3px);
-}
-
 .monster-map-marker img {
     position: relative;
     z-index: 2;

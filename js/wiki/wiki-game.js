@@ -4,8 +4,8 @@
     const phases = [
         { n: '01', name: 'Corvos cinzentos', group: 'base', contentFolder: 'Corvos%20Cinzentos' },
         { n: '02', name: 'Cruzamento alto', group: 'base', contentFolder: 'Cruzamento%20alto' },
-        { n: '03', name: 'Trilha da caichoeira', group: 'base', contentFolder: 'Trilha%20da%20caichoeira' },
-        { n: '04', name: 'Defesa do bosque rubro', group: 'base' },
+        { n: '03', name: 'Trilha da cachoeira', group: 'base', contentFolder: 'Trilha%20da%20cachoeira' },
+        { n: '04', name: 'Defesa do bosque rubro', group: 'base', contentFolder: 'Defesa%20do%20bosque%20rubro' },
         { n: '05', name: 'Jardins reais', group: 'base' },
         { n: '06', name: 'Ponto dos grifos', group: 'base' },
         { n: '07', name: 'Pedrahenge', group: 'base' },
