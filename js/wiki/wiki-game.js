@@ -468,6 +468,35 @@
             return;
         }
 
+        // Loop opcional, com o botão abaixo do vídeo.
+        if (button.dataset.gifMode === 'loop' && media.tagName === 'VIDEO') {
+            media.autoplay = false;
+            media.loop = false;
+            media.removeAttribute('autoplay');
+            media.removeAttribute('loop');
+            const updateLoopButton = () => {
+                button.setAttribute('aria-pressed', String(media.loop));
+                button.setAttribute('aria-label', media.loop
+                    ? 'Desativar repetição em loop e reiniciar o vídeo'
+                    : 'Ativar repetição em loop e reiniciar o vídeo');
+                button.title = media.loop ? 'GIF: repetição ativada' : 'GIF: ativar repetição';
+            };
+            updateLoopButton();
+            if (media.dataset.assetError === 'true') button.disabled = true;
+            const disableLoopButton = () => { button.disabled = true; };
+            media.addEventListener('error', disableLoopButton, { once: true });
+            media.querySelectorAll('source').forEach(source => source.addEventListener('error', disableLoopButton, { once: true }));
+            button.addEventListener('click', () => {
+                media.loop = !media.loop;
+                updateLoopButton();
+                restartGif(media)?.catch?.(() => {
+                    media.loop = false;
+                    updateLoopButton();
+                });
+            });
+            return;
+        }
+
         const controls = button.closest('.wiki-gif-controls');
         const stage = media.closest('.wiki-step-media, .corvos-step-media');
         if (stage && controls) {
@@ -507,6 +536,36 @@
         });
     });
 
+    // Ampliação das imagens da análise
+    document.querySelectorAll('.corvos-step-media img, .wiki-step-media img, .wiki-gallery img').forEach((image) => {
+        if (image.closest('[data-lightbox-src], .wiki-ref-wrap, .wiki-ref-popover, [hidden], .wiki-missing-asset, .wiki-ref-missing, a, button')) return;
+        const source = image.getAttribute('src');
+        if (!source) return;
+        const trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = image.parentElement.classList.contains('wiki-gallery') ? 'wiki-gallery-item' : 'wiki-image-button';
+        trigger.dataset.lightboxSrc = source;
+        trigger.dataset.lightboxAlt = image.alt || 'Imagem da análise';
+        trigger.setAttribute('aria-label', `Ampliar: ${image.alt || 'imagem da análise'}`);
+        image.replaceWith(trigger);
+        trigger.appendChild(image);
+    });
+
+    if (!document.getElementById('wiki-lightbox') && document.querySelector('[data-lightbox-src]')) {
+        const dialog = document.createElement('div');
+        dialog.id = 'wiki-lightbox';
+        dialog.className = 'wiki-lightbox';
+        dialog.hidden = true;
+        dialog.setAttribute('aria-hidden', 'true');
+        dialog.innerHTML = `
+            <div class="wiki-lightbox-backdrop" data-lightbox-close></div>
+            <div class="wiki-lightbox-panel" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+                <button class="wiki-lightbox-close" type="button" data-lightbox-close aria-label="Fechar imagem">×</button>
+                <img id="wiki-lightbox-image" alt="">
+            </div>`;
+        document.body.appendChild(dialog);
+    }
+
     const lightbox = document.getElementById('wiki-lightbox');
     const lightboxImage = document.getElementById('wiki-lightbox-image');
     let lastImageTrigger = null;
@@ -515,31 +574,42 @@
         if (!lightbox || !lightboxImage) return;
         const src = trigger?.dataset.lightboxSrc;
         if (!src) return;
+        closeAllReferences();
         lastImageTrigger = trigger;
         lightboxImage.src = src;
         lightboxImage.alt = trigger.dataset.lightboxAlt || 'Imagem ampliada';
         lightbox.hidden = false;
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.classList.add('wiki-modal-open');
+        lightbox.querySelector('.wiki-lightbox-close')?.focus({ preventScroll: true });
     }
 
     function closeLightbox() {
         if (!lightbox) return;
         lightbox.hidden = true;
         lightbox.setAttribute('aria-hidden', 'true');
-        if (lightboxImage) lightboxImage.src = '';
+        lightboxImage?.removeAttribute('src');
         document.body.classList.remove('wiki-modal-open');
-        lastImageTrigger?.focus();
+        lastImageTrigger?.focus({ preventScroll: true });
         lastImageTrigger = null;
     }
 
     document.querySelectorAll('[data-lightbox-src]').forEach((trigger) => {
-        trigger.addEventListener('click', () => openLightbox(trigger));
+        trigger.setAttribute('aria-haspopup', 'dialog');
+        trigger.setAttribute('aria-controls', 'wiki-lightbox');
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            openLightbox(trigger);
+        });
     });
     lightbox?.addEventListener('click', (event) => {
         if (event.target.matches('[data-lightbox-close]')) closeLightbox();
     });
     document.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab' && lightbox && !lightbox.hidden) {
+            event.preventDefault();
+            lightbox.querySelector('.wiki-lightbox-close')?.focus({ preventScroll: true });
+        }
         if (event.key === 'Escape') {
             if (lightbox && !lightbox.hidden) closeLightbox();
             else if (modal && !modal.hidden) closeModal();
